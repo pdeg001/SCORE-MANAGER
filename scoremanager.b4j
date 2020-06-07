@@ -1,0 +1,264 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=main.bjl
+File2=scrollpane.bjl
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=xui views
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.3
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 1024
+	#MainFormHeight: 768 
+#End Region
+
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private lblTest As B4XView
+	
+	Dim sp As ScrollPane
+	Private ScrollPane1 As ScrollPane
+	Private lblBaseweek As Label
+	Private ScrollPane2 As ScrollPane
+	Private lblHeight As Int = 30
+	Private ScrollPane3 As ScrollPane
+	Private currWeek As Int
+	Dim Label1 As Label
+	Private ptop, pleft As B4XView' = Label1
+End Sub
+
+Sub AppStart (Form1 As Form, Args() As String)
+	sp.Initialize("SP")
+	
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("main") 'Load the layout file.
+	MainForm.WindowHeight = 720
+	MainForm.WindowWidth = 1024
+	MainForm.Resizable = True
+	MainForm.Show
+	
+	'MainForm.RootPane.AddNode(sp, 10, 100, MainForm.Width-20, MainForm.Height-120)
+	ScrollPane1.LoadLayout("scrollpane",ScrollPane1.Width - 10,0)
+	ScrollPane2.LoadLayout("scrollpane",0 ,0)
+	ScrollPane3.LoadLayout("scrollpane",0 ,0)
+	
+'	ScrollPane1.SetVScrollVisibility("ALWAYS")
+	ScrollPane2.SetHScrollVisibility("ALWAYS")
+	ScrollPane1.SetHScrollVisibility("ALWAYS")
+'	ScrollPane2.SetVScrollVisibility("NEVER")
+	ScrollPane1.SetVScrollVisibility("NEVER")
+	Sleep(0)
+	lblTest.Text = "Sjaak van Duivenvoorde"
+	SetLabels
+End Sub
+
+'Return true to allow the default exceptions handler to handle the uncaught exception.
+Sub Application_Error (Error As Exception, StackTrace As String) As Boolean
+	Return True
+End Sub
+
+Sub SetLabels
+	Dim p As Pane= ScrollPane1.InnerNode
+	Dim baseLabel As Label' = lblTest
+	Dim lbl As Label
+	Dim left As Int = 1'baseLabel.Left
+	Dim width As Int = ScrollPane1.Width-10
+	Dim top As Int = 0' baseLabel.Top + height
+	 
+	For i = 1 To 30
+		lbl = lblTest
+		lbl.Initialize("lblWeek")
+		lbl.TextSize = 15
+		lbl.Alignment = "CENTER_RIGHT"
+		lbl.Tag = $"speler${i}L"$
+		lbl.Text = $"SPELER ${i}"$
+		lbl.Style = "-fx-padding: 0 10 0 0;"
+		CSSUtils.SetBorder(lbl, 1, fx.Colors.Gray, 4)
+		p.AddNode(lbl, left, top, 210, 30)
+		
+		
+		SetWeeks(lbl.Top, i)
+		top = top + 30
+	Next
+	SetNameRotated
+	p.PrefHeight = (i * lblHeight) '+ 25
+	ScrollPane2.InnerNode.PrefHeight = p.PrefHeight '(39*lblHeight)'+25
+	ScrollPane2.InnerNode.PrefWidth = (39 * 31) + 10
+	ScrollPane3.InnerNode.PrefWidth = (39 * 31) + 10
+	SetScrollbarSize(ScrollPane2, "VERTICAL", 20)
+End Sub
+
+Private Sub SetNameRotated
+	Dim left As Int
+	Label1.Initialize("lblWeek")
+	Dim baseLbl As B4XView = Label1
+'	baseLbl.Rotation = 90
+	Dim pw1 As Pane= ScrollPane3.InnerNode
+	left = 5
+	
+	For i = 1 To 30
+		Label1.Initialize("lblWeek")
+		Label1.Alignment = "CENTER_RIGHT"
+		baseLbl = Label1
+		baseLbl.Rotation = 90
+		CSSUtils.SetBorder(baseLbl, 1, fx.Colors.Gray, 4)
+		
+		baseLbl= baseLbl
+		baseLbl.Tag = $"speler${i}T"$
+	
+		baseLbl.Text = $"SPELER ${i} "$
+		baseLbl.TextSize = lblTest.TextSize
+		
+		pw1.AddNode(baseLbl, left-70, 70, 170, 30)
+		left = left+31
+	Next
+	
+End Sub
+
+
+Private Sub SetWeeks(top As Int, num As Int)
+	Dim left As Int
+	Dim lbl As Label = lblTest
+	Dim pw As Pane= ScrollPane2.InnerNode
+	left = 5
+	
+	For i = 1 To 30
+		lbl.id = "lbl"&i&""&DateTime.GetYear(DateTime.Now)
+		If i <> num Then
+		lbl.Initialize("lblWeek")
+			'lbl.Text = i
+		Else
+			lbl.Initialize("")
+			CSSUtils.SetBackgroundColor(lbl, fx.Colors.LightGray)
+		End If
+		lbl.Tag = $"week-${num}-${i}"$
+		lbl.TextSize = lblTest.TextSize
+		lbl.Alignment = "CENTER"
+		CSSUtils.SetBorder(lbl, 1, fx.Colors.Gray, 4)
+		
+		pw.AddNode(lbl, left, top, 30, 30)
+		left = left+31
+	Next
+End Sub
+
+
+Sub Label1_MouseEntered (EventData As MouseEvent)
+	
+End Sub
+
+Sub Label1_MouseExited (EventData As MouseEvent)
+	
+End Sub
+
+Sub lblWeek_MouseExited (EventData As MouseEvent)
+	Dim lbl As Label
+	lbl = Sender
+	CSSUtils.SetBackgroundColor(lbl, fx.Colors.White)
+	
+	CSSUtils.SetBackgroundColor(ptop, fx.Colors.White)
+	CSSUtils.SetBackgroundColor(pleft, fx.Colors.White)
+End Sub
+
+Sub LblWeek_MouseEntered (EventData As MouseEvent)
+	Dim lbl As Label
+	lbl = Sender
+	CSSUtils.SetBackgroundColor(lbl, fx.Colors.Yellow)
+	Dim tag As String = lbl.Tag
+	If tag.IndexOf("week") > -1 Then
+		Dim str() As String
+		str = Regex.Split("-", tag)
+				
+		Dim pn As Pane = ScrollPane1.InnerNode
+		For Each v As B4XView In pn.GetAllViewsRecursive
+			If v.Tag = $"speler${str(1)}L"$ Then
+				pleft = v
+				HighliteSpeler(v)
+				Exit
+			End If
+		Next
+		pn = ScrollPane3.InnerNode
+		For Each v As B4XView In pn.GetAllViewsRecursive
+			If v.Tag = $"speler${str(2)}T"$ Then
+				ptop = v
+				HighliteSpeler(v)
+				Exit
+			End If
+		Next
+	End If
+End Sub
+
+Private Sub HighliteSpeler(v As B4XView)
+	CSSUtils.SetBackgroundColor(v, fx.Colors.Yellow)
+End Sub
+
+
+'Parent - The Node that ontains a scrollbar i.e. ListView, TableView etc.
+'Orientation - can be VERTICAL, HORIZONTAL or BOTH
+'Size - The required width for a VERTICAl scrollbar or height for a HORIZONTAL scroll bar
+Public Sub SetScrollbarSize(Parent As JavaObject, Orientation As String, Size As Double)
+	'Get a Set that contains the scrollbars attached to the parent and convert it to an array
+	Dim Arr() As Object = Parent.RunMethodJO("lookupAll",Array(".scroll-bar")).RunMethod("toArray",Null)
+
+	For Each N As Node In Arr
+
+		'Check this object is a scrolbar
+		If GetType(N) = "com.sun.javafx.scene.control.skin.VirtualScrollBar" Or GetType(N) = "javafx.scene.control.ScrollBar" Then
+			Dim SB As JavaObject = N
+
+			'Get the orientation of the scrollbar as a string
+			Dim BarOrientation As String = SB.RunMethodJO("getOrientation",Null).RunMethod("toString",Null)
+
+			'Required Orientation is VERTICAL or BOTH
+			If BarOrientation = "VERTICAL" And (Orientation  = BarOrientation Or Orientation = "BOTH") Then
+				N.PrefWidth = Size
+			End If
+
+			'Required Orientation is HORIZONTAL or BOTH
+			If BarOrientation = "HORIZONTAL" And (Orientation = BarOrientation Or Orientation = "BOTH") Then
+				N.PrefHeight = Size
+			End If
+		End If
+ 
+	Next
+End Sub
+
+Sub ScrollPane1_VScrollChanged (Position As Double)
+	ScrollPane2.VPosition = ScrollPane1.VPosition
+	Return
+	Dim p As ScrollPane = Sender
+'	p = Sender
+	If p.tag = "sp1" Then 
+		ScrollPane2.VPosition = Position
+		ScrollPane2.VPosition = ScrollPane1.VPosition
+		Return
+	else if p.Tag = "sp2" Then
+	'	ScrollPane1.VPosition = Position
+		Return
+	End If
+End Sub
+
+Sub ScrollPane2_VScrollChanged (Position As Double)
+	ScrollPane1.VPosition = ScrollPane2.VPosition
+	Return
+	Dim p As ScrollPane = Sender
+'	p = Sender
+	If p.tag = "sp1" Then 
+		ScrollPane2.VPosition = Position
+		ScrollPane2.VPosition = ScrollPane1.VPosition
+		Return
+	else if p.Tag = "sp2" Then
+	'	ScrollPane1.VPosition = Position
+		Return
+	End If
+End Sub
+
+Sub ScrollPane2_HScrollChanged (Position As Double)
+	ScrollPane3.HPosition = Position
+End Sub
