@@ -40,43 +40,44 @@ public int _index = 0;
 public b4j.example.dateutils _dateutils = null;
 public b4j.example.cssutils _cssutils = null;
 public b4j.example.main _main = null;
+public b4j.example.players _players = null;
 public anywheresoftware.b4a.objects.B4XViewWrapper  _getpanel(b4j.example.b4xtimedtemplate __ref,b4j.example.b4xdialog _dialog) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="b4xtimedtemplate";
 if (Debug.shouldDelegate(ba, "getpanel", true))
 	 {return ((anywheresoftware.b4a.objects.B4XViewWrapper) Debug.delegate(ba, "getpanel", new Object[] {_dialog}));}
 anywheresoftware.b4a.objects.B4XViewWrapper _innerpanel = null;
-RDebugUtils.currentLine=16515072;
- //BA.debugLineNum = 16515072;BA.debugLine="Public Sub GetPanel (Dialog As B4XDialog) As B4XVi";
-RDebugUtils.currentLine=16515073;
- //BA.debugLineNum = 16515073;BA.debugLine="If mBase.NumberOfViews = 0 Then";
+RDebugUtils.currentLine=20054016;
+ //BA.debugLineNum = 20054016;BA.debugLine="Public Sub GetPanel (Dialog As B4XDialog) As B4XVi";
+RDebugUtils.currentLine=20054017;
+ //BA.debugLineNum = 20054017;BA.debugLine="If mBase.NumberOfViews = 0 Then";
 if (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getNumberOfViews()==0) { 
-RDebugUtils.currentLine=16515074;
- //BA.debugLineNum = 16515074;BA.debugLine="Dim InnerPanel As B4XView = CallSub2(mTemplate,";
+RDebugUtils.currentLine=20054018;
+ //BA.debugLineNum = 20054018;BA.debugLine="Dim InnerPanel As B4XView = CallSub2(mTemplate,";
 _innerpanel = new anywheresoftware.b4a.objects.B4XViewWrapper();
 _innerpanel = (anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper(), (java.lang.Object)(__c.CallSubDebug2(ba,__ref._mtemplate /*Object*/ ,"GetPanel",(Object)(_dialog))));
-RDebugUtils.currentLine=16515075;
- //BA.debugLineNum = 16515075;BA.debugLine="If InnerPanel.Parent.IsInitialized Then InnerPan";
+RDebugUtils.currentLine=20054019;
+ //BA.debugLineNum = 20054019;BA.debugLine="If InnerPanel.Parent.IsInitialized Then InnerPan";
 if (_innerpanel.getParent().IsInitialized()) { 
 _innerpanel.RemoveViewFromParent();};
-RDebugUtils.currentLine=16515076;
- //BA.debugLineNum = 16515076;BA.debugLine="mBase.SetLayoutAnimated(0, 0, 0, InnerPanel.Widt";
+RDebugUtils.currentLine=20054020;
+ //BA.debugLineNum = 20054020;BA.debugLine="mBase.SetLayoutAnimated(0, 0, 0, InnerPanel.Widt";
 __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetLayoutAnimated((int) (0),0,0,_innerpanel.getWidth(),_innerpanel.getHeight()+__c.DipToCurrent((int) (19)));
-RDebugUtils.currentLine=16515077;
- //BA.debugLineNum = 16515077;BA.debugLine="mBase.LoadLayout(\"TimedDialogTemplate\")";
+RDebugUtils.currentLine=20054021;
+ //BA.debugLineNum = 20054021;BA.debugLine="mBase.LoadLayout(\"TimedDialogTemplate\")";
 __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .LoadLayout("TimedDialogTemplate",ba);
-RDebugUtils.currentLine=16515078;
- //BA.debugLineNum = 16515078;BA.debugLine="mBase.SetColorAndBorder(xui.Color_Transparent, 0";
+RDebugUtils.currentLine=20054022;
+ //BA.debugLineNum = 20054022;BA.debugLine="mBase.SetColorAndBorder(xui.Color_Transparent, 0";
 __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetColorAndBorder(__ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .Color_Transparent,0,(int) (0),0);
-RDebugUtils.currentLine=16515079;
- //BA.debugLineNum = 16515079;BA.debugLine="mBase.AddView(InnerPanel, 0, 19dip, InnerPanel.W";
+RDebugUtils.currentLine=20054023;
+ //BA.debugLineNum = 20054023;BA.debugLine="mBase.AddView(InnerPanel, 0, 19dip, InnerPanel.W";
 __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .AddView((javafx.scene.Node)(_innerpanel.getObject()),0,__c.DipToCurrent((int) (19)),_innerpanel.getWidth(),_innerpanel.getHeight());
  };
-RDebugUtils.currentLine=16515081;
- //BA.debugLineNum = 16515081;BA.debugLine="Return mBase";
+RDebugUtils.currentLine=20054025;
+ //BA.debugLineNum = 20054025;BA.debugLine="Return mBase";
 if (true) return __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ ;
-RDebugUtils.currentLine=16515082;
- //BA.debugLineNum = 16515082;BA.debugLine="End Sub";
+RDebugUtils.currentLine=20054026;
+ //BA.debugLineNum = 20054026;BA.debugLine="End Sub";
 return null;
 }
 public void  _show(b4j.example.b4xtimedtemplate __ref,b4j.example.b4xdialog _dialog) throws Exception{
@@ -110,26 +111,26 @@ return;
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=16580609;
- //BA.debugLineNum = 16580609;BA.debugLine="CallSub2(mTemplate, \"Show\", Dialog)";
+RDebugUtils.currentLine=20119553;
+ //BA.debugLineNum = 20119553;BA.debugLine="CallSub2(mTemplate, \"Show\", Dialog)";
 parent.__c.CallSubDebug2(ba,__ref._mtemplate /*Object*/ ,"Show",(Object)(_dialog));
-RDebugUtils.currentLine=16580610;
- //BA.debugLineNum = 16580610;BA.debugLine="AnotherProgressBar1.SetValueNoAnimation(0)";
+RDebugUtils.currentLine=20119554;
+ //BA.debugLineNum = 20119554;BA.debugLine="AnotherProgressBar1.SetValueNoAnimation(0)";
 __ref._anotherprogressbar1 /*b4j.example.anotherprogressbar*/ ._setvaluenoanimation /*String*/ (null,(int) (0));
-RDebugUtils.currentLine=16580611;
- //BA.debugLineNum = 16580611;BA.debugLine="AnotherProgressBar1.ValueChangePerSecond = 100 /";
+RDebugUtils.currentLine=20119555;
+ //BA.debugLineNum = 20119555;BA.debugLine="AnotherProgressBar1.ValueChangePerSecond = 100 /";
 __ref._anotherprogressbar1 /*b4j.example.anotherprogressbar*/ ._valuechangepersecond /*float*/  = (float) (100/(double)(__ref._timeoutmilliseconds /*int*/ /(double)1000));
-RDebugUtils.currentLine=16580612;
- //BA.debugLineNum = 16580612;BA.debugLine="AnotherProgressBar1.Value = 100";
+RDebugUtils.currentLine=20119556;
+ //BA.debugLineNum = 20119556;BA.debugLine="AnotherProgressBar1.Value = 100";
 __ref._anotherprogressbar1 /*b4j.example.anotherprogressbar*/ ._setvalue /*int*/ (null,(int) (100));
-RDebugUtils.currentLine=16580613;
- //BA.debugLineNum = 16580613;BA.debugLine="Index = Index + 1";
+RDebugUtils.currentLine=20119557;
+ //BA.debugLineNum = 20119557;BA.debugLine="Index = Index + 1";
 __ref._index /*int*/  = (int) (__ref._index /*int*/ +1);
-RDebugUtils.currentLine=16580614;
- //BA.debugLineNum = 16580614;BA.debugLine="Dim MyIndex As Int = Index";
+RDebugUtils.currentLine=20119558;
+ //BA.debugLineNum = 20119558;BA.debugLine="Dim MyIndex As Int = Index";
 _myindex = __ref._index /*int*/ ;
-RDebugUtils.currentLine=16580615;
- //BA.debugLineNum = 16580615;BA.debugLine="Sleep(TimeoutMilliseconds)";
+RDebugUtils.currentLine=20119559;
+ //BA.debugLineNum = 20119559;BA.debugLine="Sleep(TimeoutMilliseconds)";
 parent.__c.Sleep(ba,new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "b4xtimedtemplate", "show"),__ref._timeoutmilliseconds /*int*/ );
 this.state = 5;
 return;
@@ -137,8 +138,8 @@ case 5:
 //C
 this.state = 1;
 ;
-RDebugUtils.currentLine=16580616;
- //BA.debugLineNum = 16580616;BA.debugLine="If MyIndex = Index Then";
+RDebugUtils.currentLine=20119560;
+ //BA.debugLineNum = 20119560;BA.debugLine="If MyIndex = Index Then";
 if (true) break;
 
 case 1:
@@ -151,8 +152,8 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=16580617;
- //BA.debugLineNum = 16580617;BA.debugLine="Dialog.Close(xui.DialogResponse_Cancel)";
+RDebugUtils.currentLine=20119561;
+ //BA.debugLineNum = 20119561;BA.debugLine="Dialog.Close(xui.DialogResponse_Cancel)";
 _dialog._close /*boolean*/ (null,__ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .DialogResponse_Cancel);
  if (true) break;
 
@@ -160,8 +161,8 @@ case 4:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=16580619;
- //BA.debugLineNum = 16580619;BA.debugLine="End Sub";
+RDebugUtils.currentLine=20119563;
+ //BA.debugLineNum = 20119563;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -173,43 +174,43 @@ __ref = this;
 RDebugUtils.currentModule="b4xtimedtemplate";
 if (Debug.shouldDelegate(ba, "dialogclosed", true))
 	 {return ((String) Debug.delegate(ba, "dialogclosed", new Object[] {_result}));}
-RDebugUtils.currentLine=16646144;
- //BA.debugLineNum = 16646144;BA.debugLine="Private Sub DialogClosed(Result As Int)";
-RDebugUtils.currentLine=16646145;
- //BA.debugLineNum = 16646145;BA.debugLine="Index = Index + 1";
+RDebugUtils.currentLine=20185088;
+ //BA.debugLineNum = 20185088;BA.debugLine="Private Sub DialogClosed(Result As Int)";
+RDebugUtils.currentLine=20185089;
+ //BA.debugLineNum = 20185089;BA.debugLine="Index = Index + 1";
 __ref._index /*int*/  = (int) (__ref._index /*int*/ +1);
-RDebugUtils.currentLine=16646146;
- //BA.debugLineNum = 16646146;BA.debugLine="CallSub2(mTemplate, \"DialogClosed\", Result)";
+RDebugUtils.currentLine=20185090;
+ //BA.debugLineNum = 20185090;BA.debugLine="CallSub2(mTemplate, \"DialogClosed\", Result)";
 __c.CallSubDebug2(ba,__ref._mtemplate /*Object*/ ,"DialogClosed",(Object)(_result));
-RDebugUtils.currentLine=16646147;
- //BA.debugLineNum = 16646147;BA.debugLine="End Sub";
+RDebugUtils.currentLine=20185091;
+ //BA.debugLineNum = 20185091;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(b4j.example.b4xtimedtemplate __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="b4xtimedtemplate";
-RDebugUtils.currentLine=16384000;
- //BA.debugLineNum = 16384000;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=16384001;
- //BA.debugLineNum = 16384001;BA.debugLine="Private xui As XUI";
+RDebugUtils.currentLine=19922944;
+ //BA.debugLineNum = 19922944;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=19922945;
+ //BA.debugLineNum = 19922945;BA.debugLine="Private xui As XUI";
 _xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
-RDebugUtils.currentLine=16384002;
- //BA.debugLineNum = 16384002;BA.debugLine="Public mBase As B4XView";
+RDebugUtils.currentLine=19922946;
+ //BA.debugLineNum = 19922946;BA.debugLine="Public mBase As B4XView";
 _mbase = new anywheresoftware.b4a.objects.B4XViewWrapper();
-RDebugUtils.currentLine=16384003;
- //BA.debugLineNum = 16384003;BA.debugLine="Private AnotherProgressBar1 As AnotherProgressBar";
+RDebugUtils.currentLine=19922947;
+ //BA.debugLineNum = 19922947;BA.debugLine="Private AnotherProgressBar1 As AnotherProgressBar";
 _anotherprogressbar1 = new b4j.example.anotherprogressbar();
-RDebugUtils.currentLine=16384004;
- //BA.debugLineNum = 16384004;BA.debugLine="Private mTemplate As Object";
+RDebugUtils.currentLine=19922948;
+ //BA.debugLineNum = 19922948;BA.debugLine="Private mTemplate As Object";
 _mtemplate = new Object();
-RDebugUtils.currentLine=16384005;
- //BA.debugLineNum = 16384005;BA.debugLine="Public TimeoutMilliseconds As Int = 10000";
+RDebugUtils.currentLine=19922949;
+ //BA.debugLineNum = 19922949;BA.debugLine="Public TimeoutMilliseconds As Int = 10000";
 _timeoutmilliseconds = (int) (10000);
-RDebugUtils.currentLine=16384006;
- //BA.debugLineNum = 16384006;BA.debugLine="Private Index As Int";
+RDebugUtils.currentLine=19922950;
+ //BA.debugLineNum = 19922950;BA.debugLine="Private Index As Int";
 _index = 0;
-RDebugUtils.currentLine=16384007;
- //BA.debugLineNum = 16384007;BA.debugLine="End Sub";
+RDebugUtils.currentLine=19922951;
+ //BA.debugLineNum = 19922951;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(b4j.example.b4xtimedtemplate __ref,anywheresoftware.b4a.BA _ba,Object _innertemplate) throws Exception{
@@ -218,16 +219,16 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="b4xtimedtemplate";
 if (Debug.shouldDelegate(ba, "initialize", true))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba,_innertemplate}));}
-RDebugUtils.currentLine=16449536;
- //BA.debugLineNum = 16449536;BA.debugLine="Public Sub Initialize (InnerTemplate As Object)";
-RDebugUtils.currentLine=16449537;
- //BA.debugLineNum = 16449537;BA.debugLine="mBase = xui.CreatePanel(\"mBase\")";
+RDebugUtils.currentLine=19988480;
+ //BA.debugLineNum = 19988480;BA.debugLine="Public Sub Initialize (InnerTemplate As Object)";
+RDebugUtils.currentLine=19988481;
+ //BA.debugLineNum = 19988481;BA.debugLine="mBase = xui.CreatePanel(\"mBase\")";
 __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/  = __ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .CreatePanel(ba,"mBase");
-RDebugUtils.currentLine=16449538;
- //BA.debugLineNum = 16449538;BA.debugLine="mTemplate = InnerTemplate";
+RDebugUtils.currentLine=19988482;
+ //BA.debugLineNum = 19988482;BA.debugLine="mTemplate = InnerTemplate";
 __ref._mtemplate /*Object*/  = _innertemplate;
-RDebugUtils.currentLine=16449540;
- //BA.debugLineNum = 16449540;BA.debugLine="End Sub";
+RDebugUtils.currentLine=19988484;
+ //BA.debugLineNum = 19988484;BA.debugLine="End Sub";
 return "";
 }
 }

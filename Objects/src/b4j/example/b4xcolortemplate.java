@@ -70,22 +70,23 @@ public Object[] _initialcolor = null;
 public b4j.example.dateutils _dateutils = null;
 public b4j.example.cssutils _cssutils = null;
 public b4j.example.main _main = null;
+public b4j.example.players _players = null;
 public String  _alpha_touch(b4j.example.b4xcolortemplate __ref,int _action,float _x,float _y) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "alpha_touch", true))
 	 {return ((String) Debug.delegate(ba, "alpha_touch", new Object[] {_action,_x,_y}));}
-RDebugUtils.currentLine=4390912;
- //BA.debugLineNum = 4390912;BA.debugLine="Private Sub Alpha_Touch (Action As Int, X As Float";
-RDebugUtils.currentLine=4390913;
- //BA.debugLineNum = 4390913;BA.debugLine="If Action = mBase.TOUCH_ACTION_MOVE_NOTOUCH Then";
+RDebugUtils.currentLine=7929856;
+ //BA.debugLineNum = 7929856;BA.debugLine="Private Sub Alpha_Touch (Action As Int, X As Float";
+RDebugUtils.currentLine=7929857;
+ //BA.debugLineNum = 7929857;BA.debugLine="If Action = mBase.TOUCH_ACTION_MOVE_NOTOUCH Then";
 if (_action==__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .TOUCH_ACTION_MOVE_NOTOUCH) { 
 if (true) return "";};
-RDebugUtils.currentLine=4390914;
- //BA.debugLineNum = 4390914;BA.debugLine="AlphaBarSelectedChange(x)";
+RDebugUtils.currentLine=7929858;
+ //BA.debugLineNum = 7929858;BA.debugLine="AlphaBarSelectedChange(x)";
 __ref._alphabarselectedchange /*String*/ (null,_x);
-RDebugUtils.currentLine=4390915;
- //BA.debugLineNum = 4390915;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7929859;
+ //BA.debugLineNum = 7929859;BA.debugLine="End Sub";
 return "";
 }
 public String  _alphabarselectedchange(b4j.example.b4xcolortemplate __ref,float _x) throws Exception{
@@ -94,34 +95,34 @@ RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "alphabarselectedchange", true))
 	 {return ((String) Debug.delegate(ba, "alphabarselectedchange", new Object[] {_x}));}
 anywheresoftware.b4a.objects.B4XCanvas.B4XRect _r = null;
-RDebugUtils.currentLine=3473408;
- //BA.debugLineNum = 3473408;BA.debugLine="Private Sub AlphaBarSelectedChange(x As Float)";
-RDebugUtils.currentLine=3473409;
- //BA.debugLineNum = 3473409;BA.debugLine="SelectedAlpha = 255 * Max(0, Min(1, x / AlphaBar.";
+RDebugUtils.currentLine=7012352;
+ //BA.debugLineNum = 7012352;BA.debugLine="Private Sub AlphaBarSelectedChange(x As Float)";
+RDebugUtils.currentLine=7012353;
+ //BA.debugLineNum = 7012353;BA.debugLine="SelectedAlpha = 255 * Max(0, Min(1, x / AlphaBar.";
 __ref._selectedalpha /*int*/  = (int) (255*__c.Max(0,__c.Min(1,_x/(double)__ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth())));
-RDebugUtils.currentLine=3473410;
- //BA.debugLineNum = 3473410;BA.debugLine="x = SelectedAlpha / 255 * AlphaBar.pnl.Width";
+RDebugUtils.currentLine=7012354;
+ //BA.debugLineNum = 7012354;BA.debugLine="x = SelectedAlpha / 255 * AlphaBar.pnl.Width";
 _x = (float) (__ref._selectedalpha /*int*/ /(double)255*__ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth());
-RDebugUtils.currentLine=3473411;
- //BA.debugLineNum = 3473411;BA.debugLine="AlphaBar.cvs.ClearRect(AlphaBar.cvs.TargetRect)";
+RDebugUtils.currentLine=7012355;
+ //BA.debugLineNum = 7012355;BA.debugLine="AlphaBar.cvs.ClearRect(AlphaBar.cvs.TargetRect)";
 __ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .ClearRect(__ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .getTargetRect());
-RDebugUtils.currentLine=3473412;
- //BA.debugLineNum = 3473412;BA.debugLine="Dim r As B4XRect";
+RDebugUtils.currentLine=7012356;
+ //BA.debugLineNum = 7012356;BA.debugLine="Dim r As B4XRect";
 _r = new anywheresoftware.b4a.objects.B4XCanvas.B4XRect();
-RDebugUtils.currentLine=3473413;
- //BA.debugLineNum = 3473413;BA.debugLine="r.Initialize(x - 3dip, 1dip, x + 3dip, AlphaBar.c";
+RDebugUtils.currentLine=7012357;
+ //BA.debugLineNum = 7012357;BA.debugLine="r.Initialize(x - 3dip, 1dip, x + 3dip, AlphaBar.c";
 _r.Initialize((float) (_x-__c.DipToCurrent((int) (3))),(float) (__c.DipToCurrent((int) (1))),(float) (_x+__c.DipToCurrent((int) (3))),(float) (__ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .getTargetRect().getBottom()-__c.DipToCurrent((int) (1))));
-RDebugUtils.currentLine=3473414;
- //BA.debugLineNum = 3473414;BA.debugLine="AlphaBar.cvs.DrawRect(r, xui.Color_Black, True, 2";
+RDebugUtils.currentLine=7012358;
+ //BA.debugLineNum = 7012358;BA.debugLine="AlphaBar.cvs.DrawRect(r, xui.Color_Black, True, 2";
 __ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .DrawRect(_r,__ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .Color_Black,__c.True,(float) (__c.DipToCurrent((int) (2))));
-RDebugUtils.currentLine=3473415;
- //BA.debugLineNum = 3473415;BA.debugLine="AlphaBar.cvs.Invalidate";
+RDebugUtils.currentLine=7012359;
+ //BA.debugLineNum = 7012359;BA.debugLine="AlphaBar.cvs.Invalidate";
 __ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .Invalidate();
-RDebugUtils.currentLine=3473416;
- //BA.debugLineNum = 3473416;BA.debugLine="Update";
+RDebugUtils.currentLine=7012360;
+ //BA.debugLineNum = 7012360;BA.debugLine="Update";
 __ref._update /*String*/ (null);
-RDebugUtils.currentLine=3473417;
- //BA.debugLineNum = 3473417;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7012361;
+ //BA.debugLineNum = 7012361;BA.debugLine="End Sub";
 return "";
 }
 public String  _update(b4j.example.b4xcolortemplate __ref) throws Exception{
@@ -129,16 +130,16 @@ __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "update", true))
 	 {return ((String) Debug.delegate(ba, "update", null));}
-RDebugUtils.currentLine=3538944;
- //BA.debugLineNum = 3538944;BA.debugLine="Private Sub Update";
-RDebugUtils.currentLine=3538945;
- //BA.debugLineNum = 3538945;BA.debugLine="DrawColors";
+RDebugUtils.currentLine=7077888;
+ //BA.debugLineNum = 7077888;BA.debugLine="Private Sub Update";
+RDebugUtils.currentLine=7077889;
+ //BA.debugLineNum = 7077889;BA.debugLine="DrawColors";
 __ref._drawcolors /*String*/ (null);
-RDebugUtils.currentLine=3538946;
- //BA.debugLineNum = 3538946;BA.debugLine="HandleSelectedColorChanged(DONT_CHANGE, DONT_CHAN";
+RDebugUtils.currentLine=7077890;
+ //BA.debugLineNum = 7077890;BA.debugLine="HandleSelectedColorChanged(DONT_CHANGE, DONT_CHAN";
 __ref._handleselectedcolorchanged /*String*/ (null,__ref._dont_change /*int*/ ,__ref._dont_change /*int*/ );
-RDebugUtils.currentLine=3538947;
- //BA.debugLineNum = 3538947;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7077891;
+ //BA.debugLineNum = 7077891;BA.debugLine="End Sub";
 return "";
 }
 public String  _base_resize(b4j.example.b4xcolortemplate __ref,double _width,double _height) throws Exception{
@@ -150,41 +151,41 @@ int _r = 0;
 int _w = 0;
 b4j.example.b4xcolortemplate._colorpickerpart _cpp = null;
 int _i = 0;
-RDebugUtils.currentLine=3080192;
- //BA.debugLineNum = 3080192;BA.debugLine="Private Sub Base_Resize (Width As Double, Height A";
-RDebugUtils.currentLine=3080194;
- //BA.debugLineNum = 3080194;BA.debugLine="ColorScale = Max(1, Max(Width, Height) / 100 / De";
+RDebugUtils.currentLine=6619136;
+ //BA.debugLineNum = 6619136;BA.debugLine="Private Sub Base_Resize (Width As Double, Height A";
+RDebugUtils.currentLine=6619138;
+ //BA.debugLineNum = 6619138;BA.debugLine="ColorScale = Max(1, Max(Width, Height) / 100 / De";
 __ref._colorscale /*float*/  = (float) (__c.Max(1,__c.Max(_width,_height)/(double)100/(double)__ref._devicescale /*float*/ ));
-RDebugUtils.currentLine=3080195;
- //BA.debugLineNum = 3080195;BA.debugLine="HueBar.pnl.SetLayoutAnimated(0, 1dip, 1dip, 30dip";
+RDebugUtils.currentLine=6619139;
+ //BA.debugLineNum = 6619139;BA.debugLine="HueBar.pnl.SetLayoutAnimated(0, 1dip, 1dip, 30dip";
 __ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetLayoutAnimated((int) (0),__c.DipToCurrent((int) (1)),__c.DipToCurrent((int) (1)),__c.DipToCurrent((int) (30)),_height-__c.DipToCurrent((int) (2)));
-RDebugUtils.currentLine=3080196;
- //BA.debugLineNum = 3080196;BA.debugLine="Dim r As Int = HueBar.pnl.Width + HueBar.pnl.Left";
+RDebugUtils.currentLine=6619140;
+ //BA.debugLineNum = 6619140;BA.debugLine="Dim r As Int = HueBar.pnl.Width + HueBar.pnl.Left";
 _r = (int) (__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()+__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getLeft()+__c.DipToCurrent((int) (1)));
-RDebugUtils.currentLine=3080197;
- //BA.debugLineNum = 3080197;BA.debugLine="Dim w As Int = Width - r - 1dip";
+RDebugUtils.currentLine=6619141;
+ //BA.debugLineNum = 6619141;BA.debugLine="Dim w As Int = Width - r - 1dip";
 _w = (int) (_width-_r-__c.DipToCurrent((int) (1)));
-RDebugUtils.currentLine=3080198;
- //BA.debugLineNum = 3080198;BA.debugLine="If xui.IsB4i Then";
+RDebugUtils.currentLine=6619142;
+ //BA.debugLineNum = 6619142;BA.debugLine="If xui.IsB4i Then";
 if (__ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .getIsB4i()) { 
-RDebugUtils.currentLine=3080199;
- //BA.debugLineNum = 3080199;BA.debugLine="r = r - 1";
+RDebugUtils.currentLine=6619143;
+ //BA.debugLineNum = 6619143;BA.debugLine="r = r - 1";
 _r = (int) (_r-1);
-RDebugUtils.currentLine=3080200;
- //BA.debugLineNum = 3080200;BA.debugLine="w = w + 1";
+RDebugUtils.currentLine=6619144;
+ //BA.debugLineNum = 6619144;BA.debugLine="w = w + 1";
 _w = (int) (_w+1);
  };
-RDebugUtils.currentLine=3080202;
- //BA.debugLineNum = 3080202;BA.debugLine="AlphaBar.pnl.SetLayoutAnimated(0, r, Height - 31d";
+RDebugUtils.currentLine=6619146;
+ //BA.debugLineNum = 6619146;BA.debugLine="AlphaBar.pnl.SetLayoutAnimated(0, r, Height - 31d";
 __ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetLayoutAnimated((int) (0),_r,_height-__c.DipToCurrent((int) (31)),_w,__c.DipToCurrent((int) (30)));
-RDebugUtils.currentLine=3080203;
- //BA.debugLineNum = 3080203;BA.debugLine="ColorPicker.pnl.SetLayoutAnimated(0, r, 1dip, w,";
+RDebugUtils.currentLine=6619147;
+ //BA.debugLineNum = 6619147;BA.debugLine="ColorPicker.pnl.SetLayoutAnimated(0, r, 1dip, w,";
 __ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetLayoutAnimated((int) (0),_r,__c.DipToCurrent((int) (1)),_w,_height-__c.DipToCurrent((int) (3))-__ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
-RDebugUtils.currentLine=3080204;
- //BA.debugLineNum = 3080204;BA.debugLine="bcColors.Initialize(ColorPicker.pnl.Width / Color";
+RDebugUtils.currentLine=6619148;
+ //BA.debugLineNum = 6619148;BA.debugLine="bcColors.Initialize(ColorPicker.pnl.Width / Color";
 __ref._bccolors /*b4j.example.bitmapcreator*/ ._initialize(ba,(int) (__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)__ref._colorscale /*float*/ ),(int) (__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()/(double)__ref._colorscale /*float*/ ));
-RDebugUtils.currentLine=3080205;
- //BA.debugLineNum = 3080205;BA.debugLine="For Each cpp As ColorPickerPart In Array(HueBar,";
+RDebugUtils.currentLine=6619149;
+ //BA.debugLineNum = 6619149;BA.debugLine="For Each cpp As ColorPickerPart In Array(HueBar,";
 {
 final Object[] group12 = new Object[]{(Object)(__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ ),(Object)(__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ ),(Object)(__ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ )};
 final int groupLen12 = group12.length
@@ -192,44 +193,44 @@ final int groupLen12 = group12.length
 ;
 for (; index12 < groupLen12;index12++){
 _cpp = (b4j.example.b4xcolortemplate._colorpickerpart)(group12[index12]);
-RDebugUtils.currentLine=3080206;
- //BA.debugLineNum = 3080206;BA.debugLine="For i = 0 To cpp.pnl.NumberOfViews - 1";
+RDebugUtils.currentLine=6619150;
+ //BA.debugLineNum = 6619150;BA.debugLine="For i = 0 To cpp.pnl.NumberOfViews - 1";
 {
 final int step13 = 1;
 final int limit13 = (int) (_cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getNumberOfViews()-1);
 _i = (int) (0) ;
 for (;_i <= limit13 ;_i = _i + step13 ) {
-RDebugUtils.currentLine=3080207;
- //BA.debugLineNum = 3080207;BA.debugLine="cpp.pnl.GetView(i).SetLayoutAnimated(0, 0, 0, c";
+RDebugUtils.currentLine=6619151;
+ //BA.debugLineNum = 6619151;BA.debugLine="cpp.pnl.GetView(i).SetLayoutAnimated(0, 0, 0, c";
 _cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .GetView(_i).SetLayoutAnimated((int) (0),0,0,_cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),_cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
  }
 };
-RDebugUtils.currentLine=3080209;
- //BA.debugLineNum = 3080209;BA.debugLine="cpp.cvs.Resize(cpp.pnl.Width, cpp.pnl.Height)";
+RDebugUtils.currentLine=6619153;
+ //BA.debugLineNum = 6619153;BA.debugLine="cpp.cvs.Resize(cpp.pnl.Width, cpp.pnl.Height)";
 _cpp.cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .Resize(_cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),_cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
-RDebugUtils.currentLine=3080210;
- //BA.debugLineNum = 3080210;BA.debugLine="If cpp.DrawCheckers Then";
+RDebugUtils.currentLine=6619154;
+ //BA.debugLineNum = 6619154;BA.debugLine="If cpp.DrawCheckers Then";
 if (_cpp.DrawCheckers /*boolean*/ ) { 
-RDebugUtils.currentLine=3080211;
- //BA.debugLineNum = 3080211;BA.debugLine="DrawCheckers(cpp)";
+RDebugUtils.currentLine=6619155;
+ //BA.debugLineNum = 6619155;BA.debugLine="DrawCheckers(cpp)";
 __ref._drawcheckers /*String*/ (null,_cpp);
  };
  }
 };
-RDebugUtils.currentLine=3080214;
- //BA.debugLineNum = 3080214;BA.debugLine="DrawHueBar";
+RDebugUtils.currentLine=6619158;
+ //BA.debugLineNum = 6619158;BA.debugLine="DrawHueBar";
 __ref._drawhuebar /*String*/ (null);
-RDebugUtils.currentLine=3080215;
- //BA.debugLineNum = 3080215;BA.debugLine="DrawAlphaBar";
+RDebugUtils.currentLine=6619159;
+ //BA.debugLineNum = 6619159;BA.debugLine="DrawAlphaBar";
 __ref._drawalphabar /*String*/ (null);
-RDebugUtils.currentLine=3080216;
- //BA.debugLineNum = 3080216;BA.debugLine="HueBarSelectedChanged (selectedH / 360 * HueBar.p";
+RDebugUtils.currentLine=6619160;
+ //BA.debugLineNum = 6619160;BA.debugLine="HueBarSelectedChanged (selectedH / 360 * HueBar.p";
 __ref._huebarselectedchanged /*String*/ (null,(float) (__ref._selectedh /*float*/ /(double)360*__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()));
-RDebugUtils.currentLine=3080217;
- //BA.debugLineNum = 3080217;BA.debugLine="AlphaBarSelectedChange (SelectedAlpha / 255 * Alp";
+RDebugUtils.currentLine=6619161;
+ //BA.debugLineNum = 6619161;BA.debugLine="AlphaBarSelectedChange (SelectedAlpha / 255 * Alp";
 __ref._alphabarselectedchange /*String*/ (null,(float) (__ref._selectedalpha /*int*/ /(double)255*__ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()));
-RDebugUtils.currentLine=3080218;
- //BA.debugLineNum = 3080218;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6619162;
+ //BA.debugLineNum = 6619162;BA.debugLine="End Sub";
 return "";
 }
 public String  _drawcheckers(b4j.example.b4xcolortemplate __ref,b4j.example.b4xcolortemplate._colorpickerpart _cpp) throws Exception{
@@ -244,64 +245,64 @@ anywheresoftware.b4a.objects.B4XCanvas.B4XRect _r = null;
 int _x = 0;
 int _xx = 0;
 int _y = 0;
-RDebugUtils.currentLine=3145728;
- //BA.debugLineNum = 3145728;BA.debugLine="Private Sub DrawCheckers (cpp As ColorPickerPart)";
-RDebugUtils.currentLine=3145729;
- //BA.debugLineNum = 3145729;BA.debugLine="cpp.checkersCanvas.Resize(cpp.pnl.Width, cpp.pnl.";
+RDebugUtils.currentLine=6684672;
+ //BA.debugLineNum = 6684672;BA.debugLine="Private Sub DrawCheckers (cpp As ColorPickerPart)";
+RDebugUtils.currentLine=6684673;
+ //BA.debugLineNum = 6684673;BA.debugLine="cpp.checkersCanvas.Resize(cpp.pnl.Width, cpp.pnl.";
 _cpp.checkersCanvas /*anywheresoftware.b4a.objects.B4XCanvas*/ .Resize(_cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),_cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
-RDebugUtils.currentLine=3145730;
- //BA.debugLineNum = 3145730;BA.debugLine="cpp.checkersCanvas.ClearRect(cpp.checkersCanvas.T";
+RDebugUtils.currentLine=6684674;
+ //BA.debugLineNum = 6684674;BA.debugLine="cpp.checkersCanvas.ClearRect(cpp.checkersCanvas.T";
 _cpp.checkersCanvas /*anywheresoftware.b4a.objects.B4XCanvas*/ .ClearRect(_cpp.checkersCanvas /*anywheresoftware.b4a.objects.B4XCanvas*/ .getTargetRect());
-RDebugUtils.currentLine=3145731;
- //BA.debugLineNum = 3145731;BA.debugLine="Dim size As Int = 10dip";
+RDebugUtils.currentLine=6684675;
+ //BA.debugLineNum = 6684675;BA.debugLine="Dim size As Int = 10dip";
 _size = __c.DipToCurrent((int) (10));
-RDebugUtils.currentLine=3145732;
- //BA.debugLineNum = 3145732;BA.debugLine="Dim clrs() As Int = Array As Int(0xFFC0C0C0, 0xFF";
+RDebugUtils.currentLine=6684676;
+ //BA.debugLineNum = 6684676;BA.debugLine="Dim clrs() As Int = Array As Int(0xFFC0C0C0, 0xFF";
 _clrs = new int[]{(int) (0xffc0c0c0),(int) (0xff757575)};
-RDebugUtils.currentLine=3145733;
- //BA.debugLineNum = 3145733;BA.debugLine="Dim clr As Int = 0";
+RDebugUtils.currentLine=6684677;
+ //BA.debugLineNum = 6684677;BA.debugLine="Dim clr As Int = 0";
 _clr = (int) (0);
-RDebugUtils.currentLine=3145734;
- //BA.debugLineNum = 3145734;BA.debugLine="Dim r As B4XRect";
+RDebugUtils.currentLine=6684678;
+ //BA.debugLineNum = 6684678;BA.debugLine="Dim r As B4XRect";
 _r = new anywheresoftware.b4a.objects.B4XCanvas.B4XRect();
-RDebugUtils.currentLine=3145735;
- //BA.debugLineNum = 3145735;BA.debugLine="For x = 0 To cpp.checkersCanvas.TargetRect.Right";
+RDebugUtils.currentLine=6684679;
+ //BA.debugLineNum = 6684679;BA.debugLine="For x = 0 To cpp.checkersCanvas.TargetRect.Right";
 {
 final int step7 = _size;
 final int limit7 = (int) (_cpp.checkersCanvas /*anywheresoftware.b4a.objects.B4XCanvas*/ .getTargetRect().getRight()-__c.DipToCurrent((int) (1)));
 _x = (int) (0) ;
 for (;(step7 > 0 && _x <= limit7) || (step7 < 0 && _x >= limit7) ;_x = ((int)(0 + _x + step7))  ) {
-RDebugUtils.currentLine=3145736;
- //BA.debugLineNum = 3145736;BA.debugLine="Dim xx As Int = x / size";
+RDebugUtils.currentLine=6684680;
+ //BA.debugLineNum = 6684680;BA.debugLine="Dim xx As Int = x / size";
 _xx = (int) (_x/(double)_size);
-RDebugUtils.currentLine=3145737;
- //BA.debugLineNum = 3145737;BA.debugLine="clr = xx Mod 2";
+RDebugUtils.currentLine=6684681;
+ //BA.debugLineNum = 6684681;BA.debugLine="clr = xx Mod 2";
 _clr = (int) (_xx%2);
-RDebugUtils.currentLine=3145738;
- //BA.debugLineNum = 3145738;BA.debugLine="For y = 0 To cpp.checkersCanvas.TargetRect.Botto";
+RDebugUtils.currentLine=6684682;
+ //BA.debugLineNum = 6684682;BA.debugLine="For y = 0 To cpp.checkersCanvas.TargetRect.Botto";
 {
 final int step10 = _size;
 final int limit10 = (int) (_cpp.checkersCanvas /*anywheresoftware.b4a.objects.B4XCanvas*/ .getTargetRect().getBottom()-__c.DipToCurrent((int) (1)));
 _y = (int) (0) ;
 for (;(step10 > 0 && _y <= limit10) || (step10 < 0 && _y >= limit10) ;_y = ((int)(0 + _y + step10))  ) {
-RDebugUtils.currentLine=3145739;
- //BA.debugLineNum = 3145739;BA.debugLine="clr = (clr + 1) Mod 2";
+RDebugUtils.currentLine=6684683;
+ //BA.debugLineNum = 6684683;BA.debugLine="clr = (clr + 1) Mod 2";
 _clr = (int) ((_clr+1)%2);
-RDebugUtils.currentLine=3145740;
- //BA.debugLineNum = 3145740;BA.debugLine="r.Initialize(x, y, x + size, y + size)";
+RDebugUtils.currentLine=6684684;
+ //BA.debugLineNum = 6684684;BA.debugLine="r.Initialize(x, y, x + size, y + size)";
 _r.Initialize((float) (_x),(float) (_y),(float) (_x+_size),(float) (_y+_size));
-RDebugUtils.currentLine=3145741;
- //BA.debugLineNum = 3145741;BA.debugLine="cpp.checkersCanvas.DrawRect(r, clrs(clr), True,";
+RDebugUtils.currentLine=6684685;
+ //BA.debugLineNum = 6684685;BA.debugLine="cpp.checkersCanvas.DrawRect(r, clrs(clr), True,";
 _cpp.checkersCanvas /*anywheresoftware.b4a.objects.B4XCanvas*/ .DrawRect(_r,_clrs[_clr],__c.True,(float) (0));
  }
 };
  }
 };
-RDebugUtils.currentLine=3145744;
- //BA.debugLineNum = 3145744;BA.debugLine="cpp.checkersCanvas.Invalidate";
+RDebugUtils.currentLine=6684688;
+ //BA.debugLineNum = 6684688;BA.debugLine="cpp.checkersCanvas.Invalidate";
 _cpp.checkersCanvas /*anywheresoftware.b4a.objects.B4XCanvas*/ .Invalidate();
-RDebugUtils.currentLine=3145745;
- //BA.debugLineNum = 3145745;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6684689;
+ //BA.debugLineNum = 6684689;BA.debugLine="End Sub";
 return "";
 }
 public String  _drawhuebar(b4j.example.b4xcolortemplate __ref) throws Exception{
@@ -312,40 +313,40 @@ if (Debug.shouldDelegate(ba, "drawhuebar", true))
 b4j.example.bitmapcreator _bchue = null;
 int _y = 0;
 int _x = 0;
-RDebugUtils.currentLine=3211264;
- //BA.debugLineNum = 3211264;BA.debugLine="Private Sub DrawHueBar";
-RDebugUtils.currentLine=3211265;
- //BA.debugLineNum = 3211265;BA.debugLine="Dim bcHue As BitmapCreator";
+RDebugUtils.currentLine=6750208;
+ //BA.debugLineNum = 6750208;BA.debugLine="Private Sub DrawHueBar";
+RDebugUtils.currentLine=6750209;
+ //BA.debugLineNum = 6750209;BA.debugLine="Dim bcHue As BitmapCreator";
 _bchue = new b4j.example.bitmapcreator();
-RDebugUtils.currentLine=3211266;
- //BA.debugLineNum = 3211266;BA.debugLine="bcHue.Initialize(HueBar.pnl.Width / DeviceScale,";
+RDebugUtils.currentLine=6750210;
+ //BA.debugLineNum = 6750210;BA.debugLine="bcHue.Initialize(HueBar.pnl.Width / DeviceScale,";
 _bchue._initialize(ba,(int) (__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)__ref._devicescale /*float*/ ),(int) (__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()/(double)__ref._devicescale /*float*/ ));
-RDebugUtils.currentLine=3211267;
- //BA.debugLineNum = 3211267;BA.debugLine="For y = 0 To bcHue.mHeight - 1";
+RDebugUtils.currentLine=6750211;
+ //BA.debugLineNum = 6750211;BA.debugLine="For y = 0 To bcHue.mHeight - 1";
 {
 final int step3 = 1;
 final int limit3 = (int) (_bchue._mheight-1);
 _y = (int) (0) ;
 for (;_y <= limit3 ;_y = _y + step3 ) {
-RDebugUtils.currentLine=3211268;
- //BA.debugLineNum = 3211268;BA.debugLine="For x = 0 To bcHue.mWidth - 1";
+RDebugUtils.currentLine=6750212;
+ //BA.debugLineNum = 6750212;BA.debugLine="For x = 0 To bcHue.mWidth - 1";
 {
 final int step4 = 1;
 final int limit4 = (int) (_bchue._mwidth-1);
 _x = (int) (0) ;
 for (;_x <= limit4 ;_x = _x + step4 ) {
-RDebugUtils.currentLine=3211269;
- //BA.debugLineNum = 3211269;BA.debugLine="bcHue.SetHSV(x, y, 255, 360 / bcHue.mHeight * y";
+RDebugUtils.currentLine=6750213;
+ //BA.debugLineNum = 6750213;BA.debugLine="bcHue.SetHSV(x, y, 255, 360 / bcHue.mHeight * y";
 _bchue._sethsv(_x,_y,(int) (255),(int) (360/(double)_bchue._mheight*_y),(float) (1),(float) (1));
  }
 };
  }
 };
-RDebugUtils.currentLine=3211272;
- //BA.debugLineNum = 3211272;BA.debugLine="HueBar.iv.SetBitmap(bcHue.Bitmap)";
+RDebugUtils.currentLine=6750216;
+ //BA.debugLineNum = 6750216;BA.debugLine="HueBar.iv.SetBitmap(bcHue.Bitmap)";
 __ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetBitmap((javafx.scene.image.Image)(_bchue._getbitmap().getObject()));
-RDebugUtils.currentLine=3211273;
- //BA.debugLineNum = 3211273;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6750217;
+ //BA.debugLineNum = 6750217;BA.debugLine="End Sub";
 return "";
 }
 public String  _drawalphabar(b4j.example.b4xcolortemplate __ref) throws Exception{
@@ -357,55 +358,55 @@ b4j.example.bitmapcreator _bc = null;
 b4j.example.bitmapcreator._argbcolor _argb = null;
 int _y = 0;
 int _x = 0;
-RDebugUtils.currentLine=3276800;
- //BA.debugLineNum = 3276800;BA.debugLine="Private Sub DrawAlphaBar";
-RDebugUtils.currentLine=3276801;
- //BA.debugLineNum = 3276801;BA.debugLine="Dim bc As BitmapCreator";
+RDebugUtils.currentLine=6815744;
+ //BA.debugLineNum = 6815744;BA.debugLine="Private Sub DrawAlphaBar";
+RDebugUtils.currentLine=6815745;
+ //BA.debugLineNum = 6815745;BA.debugLine="Dim bc As BitmapCreator";
 _bc = new b4j.example.bitmapcreator();
-RDebugUtils.currentLine=3276802;
- //BA.debugLineNum = 3276802;BA.debugLine="bc.Initialize(AlphaBar.pnl.Width / DeviceScale, A";
+RDebugUtils.currentLine=6815746;
+ //BA.debugLineNum = 6815746;BA.debugLine="bc.Initialize(AlphaBar.pnl.Width / DeviceScale, A";
 _bc._initialize(ba,(int) (__ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)__ref._devicescale /*float*/ ),(int) (__ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()/(double)__ref._devicescale /*float*/ ));
-RDebugUtils.currentLine=3276803;
- //BA.debugLineNum = 3276803;BA.debugLine="Dim argb As ARGBColor";
+RDebugUtils.currentLine=6815747;
+ //BA.debugLineNum = 6815747;BA.debugLine="Dim argb As ARGBColor";
 _argb = new b4j.example.bitmapcreator._argbcolor();
-RDebugUtils.currentLine=3276804;
- //BA.debugLineNum = 3276804;BA.debugLine="argb.r = 0xcc";
+RDebugUtils.currentLine=6815748;
+ //BA.debugLineNum = 6815748;BA.debugLine="argb.r = 0xcc";
 _argb.r = (int) (0xcc);
-RDebugUtils.currentLine=3276805;
- //BA.debugLineNum = 3276805;BA.debugLine="argb.g = 0xcc";
+RDebugUtils.currentLine=6815749;
+ //BA.debugLineNum = 6815749;BA.debugLine="argb.g = 0xcc";
 _argb.g = (int) (0xcc);
-RDebugUtils.currentLine=3276806;
- //BA.debugLineNum = 3276806;BA.debugLine="argb.b = 0xcc";
+RDebugUtils.currentLine=6815750;
+ //BA.debugLineNum = 6815750;BA.debugLine="argb.b = 0xcc";
 _argb.b = (int) (0xcc);
-RDebugUtils.currentLine=3276808;
- //BA.debugLineNum = 3276808;BA.debugLine="For y = 0 To bc.mHeight - 1";
+RDebugUtils.currentLine=6815752;
+ //BA.debugLineNum = 6815752;BA.debugLine="For y = 0 To bc.mHeight - 1";
 {
 final int step7 = 1;
 final int limit7 = (int) (_bc._mheight-1);
 _y = (int) (0) ;
 for (;_y <= limit7 ;_y = _y + step7 ) {
-RDebugUtils.currentLine=3276809;
- //BA.debugLineNum = 3276809;BA.debugLine="For x = 0 To bc.mWidth - 1";
+RDebugUtils.currentLine=6815753;
+ //BA.debugLineNum = 6815753;BA.debugLine="For x = 0 To bc.mWidth - 1";
 {
 final int step8 = 1;
 final int limit8 = (int) (_bc._mwidth-1);
 _x = (int) (0) ;
 for (;_x <= limit8 ;_x = _x + step8 ) {
-RDebugUtils.currentLine=3276810;
- //BA.debugLineNum = 3276810;BA.debugLine="argb.a = x / bc.mWidth * 255";
+RDebugUtils.currentLine=6815754;
+ //BA.debugLineNum = 6815754;BA.debugLine="argb.a = x / bc.mWidth * 255";
 _argb.a = (int) (_x/(double)_bc._mwidth*255);
-RDebugUtils.currentLine=3276811;
- //BA.debugLineNum = 3276811;BA.debugLine="bc.SetARGB(x, y, argb)";
+RDebugUtils.currentLine=6815755;
+ //BA.debugLineNum = 6815755;BA.debugLine="bc.SetARGB(x, y, argb)";
 _bc._setargb(_x,_y,_argb);
  }
 };
  }
 };
-RDebugUtils.currentLine=3276814;
- //BA.debugLineNum = 3276814;BA.debugLine="AlphaBar.iv.SetBitmap(bc.Bitmap)";
+RDebugUtils.currentLine=6815758;
+ //BA.debugLineNum = 6815758;BA.debugLine="AlphaBar.iv.SetBitmap(bc.Bitmap)";
 __ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetBitmap((javafx.scene.image.Image)(_bc._getbitmap().getObject()));
-RDebugUtils.currentLine=3276815;
- //BA.debugLineNum = 3276815;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6815759;
+ //BA.debugLineNum = 6815759;BA.debugLine="End Sub";
 return "";
 }
 public String  _huebarselectedchanged(b4j.example.b4xcolortemplate __ref,float _y) throws Exception{
@@ -414,84 +415,84 @@ RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "huebarselectedchanged", true))
 	 {return ((String) Debug.delegate(ba, "huebarselectedchanged", new Object[] {_y}));}
 anywheresoftware.b4a.objects.B4XCanvas.B4XRect _r = null;
-RDebugUtils.currentLine=3407872;
- //BA.debugLineNum = 3407872;BA.debugLine="Private Sub HueBarSelectedChanged (y As Float)";
-RDebugUtils.currentLine=3407873;
- //BA.debugLineNum = 3407873;BA.debugLine="selectedH = Max(0, Min(360, 360 * y / HueBar.pnl.";
+RDebugUtils.currentLine=6946816;
+ //BA.debugLineNum = 6946816;BA.debugLine="Private Sub HueBarSelectedChanged (y As Float)";
+RDebugUtils.currentLine=6946817;
+ //BA.debugLineNum = 6946817;BA.debugLine="selectedH = Max(0, Min(360, 360 * y / HueBar.pnl.";
 __ref._selectedh /*float*/  = (float) (__c.Max(0,__c.Min(360,360*_y/(double)__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight())));
-RDebugUtils.currentLine=3407874;
- //BA.debugLineNum = 3407874;BA.debugLine="y = selectedH * HueBar.pnl.Height / 360";
+RDebugUtils.currentLine=6946818;
+ //BA.debugLineNum = 6946818;BA.debugLine="y = selectedH * HueBar.pnl.Height / 360";
 _y = (float) (__ref._selectedh /*float*/ *__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()/(double)360);
-RDebugUtils.currentLine=3407875;
- //BA.debugLineNum = 3407875;BA.debugLine="HueBar.cvs.ClearRect(HueBar.cvs.TargetRect)";
+RDebugUtils.currentLine=6946819;
+ //BA.debugLineNum = 6946819;BA.debugLine="HueBar.cvs.ClearRect(HueBar.cvs.TargetRect)";
 __ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .ClearRect(__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .getTargetRect());
-RDebugUtils.currentLine=3407876;
- //BA.debugLineNum = 3407876;BA.debugLine="Dim r As B4XRect";
+RDebugUtils.currentLine=6946820;
+ //BA.debugLineNum = 6946820;BA.debugLine="Dim r As B4XRect";
 _r = new anywheresoftware.b4a.objects.B4XCanvas.B4XRect();
-RDebugUtils.currentLine=3407877;
- //BA.debugLineNum = 3407877;BA.debugLine="r.Initialize(0, y - 3dip, HueBar.cvs.TargetRect.R";
+RDebugUtils.currentLine=6946821;
+ //BA.debugLineNum = 6946821;BA.debugLine="r.Initialize(0, y - 3dip, HueBar.cvs.TargetRect.R";
 _r.Initialize((float) (0),(float) (_y-__c.DipToCurrent((int) (3))),__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .getTargetRect().getRight(),(float) (_y+__c.DipToCurrent((int) (3))));
-RDebugUtils.currentLine=3407878;
- //BA.debugLineNum = 3407878;BA.debugLine="HueBar.cvs.DrawRect(r, xui.Color_White, False, 2d";
+RDebugUtils.currentLine=6946822;
+ //BA.debugLineNum = 6946822;BA.debugLine="HueBar.cvs.DrawRect(r, xui.Color_White, False, 2d";
 __ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .DrawRect(_r,__ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .Color_White,__c.False,(float) (__c.DipToCurrent((int) (2))));
-RDebugUtils.currentLine=3407879;
- //BA.debugLineNum = 3407879;BA.debugLine="HueBar.cvs.Invalidate";
+RDebugUtils.currentLine=6946823;
+ //BA.debugLineNum = 6946823;BA.debugLine="HueBar.cvs.Invalidate";
 __ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .Invalidate();
-RDebugUtils.currentLine=3407880;
- //BA.debugLineNum = 3407880;BA.debugLine="Update";
+RDebugUtils.currentLine=6946824;
+ //BA.debugLineNum = 6946824;BA.debugLine="Update";
 __ref._update /*String*/ (null);
-RDebugUtils.currentLine=3407881;
- //BA.debugLineNum = 3407881;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6946825;
+ //BA.debugLineNum = 6946825;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(b4j.example.b4xcolortemplate __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
-RDebugUtils.currentLine=2883584;
- //BA.debugLineNum = 2883584;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=2883585;
- //BA.debugLineNum = 2883585;BA.debugLine="Public mBase As B4XView 'ignore";
+RDebugUtils.currentLine=6422528;
+ //BA.debugLineNum = 6422528;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=6422529;
+ //BA.debugLineNum = 6422529;BA.debugLine="Public mBase As B4XView 'ignore";
 _mbase = new anywheresoftware.b4a.objects.B4XViewWrapper();
-RDebugUtils.currentLine=2883586;
- //BA.debugLineNum = 2883586;BA.debugLine="Private xui As XUI 'ignore";
+RDebugUtils.currentLine=6422530;
+ //BA.debugLineNum = 6422530;BA.debugLine="Private xui As XUI 'ignore";
 _xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
-RDebugUtils.currentLine=2883587;
- //BA.debugLineNum = 2883587;BA.debugLine="Private SelectedAlpha As Int = 255";
+RDebugUtils.currentLine=6422531;
+ //BA.debugLineNum = 6422531;BA.debugLine="Private SelectedAlpha As Int = 255";
 _selectedalpha = (int) (255);
-RDebugUtils.currentLine=2883588;
- //BA.debugLineNum = 2883588;BA.debugLine="Private bcColors As BitmapCreator";
+RDebugUtils.currentLine=6422532;
+ //BA.debugLineNum = 6422532;BA.debugLine="Private bcColors As BitmapCreator";
 _bccolors = new b4j.example.bitmapcreator();
-RDebugUtils.currentLine=2883589;
- //BA.debugLineNum = 2883589;BA.debugLine="Private selectedH = 60, selectedS = 0.5, selected";
+RDebugUtils.currentLine=6422533;
+ //BA.debugLineNum = 6422533;BA.debugLine="Private selectedH = 60, selectedS = 0.5, selected";
 _selectedh = (float) (60);
 _selecteds = (float) (0.5);
 _selectedv = (float) (0.5);
-RDebugUtils.currentLine=2883590;
- //BA.debugLineNum = 2883590;BA.debugLine="Private DeviceScale, ColorScale As Float";
+RDebugUtils.currentLine=6422534;
+ //BA.debugLineNum = 6422534;BA.debugLine="Private DeviceScale, ColorScale As Float";
 _devicescale = 0f;
 _colorscale = 0f;
-RDebugUtils.currentLine=2883591;
- //BA.debugLineNum = 2883591;BA.debugLine="Private tempBC As BitmapCreator";
+RDebugUtils.currentLine=6422535;
+ //BA.debugLineNum = 6422535;BA.debugLine="Private tempBC As BitmapCreator";
 _tempbc = new b4j.example.bitmapcreator();
-RDebugUtils.currentLine=2883592;
- //BA.debugLineNum = 2883592;BA.debugLine="Private const DONT_CHANGE As Int = -999999999";
+RDebugUtils.currentLine=6422536;
+ //BA.debugLineNum = 6422536;BA.debugLine="Private const DONT_CHANGE As Int = -999999999";
 _dont_change = (int) (-999999999);
-RDebugUtils.currentLine=2883593;
- //BA.debugLineNum = 2883593;BA.debugLine="Type ColorPickerPart (cvs As B4XCanvas, pnl As B4";
+RDebugUtils.currentLine=6422537;
+ //BA.debugLineNum = 6422537;BA.debugLine="Type ColorPickerPart (cvs As B4XCanvas, pnl As B4";
 ;
-RDebugUtils.currentLine=2883594;
- //BA.debugLineNum = 2883594;BA.debugLine="Private HueBar, ColorPicker, AlphaBar As ColorPic";
+RDebugUtils.currentLine=6422538;
+ //BA.debugLineNum = 6422538;BA.debugLine="Private HueBar, ColorPicker, AlphaBar As ColorPic";
 _huebar = new b4j.example.b4xcolortemplate._colorpickerpart();
 _colorpicker = new b4j.example.b4xcolortemplate._colorpickerpart();
 _alphabar = new b4j.example.b4xcolortemplate._colorpickerpart();
-RDebugUtils.currentLine=2883595;
- //BA.debugLineNum = 2883595;BA.debugLine="Private BordersColor As Int";
+RDebugUtils.currentLine=6422539;
+ //BA.debugLineNum = 6422539;BA.debugLine="Private BordersColor As Int";
 _borderscolor = 0;
-RDebugUtils.currentLine=2883596;
- //BA.debugLineNum = 2883596;BA.debugLine="Private xDialog As B4XDialog";
+RDebugUtils.currentLine=6422540;
+ //BA.debugLineNum = 6422540;BA.debugLine="Private xDialog As B4XDialog";
 _xdialog = new b4j.example.b4xdialog();
-RDebugUtils.currentLine=2883597;
- //BA.debugLineNum = 2883597;BA.debugLine="Private InitialColor() As Object";
+RDebugUtils.currentLine=6422541;
+ //BA.debugLineNum = 6422541;BA.debugLine="Private InitialColor() As Object";
 _initialcolor = new Object[(int) (0)];
 {
 int d0 = _initialcolor.length;
@@ -500,8 +501,8 @@ _initialcolor[i0] = new Object();
 }
 }
 ;
-RDebugUtils.currentLine=2883598;
- //BA.debugLineNum = 2883598;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6422542;
+ //BA.debugLineNum = 6422542;BA.debugLine="End Sub";
 return "";
 }
 public String  _colors_touch(b4j.example.b4xcolortemplate __ref,int _action,float _x,float _y) throws Exception{
@@ -509,17 +510,17 @@ __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "colors_touch", true))
 	 {return ((String) Debug.delegate(ba, "colors_touch", new Object[] {_action,_x,_y}));}
-RDebugUtils.currentLine=4259840;
- //BA.debugLineNum = 4259840;BA.debugLine="Private Sub Colors_Touch (Action As Int, X As Floa";
-RDebugUtils.currentLine=4259841;
- //BA.debugLineNum = 4259841;BA.debugLine="If Action = mBase.TOUCH_ACTION_MOVE_NOTOUCH Then";
+RDebugUtils.currentLine=7798784;
+ //BA.debugLineNum = 7798784;BA.debugLine="Private Sub Colors_Touch (Action As Int, X As Floa";
+RDebugUtils.currentLine=7798785;
+ //BA.debugLineNum = 7798785;BA.debugLine="If Action = mBase.TOUCH_ACTION_MOVE_NOTOUCH Then";
 if (_action==__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .TOUCH_ACTION_MOVE_NOTOUCH) { 
 if (true) return "";};
-RDebugUtils.currentLine=4259842;
- //BA.debugLineNum = 4259842;BA.debugLine="HandleSelectedColorChanged(X, Y)";
+RDebugUtils.currentLine=7798786;
+ //BA.debugLineNum = 7798786;BA.debugLine="HandleSelectedColorChanged(X, Y)";
 __ref._handleselectedcolorchanged /*String*/ (null,(int) (_x),(int) (_y));
-RDebugUtils.currentLine=4259843;
- //BA.debugLineNum = 4259843;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7798787;
+ //BA.debugLineNum = 7798787;BA.debugLine="End Sub";
 return "";
 }
 public String  _handleselectedcolorchanged(b4j.example.b4xcolortemplate __ref,int _x,int _y) throws Exception{
@@ -527,32 +528,32 @@ __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "handleselectedcolorchanged", true))
 	 {return ((String) Debug.delegate(ba, "handleselectedcolorchanged", new Object[] {_x,_y}));}
-RDebugUtils.currentLine=3604480;
- //BA.debugLineNum = 3604480;BA.debugLine="Private Sub HandleSelectedColorChanged (x As Int,";
-RDebugUtils.currentLine=3604481;
- //BA.debugLineNum = 3604481;BA.debugLine="If x <> DONT_CHANGE Then";
+RDebugUtils.currentLine=7143424;
+ //BA.debugLineNum = 7143424;BA.debugLine="Private Sub HandleSelectedColorChanged (x As Int,";
+RDebugUtils.currentLine=7143425;
+ //BA.debugLineNum = 7143425;BA.debugLine="If x <> DONT_CHANGE Then";
 if (_x!=__ref._dont_change /*int*/ ) { 
-RDebugUtils.currentLine=3604482;
- //BA.debugLineNum = 3604482;BA.debugLine="selectedS = Max(0, Min(1, x / ColorPicker.pnl.Wi";
+RDebugUtils.currentLine=7143426;
+ //BA.debugLineNum = 7143426;BA.debugLine="selectedS = Max(0, Min(1, x / ColorPicker.pnl.Wi";
 __ref._selecteds /*float*/  = (float) (__c.Max(0,__c.Min(1,_x/(double)__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth())));
-RDebugUtils.currentLine=3604483;
- //BA.debugLineNum = 3604483;BA.debugLine="selectedV = Max(0, Min(1, (ColorPicker.pnl.Heigh";
+RDebugUtils.currentLine=7143427;
+ //BA.debugLineNum = 7143427;BA.debugLine="selectedV = Max(0, Min(1, (ColorPicker.pnl.Heigh";
 __ref._selectedv /*float*/  = (float) (__c.Max(0,__c.Min(1,(__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()-_y)/(double)__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight())));
  };
-RDebugUtils.currentLine=3604485;
- //BA.debugLineNum = 3604485;BA.debugLine="ColorPicker.cvs.ClearRect(ColorPicker.cvs.TargetR";
+RDebugUtils.currentLine=7143429;
+ //BA.debugLineNum = 7143429;BA.debugLine="ColorPicker.cvs.ClearRect(ColorPicker.cvs.TargetR";
 __ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .ClearRect(__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .getTargetRect());
-RDebugUtils.currentLine=3604486;
- //BA.debugLineNum = 3604486;BA.debugLine="ColorPicker.cvs.DrawCircle(selectedS * ColorPicke";
+RDebugUtils.currentLine=7143430;
+ //BA.debugLineNum = 7143430;BA.debugLine="ColorPicker.cvs.DrawCircle(selectedS * ColorPicke";
 __ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .DrawCircle((float) (__ref._selecteds /*float*/ *__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()),(float) (__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()-__ref._selectedv /*float*/ *__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()),(float) (__c.DipToCurrent((int) (10))),__ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .Color_White,__c.False,(float) (__c.DipToCurrent((int) (2))));
-RDebugUtils.currentLine=3604488;
- //BA.debugLineNum = 3604488;BA.debugLine="ColorPicker.cvs.Invalidate";
+RDebugUtils.currentLine=7143432;
+ //BA.debugLineNum = 7143432;BA.debugLine="ColorPicker.cvs.Invalidate";
 __ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .Invalidate();
-RDebugUtils.currentLine=3604489;
- //BA.debugLineNum = 3604489;BA.debugLine="UpdateBarColor";
+RDebugUtils.currentLine=7143433;
+ //BA.debugLineNum = 7143433;BA.debugLine="UpdateBarColor";
 __ref._updatebarcolor /*String*/ (null);
-RDebugUtils.currentLine=3604490;
- //BA.debugLineNum = 3604490;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7143434;
+ //BA.debugLineNum = 7143434;BA.debugLine="End Sub";
 return "";
 }
 public Object[]  _colortohsv(b4j.example.b4xcolortemplate __ref,int _clr) throws Exception{
@@ -572,89 +573,89 @@ int _cmin = 0;
 float _rc = 0f;
 float _gc = 0f;
 float _bc = 0f;
-RDebugUtils.currentLine=3932160;
- //BA.debugLineNum = 3932160;BA.debugLine="Public Sub ColorToHSV(clr As Int) As Object()";
-RDebugUtils.currentLine=3932161;
- //BA.debugLineNum = 3932161;BA.debugLine="Dim a As Int = Bit.And(0xff, Bit.UnsignedShiftRig";
+RDebugUtils.currentLine=7471104;
+ //BA.debugLineNum = 7471104;BA.debugLine="Public Sub ColorToHSV(clr As Int) As Object()";
+RDebugUtils.currentLine=7471105;
+ //BA.debugLineNum = 7471105;BA.debugLine="Dim a As Int = Bit.And(0xff, Bit.UnsignedShiftRig";
 _a = __c.Bit.And((int) (0xff),__c.Bit.UnsignedShiftRight(_clr,(int) (24)));
-RDebugUtils.currentLine=3932162;
- //BA.debugLineNum = 3932162;BA.debugLine="Dim r As Int = Bit.And(0xff, Bit.UnsignedShiftRig";
+RDebugUtils.currentLine=7471106;
+ //BA.debugLineNum = 7471106;BA.debugLine="Dim r As Int = Bit.And(0xff, Bit.UnsignedShiftRig";
 _r = __c.Bit.And((int) (0xff),__c.Bit.UnsignedShiftRight(_clr,(int) (16)));
-RDebugUtils.currentLine=3932163;
- //BA.debugLineNum = 3932163;BA.debugLine="Dim g As Int = Bit.And(0xff, Bit.UnsignedShiftRig";
+RDebugUtils.currentLine=7471107;
+ //BA.debugLineNum = 7471107;BA.debugLine="Dim g As Int = Bit.And(0xff, Bit.UnsignedShiftRig";
 _g = __c.Bit.And((int) (0xff),__c.Bit.UnsignedShiftRight(_clr,(int) (8)));
-RDebugUtils.currentLine=3932164;
- //BA.debugLineNum = 3932164;BA.debugLine="Dim b As Int = Bit.And(0xff, Bit.UnsignedShiftRig";
+RDebugUtils.currentLine=7471108;
+ //BA.debugLineNum = 7471108;BA.debugLine="Dim b As Int = Bit.And(0xff, Bit.UnsignedShiftRig";
 _b = __c.Bit.And((int) (0xff),__c.Bit.UnsignedShiftRight(_clr,(int) (0)));
-RDebugUtils.currentLine=3932165;
- //BA.debugLineNum = 3932165;BA.debugLine="Dim h, s, v As Float";
+RDebugUtils.currentLine=7471109;
+ //BA.debugLineNum = 7471109;BA.debugLine="Dim h, s, v As Float";
 _h = 0f;
 _s = 0f;
 _v = 0f;
-RDebugUtils.currentLine=3932166;
- //BA.debugLineNum = 3932166;BA.debugLine="Dim cmax As Int = Max(Max(r, g), b)";
+RDebugUtils.currentLine=7471110;
+ //BA.debugLineNum = 7471110;BA.debugLine="Dim cmax As Int = Max(Max(r, g), b)";
 _cmax = (int) (__c.Max(__c.Max(_r,_g),_b));
-RDebugUtils.currentLine=3932167;
- //BA.debugLineNum = 3932167;BA.debugLine="Dim cmin As Int = Min(Min(r, g), b)";
+RDebugUtils.currentLine=7471111;
+ //BA.debugLineNum = 7471111;BA.debugLine="Dim cmin As Int = Min(Min(r, g), b)";
 _cmin = (int) (__c.Min(__c.Min(_r,_g),_b));
-RDebugUtils.currentLine=3932168;
- //BA.debugLineNum = 3932168;BA.debugLine="v = cmax / 255";
+RDebugUtils.currentLine=7471112;
+ //BA.debugLineNum = 7471112;BA.debugLine="v = cmax / 255";
 _v = (float) (_cmax/(double)255);
-RDebugUtils.currentLine=3932169;
- //BA.debugLineNum = 3932169;BA.debugLine="If cmax <> 0 Then";
+RDebugUtils.currentLine=7471113;
+ //BA.debugLineNum = 7471113;BA.debugLine="If cmax <> 0 Then";
 if (_cmax!=0) { 
-RDebugUtils.currentLine=3932170;
- //BA.debugLineNum = 3932170;BA.debugLine="s = (cmax - cmin) / cmax";
+RDebugUtils.currentLine=7471114;
+ //BA.debugLineNum = 7471114;BA.debugLine="s = (cmax - cmin) / cmax";
 _s = (float) ((_cmax-_cmin)/(double)_cmax);
  };
-RDebugUtils.currentLine=3932172;
- //BA.debugLineNum = 3932172;BA.debugLine="If s = 0 Then";
+RDebugUtils.currentLine=7471116;
+ //BA.debugLineNum = 7471116;BA.debugLine="If s = 0 Then";
 if (_s==0) { 
-RDebugUtils.currentLine=3932173;
- //BA.debugLineNum = 3932173;BA.debugLine="h = 0";
+RDebugUtils.currentLine=7471117;
+ //BA.debugLineNum = 7471117;BA.debugLine="h = 0";
 _h = (float) (0);
  }else {
-RDebugUtils.currentLine=3932175;
- //BA.debugLineNum = 3932175;BA.debugLine="Dim rc As Float = (cmax - r) / (cmax - cmin)";
+RDebugUtils.currentLine=7471119;
+ //BA.debugLineNum = 7471119;BA.debugLine="Dim rc As Float = (cmax - r) / (cmax - cmin)";
 _rc = (float) ((_cmax-_r)/(double)(_cmax-_cmin));
-RDebugUtils.currentLine=3932176;
- //BA.debugLineNum = 3932176;BA.debugLine="Dim gc As Float = (cmax - g) / (cmax - cmin)";
+RDebugUtils.currentLine=7471120;
+ //BA.debugLineNum = 7471120;BA.debugLine="Dim gc As Float = (cmax - g) / (cmax - cmin)";
 _gc = (float) ((_cmax-_g)/(double)(_cmax-_cmin));
-RDebugUtils.currentLine=3932177;
- //BA.debugLineNum = 3932177;BA.debugLine="Dim bc As Float = (cmax - b) / (cmax - cmin)";
+RDebugUtils.currentLine=7471121;
+ //BA.debugLineNum = 7471121;BA.debugLine="Dim bc As Float = (cmax - b) / (cmax - cmin)";
 _bc = (float) ((_cmax-_b)/(double)(_cmax-_cmin));
-RDebugUtils.currentLine=3932178;
- //BA.debugLineNum = 3932178;BA.debugLine="If r = cmax Then";
+RDebugUtils.currentLine=7471122;
+ //BA.debugLineNum = 7471122;BA.debugLine="If r = cmax Then";
 if (_r==_cmax) { 
-RDebugUtils.currentLine=3932179;
- //BA.debugLineNum = 3932179;BA.debugLine="h = bc - gc";
+RDebugUtils.currentLine=7471123;
+ //BA.debugLineNum = 7471123;BA.debugLine="h = bc - gc";
 _h = (float) (_bc-_gc);
  }else 
-{RDebugUtils.currentLine=3932180;
- //BA.debugLineNum = 3932180;BA.debugLine="Else If g = cmax Then";
+{RDebugUtils.currentLine=7471124;
+ //BA.debugLineNum = 7471124;BA.debugLine="Else If g = cmax Then";
 if (_g==_cmax) { 
-RDebugUtils.currentLine=3932181;
- //BA.debugLineNum = 3932181;BA.debugLine="h = 2 + rc - bc";
+RDebugUtils.currentLine=7471125;
+ //BA.debugLineNum = 7471125;BA.debugLine="h = 2 + rc - bc";
 _h = (float) (2+_rc-_bc);
  }else {
-RDebugUtils.currentLine=3932183;
- //BA.debugLineNum = 3932183;BA.debugLine="h = 4 + gc - rc";
+RDebugUtils.currentLine=7471127;
+ //BA.debugLineNum = 7471127;BA.debugLine="h = 4 + gc - rc";
 _h = (float) (4+_gc-_rc);
  }}
 ;
-RDebugUtils.currentLine=3932185;
- //BA.debugLineNum = 3932185;BA.debugLine="h = h / 6";
+RDebugUtils.currentLine=7471129;
+ //BA.debugLineNum = 7471129;BA.debugLine="h = h / 6";
 _h = (float) (_h/(double)6);
-RDebugUtils.currentLine=3932186;
- //BA.debugLineNum = 3932186;BA.debugLine="If h < 0 Then h = h + 1";
+RDebugUtils.currentLine=7471130;
+ //BA.debugLineNum = 7471130;BA.debugLine="If h < 0 Then h = h + 1";
 if (_h<0) { 
 _h = (float) (_h+1);};
  };
-RDebugUtils.currentLine=3932188;
- //BA.debugLineNum = 3932188;BA.debugLine="Return Array (h * 360, s, v, a)";
+RDebugUtils.currentLine=7471132;
+ //BA.debugLineNum = 7471132;BA.debugLine="Return Array (h * 360, s, v, a)";
 if (true) return new Object[]{(Object)(_h*360),(Object)(_s),(Object)(_v),(Object)(_a)};
-RDebugUtils.currentLine=3932189;
- //BA.debugLineNum = 3932189;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7471133;
+ //BA.debugLineNum = 7471133;BA.debugLine="End Sub";
 return null;
 }
 public b4j.example.b4xcolortemplate._colorpickerpart  _createpanelforbitmapcreator(b4j.example.b4xcolortemplate __ref,String _eventname,boolean _withcheckers) throws Exception{
@@ -665,63 +666,63 @@ if (Debug.shouldDelegate(ba, "createpanelforbitmapcreator", true))
 b4j.example.b4xcolortemplate._colorpickerpart _cpp = null;
 anywheresoftware.b4j.objects.ImageViewWrapper _iv = null;
 anywheresoftware.b4a.objects.B4XViewWrapper _overlay = null;
-RDebugUtils.currentLine=3014656;
- //BA.debugLineNum = 3014656;BA.debugLine="Private Sub CreatePanelForBitmapCreator (EventName";
-RDebugUtils.currentLine=3014657;
- //BA.debugLineNum = 3014657;BA.debugLine="Dim cpp As ColorPickerPart";
+RDebugUtils.currentLine=6553600;
+ //BA.debugLineNum = 6553600;BA.debugLine="Private Sub CreatePanelForBitmapCreator (EventName";
+RDebugUtils.currentLine=6553601;
+ //BA.debugLineNum = 6553601;BA.debugLine="Dim cpp As ColorPickerPart";
 _cpp = new b4j.example.b4xcolortemplate._colorpickerpart();
-RDebugUtils.currentLine=3014658;
- //BA.debugLineNum = 3014658;BA.debugLine="cpp.Initialize";
+RDebugUtils.currentLine=6553602;
+ //BA.debugLineNum = 6553602;BA.debugLine="cpp.Initialize";
 _cpp.Initialize();
-RDebugUtils.currentLine=3014659;
- //BA.debugLineNum = 3014659;BA.debugLine="cpp.pnl = xui.CreatePanel(\"\")";
+RDebugUtils.currentLine=6553603;
+ //BA.debugLineNum = 6553603;BA.debugLine="cpp.pnl = xui.CreatePanel(\"\")";
 _cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/  = __ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .CreatePanel(ba,"");
-RDebugUtils.currentLine=3014660;
- //BA.debugLineNum = 3014660;BA.debugLine="cpp.pnl.SetColorAndBorder(BordersColor, 1dip, Bor";
+RDebugUtils.currentLine=6553604;
+ //BA.debugLineNum = 6553604;BA.debugLine="cpp.pnl.SetColorAndBorder(BordersColor, 1dip, Bor";
 _cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetColorAndBorder(__ref._borderscolor /*int*/ ,__c.DipToCurrent((int) (1)),__ref._borderscolor /*int*/ ,0);
-RDebugUtils.currentLine=3014661;
- //BA.debugLineNum = 3014661;BA.debugLine="cpp.pnl.SetLayoutAnimated(0, 1dip, 1dip, 1dip, 1d";
+RDebugUtils.currentLine=6553605;
+ //BA.debugLineNum = 6553605;BA.debugLine="cpp.pnl.SetLayoutAnimated(0, 1dip, 1dip, 1dip, 1d";
 _cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetLayoutAnimated((int) (0),__c.DipToCurrent((int) (1)),__c.DipToCurrent((int) (1)),__c.DipToCurrent((int) (1)),__c.DipToCurrent((int) (1)));
-RDebugUtils.currentLine=3014662;
- //BA.debugLineNum = 3014662;BA.debugLine="If WithCheckers Then";
+RDebugUtils.currentLine=6553606;
+ //BA.debugLineNum = 6553606;BA.debugLine="If WithCheckers Then";
 if (_withcheckers) { 
-RDebugUtils.currentLine=3014663;
- //BA.debugLineNum = 3014663;BA.debugLine="cpp.checkersCanvas.Initialize(cpp.pnl)";
+RDebugUtils.currentLine=6553607;
+ //BA.debugLineNum = 6553607;BA.debugLine="cpp.checkersCanvas.Initialize(cpp.pnl)";
 _cpp.checkersCanvas /*anywheresoftware.b4a.objects.B4XCanvas*/ .Initialize(ba,_cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ );
-RDebugUtils.currentLine=3014664;
- //BA.debugLineNum = 3014664;BA.debugLine="cpp.DrawCheckers = True";
+RDebugUtils.currentLine=6553608;
+ //BA.debugLineNum = 6553608;BA.debugLine="cpp.DrawCheckers = True";
 _cpp.DrawCheckers /*boolean*/  = __c.True;
  };
-RDebugUtils.currentLine=3014666;
- //BA.debugLineNum = 3014666;BA.debugLine="Dim iv As ImageView";
+RDebugUtils.currentLine=6553610;
+ //BA.debugLineNum = 6553610;BA.debugLine="Dim iv As ImageView";
 _iv = new anywheresoftware.b4j.objects.ImageViewWrapper();
-RDebugUtils.currentLine=3014667;
- //BA.debugLineNum = 3014667;BA.debugLine="iv.Initialize(\"\")";
+RDebugUtils.currentLine=6553611;
+ //BA.debugLineNum = 6553611;BA.debugLine="iv.Initialize(\"\")";
 _iv.Initialize(ba,"");
-RDebugUtils.currentLine=3014668;
- //BA.debugLineNum = 3014668;BA.debugLine="cpp.iv = iv";
+RDebugUtils.currentLine=6553612;
+ //BA.debugLineNum = 6553612;BA.debugLine="cpp.iv = iv";
 _cpp.iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/  = (anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper(), (java.lang.Object)(_iv.getObject()));
-RDebugUtils.currentLine=3014669;
- //BA.debugLineNum = 3014669;BA.debugLine="Dim overlay As B4XView = xui.CreatePanel(EventNam";
+RDebugUtils.currentLine=6553613;
+ //BA.debugLineNum = 6553613;BA.debugLine="Dim overlay As B4XView = xui.CreatePanel(EventNam";
 _overlay = new anywheresoftware.b4a.objects.B4XViewWrapper();
 _overlay = __ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .CreatePanel(ba,_eventname);
-RDebugUtils.currentLine=3014670;
- //BA.debugLineNum = 3014670;BA.debugLine="cpp.pnl.AddView(iv, 0, 0, 0, 0)";
+RDebugUtils.currentLine=6553614;
+ //BA.debugLineNum = 6553614;BA.debugLine="cpp.pnl.AddView(iv, 0, 0, 0, 0)";
 _cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .AddView((javafx.scene.Node)(_iv.getObject()),0,0,0,0);
-RDebugUtils.currentLine=3014671;
- //BA.debugLineNum = 3014671;BA.debugLine="cpp.pnl.AddView(overlay, 1dip, 1dip, 1dip, 1dip)";
+RDebugUtils.currentLine=6553615;
+ //BA.debugLineNum = 6553615;BA.debugLine="cpp.pnl.AddView(overlay, 1dip, 1dip, 1dip, 1dip)";
 _cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .AddView((javafx.scene.Node)(_overlay.getObject()),__c.DipToCurrent((int) (1)),__c.DipToCurrent((int) (1)),__c.DipToCurrent((int) (1)),__c.DipToCurrent((int) (1)));
-RDebugUtils.currentLine=3014672;
- //BA.debugLineNum = 3014672;BA.debugLine="cpp.cvs.Initialize(overlay)";
+RDebugUtils.currentLine=6553616;
+ //BA.debugLineNum = 6553616;BA.debugLine="cpp.cvs.Initialize(overlay)";
 _cpp.cvs /*anywheresoftware.b4a.objects.B4XCanvas*/ .Initialize(ba,_overlay);
-RDebugUtils.currentLine=3014673;
- //BA.debugLineNum = 3014673;BA.debugLine="mBase.AddView(cpp.pnl, 0, 0, 0, 0)";
+RDebugUtils.currentLine=6553617;
+ //BA.debugLineNum = 6553617;BA.debugLine="mBase.AddView(cpp.pnl, 0, 0, 0, 0)";
 __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .AddView((javafx.scene.Node)(_cpp.pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getObject()),0,0,0,0);
-RDebugUtils.currentLine=3014674;
- //BA.debugLineNum = 3014674;BA.debugLine="Return cpp";
+RDebugUtils.currentLine=6553618;
+ //BA.debugLineNum = 6553618;BA.debugLine="Return cpp";
 if (true) return _cpp;
-RDebugUtils.currentLine=3014675;
- //BA.debugLineNum = 3014675;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6553619;
+ //BA.debugLineNum = 6553619;BA.debugLine="End Sub";
 return null;
 }
 public String  _dialogclosed(b4j.example.b4xcolortemplate __ref,int _result) throws Exception{
@@ -729,17 +730,17 @@ __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "dialogclosed", true))
 	 {return ((String) Debug.delegate(ba, "dialogclosed", new Object[] {_result}));}
-RDebugUtils.currentLine=4128768;
- //BA.debugLineNum = 4128768;BA.debugLine="Private Sub DialogClosed(Result As Int)";
-RDebugUtils.currentLine=4128769;
- //BA.debugLineNum = 4128769;BA.debugLine="If Result <> xui.DialogResponse_Positive Then";
+RDebugUtils.currentLine=7667712;
+ //BA.debugLineNum = 7667712;BA.debugLine="Private Sub DialogClosed(Result As Int)";
+RDebugUtils.currentLine=7667713;
+ //BA.debugLineNum = 7667713;BA.debugLine="If Result <> xui.DialogResponse_Positive Then";
 if (_result!=__ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .DialogResponse_Positive) { 
-RDebugUtils.currentLine=4128770;
- //BA.debugLineNum = 4128770;BA.debugLine="setSelectedHSVColor(InitialColor)";
+RDebugUtils.currentLine=7667714;
+ //BA.debugLineNum = 7667714;BA.debugLine="setSelectedHSVColor(InitialColor)";
 __ref._setselectedhsvcolor /*String*/ (null,__ref._initialcolor /*Object[]*/ );
  };
-RDebugUtils.currentLine=4128772;
- //BA.debugLineNum = 4128772;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7667716;
+ //BA.debugLineNum = 7667716;BA.debugLine="End Sub";
 return "";
 }
 public String  _setselectedhsvcolor(b4j.example.b4xcolortemplate __ref,Object[] _hsv) throws Exception{
@@ -747,28 +748,28 @@ __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "setselectedhsvcolor", true))
 	 {return ((String) Debug.delegate(ba, "setselectedhsvcolor", new Object[] {_hsv}));}
-RDebugUtils.currentLine=3866624;
- //BA.debugLineNum = 3866624;BA.debugLine="Public Sub setSelectedHSVColor (HSV() As Object)";
-RDebugUtils.currentLine=3866625;
- //BA.debugLineNum = 3866625;BA.debugLine="selectedH = HSV(0)";
+RDebugUtils.currentLine=7405568;
+ //BA.debugLineNum = 7405568;BA.debugLine="Public Sub setSelectedHSVColor (HSV() As Object)";
+RDebugUtils.currentLine=7405569;
+ //BA.debugLineNum = 7405569;BA.debugLine="selectedH = HSV(0)";
 __ref._selectedh /*float*/  = (float)(BA.ObjectToNumber(_hsv[(int) (0)]));
-RDebugUtils.currentLine=3866626;
- //BA.debugLineNum = 3866626;BA.debugLine="selectedS = HSV(1)";
+RDebugUtils.currentLine=7405570;
+ //BA.debugLineNum = 7405570;BA.debugLine="selectedS = HSV(1)";
 __ref._selecteds /*float*/  = (float)(BA.ObjectToNumber(_hsv[(int) (1)]));
-RDebugUtils.currentLine=3866627;
- //BA.debugLineNum = 3866627;BA.debugLine="selectedV = HSV(2)";
+RDebugUtils.currentLine=7405571;
+ //BA.debugLineNum = 7405571;BA.debugLine="selectedV = HSV(2)";
 __ref._selectedv /*float*/  = (float)(BA.ObjectToNumber(_hsv[(int) (2)]));
-RDebugUtils.currentLine=3866628;
- //BA.debugLineNum = 3866628;BA.debugLine="SelectedAlpha = HSV(3)";
+RDebugUtils.currentLine=7405572;
+ //BA.debugLineNum = 7405572;BA.debugLine="SelectedAlpha = HSV(3)";
 __ref._selectedalpha /*int*/  = (int)(BA.ObjectToNumber(_hsv[(int) (3)]));
-RDebugUtils.currentLine=3866629;
- //BA.debugLineNum = 3866629;BA.debugLine="HueBarSelectedChanged(selectedH / 360 * HueBar.pn";
+RDebugUtils.currentLine=7405573;
+ //BA.debugLineNum = 7405573;BA.debugLine="HueBarSelectedChanged(selectedH / 360 * HueBar.pn";
 __ref._huebarselectedchanged /*String*/ (null,(float) (__ref._selectedh /*float*/ /(double)360*__ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()));
-RDebugUtils.currentLine=3866630;
- //BA.debugLineNum = 3866630;BA.debugLine="AlphaBarSelectedChange(SelectedAlpha / 255 * Alph";
+RDebugUtils.currentLine=7405574;
+ //BA.debugLineNum = 7405574;BA.debugLine="AlphaBarSelectedChange(SelectedAlpha / 255 * Alph";
 __ref._alphabarselectedchange /*String*/ (null,(float) (__ref._selectedalpha /*int*/ /(double)255*__ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/ .pnl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()));
-RDebugUtils.currentLine=3866631;
- //BA.debugLineNum = 3866631;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7405575;
+ //BA.debugLineNum = 7405575;BA.debugLine="End Sub";
 return "";
 }
 public String  _drawcolors(b4j.example.b4xcolortemplate __ref) throws Exception{
@@ -778,34 +779,34 @@ if (Debug.shouldDelegate(ba, "drawcolors", true))
 	 {return ((String) Debug.delegate(ba, "drawcolors", null));}
 int _x = 0;
 int _y = 0;
-RDebugUtils.currentLine=3342336;
- //BA.debugLineNum = 3342336;BA.debugLine="Private Sub DrawColors";
-RDebugUtils.currentLine=3342337;
- //BA.debugLineNum = 3342337;BA.debugLine="For x = 0 To bcColors.mWidth - 1";
+RDebugUtils.currentLine=6881280;
+ //BA.debugLineNum = 6881280;BA.debugLine="Private Sub DrawColors";
+RDebugUtils.currentLine=6881281;
+ //BA.debugLineNum = 6881281;BA.debugLine="For x = 0 To bcColors.mWidth - 1";
 {
 final int step1 = 1;
 final int limit1 = (int) (__ref._bccolors /*b4j.example.bitmapcreator*/ ._mwidth-1);
 _x = (int) (0) ;
 for (;_x <= limit1 ;_x = _x + step1 ) {
-RDebugUtils.currentLine=3342338;
- //BA.debugLineNum = 3342338;BA.debugLine="For y = 0 To bcColors.mHeight - 1";
+RDebugUtils.currentLine=6881282;
+ //BA.debugLineNum = 6881282;BA.debugLine="For y = 0 To bcColors.mHeight - 1";
 {
 final int step2 = 1;
 final int limit2 = (int) (__ref._bccolors /*b4j.example.bitmapcreator*/ ._mheight-1);
 _y = (int) (0) ;
 for (;_y <= limit2 ;_y = _y + step2 ) {
-RDebugUtils.currentLine=3342339;
- //BA.debugLineNum = 3342339;BA.debugLine="bcColors.SetHSV(x, y, SelectedAlpha, selectedH,";
+RDebugUtils.currentLine=6881283;
+ //BA.debugLineNum = 6881283;BA.debugLine="bcColors.SetHSV(x, y, SelectedAlpha, selectedH,";
 __ref._bccolors /*b4j.example.bitmapcreator*/ ._sethsv(_x,_y,__ref._selectedalpha /*int*/ ,(int) (__ref._selectedh /*float*/ ),(float) (_x/(double)__ref._bccolors /*b4j.example.bitmapcreator*/ ._mwidth),(float) ((__ref._bccolors /*b4j.example.bitmapcreator*/ ._mheight-_y)/(double)__ref._bccolors /*b4j.example.bitmapcreator*/ ._mheight));
  }
 };
  }
 };
-RDebugUtils.currentLine=3342343;
- //BA.debugLineNum = 3342343;BA.debugLine="ColorPicker.iv.SetBitmap(bcColors.Bitmap.Resize(C";
+RDebugUtils.currentLine=6881287;
+ //BA.debugLineNum = 6881287;BA.debugLine="ColorPicker.iv.SetBitmap(bcColors.Bitmap.Resize(C";
 __ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetBitmap((javafx.scene.image.Image)(__ref._bccolors /*b4j.example.bitmapcreator*/ ._getbitmap().Resize((int) (__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()),(int) (__ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/ .iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()),__c.False).getObject()));
-RDebugUtils.currentLine=3342344;
- //BA.debugLineNum = 3342344;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6881288;
+ //BA.debugLineNum = 6881288;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.objects.B4XViewWrapper  _getpanel(b4j.example.b4xcolortemplate __ref,b4j.example.b4xdialog _dialog) throws Exception{
@@ -813,13 +814,13 @@ __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "getpanel", true))
 	 {return ((anywheresoftware.b4a.objects.B4XViewWrapper) Debug.delegate(ba, "getpanel", new Object[] {_dialog}));}
-RDebugUtils.currentLine=3997696;
- //BA.debugLineNum = 3997696;BA.debugLine="Public Sub GetPanel (Dialog As B4XDialog) As B4XVi";
-RDebugUtils.currentLine=3997697;
- //BA.debugLineNum = 3997697;BA.debugLine="Return mBase";
+RDebugUtils.currentLine=7536640;
+ //BA.debugLineNum = 7536640;BA.debugLine="Public Sub GetPanel (Dialog As B4XDialog) As B4XVi";
+RDebugUtils.currentLine=7536641;
+ //BA.debugLineNum = 7536641;BA.debugLine="Return mBase";
 if (true) return __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ ;
-RDebugUtils.currentLine=3997698;
- //BA.debugLineNum = 3997698;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7536642;
+ //BA.debugLineNum = 7536642;BA.debugLine="End Sub";
 return null;
 }
 public int  _getselectedcolor(b4j.example.b4xcolortemplate __ref) throws Exception{
@@ -828,19 +829,19 @@ RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "getselectedcolor", true))
 	 {return ((Integer) Debug.delegate(ba, "getselectedcolor", null));}
 Object[] _hsv = null;
-RDebugUtils.currentLine=3670016;
- //BA.debugLineNum = 3670016;BA.debugLine="Public Sub getSelectedColor As Int";
-RDebugUtils.currentLine=3670017;
- //BA.debugLineNum = 3670017;BA.debugLine="Dim hsv() As Object = getSelectedHSVColor";
+RDebugUtils.currentLine=7208960;
+ //BA.debugLineNum = 7208960;BA.debugLine="Public Sub getSelectedColor As Int";
+RDebugUtils.currentLine=7208961;
+ //BA.debugLineNum = 7208961;BA.debugLine="Dim hsv() As Object = getSelectedHSVColor";
 _hsv = __ref._getselectedhsvcolor /*Object[]*/ (null);
-RDebugUtils.currentLine=3670018;
- //BA.debugLineNum = 3670018;BA.debugLine="tempBC.SetHSV(0, 0, SelectedAlpha, hsv(0), hsv(1)";
+RDebugUtils.currentLine=7208962;
+ //BA.debugLineNum = 7208962;BA.debugLine="tempBC.SetHSV(0, 0, SelectedAlpha, hsv(0), hsv(1)";
 __ref._tempbc /*b4j.example.bitmapcreator*/ ._sethsv((int) (0),(int) (0),__ref._selectedalpha /*int*/ ,(int)(BA.ObjectToNumber(_hsv[(int) (0)])),(float)(BA.ObjectToNumber(_hsv[(int) (1)])),(float)(BA.ObjectToNumber(_hsv[(int) (2)])));
-RDebugUtils.currentLine=3670019;
- //BA.debugLineNum = 3670019;BA.debugLine="Return tempBC.GetColor(0, 0)";
+RDebugUtils.currentLine=7208963;
+ //BA.debugLineNum = 7208963;BA.debugLine="Return tempBC.GetColor(0, 0)";
 if (true) return __ref._tempbc /*b4j.example.bitmapcreator*/ ._getcolor((int) (0),(int) (0));
-RDebugUtils.currentLine=3670020;
- //BA.debugLineNum = 3670020;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7208964;
+ //BA.debugLineNum = 7208964;BA.debugLine="End Sub";
 return 0;
 }
 public Object[]  _getselectedhsvcolor(b4j.example.b4xcolortemplate __ref) throws Exception{
@@ -848,13 +849,13 @@ __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "getselectedhsvcolor", true))
 	 {return ((Object[]) Debug.delegate(ba, "getselectedhsvcolor", null));}
-RDebugUtils.currentLine=3801088;
- //BA.debugLineNum = 3801088;BA.debugLine="Public Sub getSelectedHSVColor As Object()";
-RDebugUtils.currentLine=3801089;
- //BA.debugLineNum = 3801089;BA.debugLine="Return Array (selectedH, selectedS, selectedV, Se";
+RDebugUtils.currentLine=7340032;
+ //BA.debugLineNum = 7340032;BA.debugLine="Public Sub getSelectedHSVColor As Object()";
+RDebugUtils.currentLine=7340033;
+ //BA.debugLineNum = 7340033;BA.debugLine="Return Array (selectedH, selectedS, selectedV, Se";
 if (true) return new Object[]{(Object)(__ref._selectedh /*float*/ ),(Object)(__ref._selecteds /*float*/ ),(Object)(__ref._selectedv /*float*/ ),(Object)(__ref._selectedalpha /*int*/ )};
-RDebugUtils.currentLine=3801090;
- //BA.debugLineNum = 3801090;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7340034;
+ //BA.debugLineNum = 7340034;BA.debugLine="End Sub";
 return null;
 }
 public String  _updatebarcolor(b4j.example.b4xcolortemplate __ref) throws Exception{
@@ -862,17 +863,17 @@ __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "updatebarcolor", true))
 	 {return ((String) Debug.delegate(ba, "updatebarcolor", null));}
-RDebugUtils.currentLine=4194304;
- //BA.debugLineNum = 4194304;BA.debugLine="Private Sub UpdateBarColor";
-RDebugUtils.currentLine=4194305;
- //BA.debugLineNum = 4194305;BA.debugLine="If xDialog.IsInitialized And xDialog.TitleBar.IsI";
+RDebugUtils.currentLine=7733248;
+ //BA.debugLineNum = 7733248;BA.debugLine="Private Sub UpdateBarColor";
+RDebugUtils.currentLine=7733249;
+ //BA.debugLineNum = 7733249;BA.debugLine="If xDialog.IsInitialized And xDialog.TitleBar.IsI";
 if (__ref._xdialog /*b4j.example.b4xdialog*/ .IsInitialized /*boolean*/ () && __ref._xdialog /*b4j.example.b4xdialog*/ ._titlebar /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .IsInitialized()) { 
-RDebugUtils.currentLine=4194306;
- //BA.debugLineNum = 4194306;BA.debugLine="xDialog.TitleBar.Color = getSelectedColor";
+RDebugUtils.currentLine=7733250;
+ //BA.debugLineNum = 7733250;BA.debugLine="xDialog.TitleBar.Color = getSelectedColor";
 __ref._xdialog /*b4j.example.b4xdialog*/ ._titlebar /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .setColor(__ref._getselectedcolor /*int*/ (null));
  };
-RDebugUtils.currentLine=4194308;
- //BA.debugLineNum = 4194308;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7733252;
+ //BA.debugLineNum = 7733252;BA.debugLine="End Sub";
 return "";
 }
 public String  _huebar_touch(b4j.example.b4xcolortemplate __ref,int _action,float _x,float _y) throws Exception{
@@ -880,17 +881,17 @@ __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "huebar_touch", true))
 	 {return ((String) Debug.delegate(ba, "huebar_touch", new Object[] {_action,_x,_y}));}
-RDebugUtils.currentLine=4325376;
- //BA.debugLineNum = 4325376;BA.debugLine="Private Sub HueBar_Touch (Action As Int, X As Floa";
-RDebugUtils.currentLine=4325377;
- //BA.debugLineNum = 4325377;BA.debugLine="If Action = mBase.TOUCH_ACTION_MOVE_NOTOUCH Then";
+RDebugUtils.currentLine=7864320;
+ //BA.debugLineNum = 7864320;BA.debugLine="Private Sub HueBar_Touch (Action As Int, X As Floa";
+RDebugUtils.currentLine=7864321;
+ //BA.debugLineNum = 7864321;BA.debugLine="If Action = mBase.TOUCH_ACTION_MOVE_NOTOUCH Then";
 if (_action==__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .TOUCH_ACTION_MOVE_NOTOUCH) { 
 if (true) return "";};
-RDebugUtils.currentLine=4325378;
- //BA.debugLineNum = 4325378;BA.debugLine="HueBarSelectedChanged(Y)";
+RDebugUtils.currentLine=7864322;
+ //BA.debugLineNum = 7864322;BA.debugLine="HueBarSelectedChanged(Y)";
 __ref._huebarselectedchanged /*String*/ (null,_y);
-RDebugUtils.currentLine=4325379;
- //BA.debugLineNum = 4325379;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7864323;
+ //BA.debugLineNum = 7864323;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(b4j.example.b4xcolortemplate __ref,anywheresoftware.b4a.BA _ba) throws Exception{
@@ -899,40 +900,40 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "initialize", true))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=2949120;
- //BA.debugLineNum = 2949120;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=2949121;
- //BA.debugLineNum = 2949121;BA.debugLine="tempBC.Initialize(1, 1)";
+RDebugUtils.currentLine=6488064;
+ //BA.debugLineNum = 6488064;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=6488065;
+ //BA.debugLineNum = 6488065;BA.debugLine="tempBC.Initialize(1, 1)";
 __ref._tempbc /*b4j.example.bitmapcreator*/ ._initialize(ba,(int) (1),(int) (1));
-RDebugUtils.currentLine=2949122;
- //BA.debugLineNum = 2949122;BA.debugLine="DeviceScale = 100dip / 100";
+RDebugUtils.currentLine=6488066;
+ //BA.debugLineNum = 6488066;BA.debugLine="DeviceScale = 100dip / 100";
 __ref._devicescale /*float*/  = (float) (__c.DipToCurrent((int) (100))/(double)100);
-RDebugUtils.currentLine=2949123;
- //BA.debugLineNum = 2949123;BA.debugLine="mBase = xui.CreatePanel(\"\")";
+RDebugUtils.currentLine=6488067;
+ //BA.debugLineNum = 6488067;BA.debugLine="mBase = xui.CreatePanel(\"\")";
 __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/  = __ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .CreatePanel(ba,"");
-RDebugUtils.currentLine=2949124;
- //BA.debugLineNum = 2949124;BA.debugLine="mBase.SetLayoutAnimated(0, 0, 0, 300dip, 250dip)";
+RDebugUtils.currentLine=6488068;
+ //BA.debugLineNum = 6488068;BA.debugLine="mBase.SetLayoutAnimated(0, 0, 0, 300dip, 250dip)";
 __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetLayoutAnimated((int) (0),0,0,__c.DipToCurrent((int) (300)),__c.DipToCurrent((int) (250)));
-RDebugUtils.currentLine=2949125;
- //BA.debugLineNum = 2949125;BA.debugLine="BordersColor = xui.Color_Black";
+RDebugUtils.currentLine=6488069;
+ //BA.debugLineNum = 6488069;BA.debugLine="BordersColor = xui.Color_Black";
 __ref._borderscolor /*int*/  = __ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .Color_Black;
-RDebugUtils.currentLine=2949126;
- //BA.debugLineNum = 2949126;BA.debugLine="mBase.SetColorAndBorder(BordersColor, 1dip, Borde";
+RDebugUtils.currentLine=6488070;
+ //BA.debugLineNum = 6488070;BA.debugLine="mBase.SetColorAndBorder(BordersColor, 1dip, Borde";
 __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetColorAndBorder(__ref._borderscolor /*int*/ ,__c.DipToCurrent((int) (1)),__ref._borderscolor /*int*/ ,__c.DipToCurrent((int) (2)));
-RDebugUtils.currentLine=2949127;
- //BA.debugLineNum = 2949127;BA.debugLine="HueBar = CreatePanelForBitmapCreator(\"hueBar\", Fa";
+RDebugUtils.currentLine=6488071;
+ //BA.debugLineNum = 6488071;BA.debugLine="HueBar = CreatePanelForBitmapCreator(\"hueBar\", Fa";
 __ref._huebar /*b4j.example.b4xcolortemplate._colorpickerpart*/  = __ref._createpanelforbitmapcreator /*b4j.example.b4xcolortemplate._colorpickerpart*/ (null,"hueBar",__c.False);
-RDebugUtils.currentLine=2949128;
- //BA.debugLineNum = 2949128;BA.debugLine="ColorPicker = CreatePanelForBitmapCreator(\"colors";
+RDebugUtils.currentLine=6488072;
+ //BA.debugLineNum = 6488072;BA.debugLine="ColorPicker = CreatePanelForBitmapCreator(\"colors";
 __ref._colorpicker /*b4j.example.b4xcolortemplate._colorpickerpart*/  = __ref._createpanelforbitmapcreator /*b4j.example.b4xcolortemplate._colorpickerpart*/ (null,"colors",__c.True);
-RDebugUtils.currentLine=2949129;
- //BA.debugLineNum = 2949129;BA.debugLine="AlphaBar = CreatePanelForBitmapCreator(\"alpha\", T";
+RDebugUtils.currentLine=6488073;
+ //BA.debugLineNum = 6488073;BA.debugLine="AlphaBar = CreatePanelForBitmapCreator(\"alpha\", T";
 __ref._alphabar /*b4j.example.b4xcolortemplate._colorpickerpart*/  = __ref._createpanelforbitmapcreator /*b4j.example.b4xcolortemplate._colorpickerpart*/ (null,"alpha",__c.True);
-RDebugUtils.currentLine=2949130;
- //BA.debugLineNum = 2949130;BA.debugLine="Base_Resize(mBase.Width, mBase.Height)";
+RDebugUtils.currentLine=6488074;
+ //BA.debugLineNum = 6488074;BA.debugLine="Base_Resize(mBase.Width, mBase.Height)";
 __ref._base_resize /*String*/ (null,__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
-RDebugUtils.currentLine=2949131;
- //BA.debugLineNum = 2949131;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6488075;
+ //BA.debugLineNum = 6488075;BA.debugLine="End Sub";
 return "";
 }
 public String  _setselectedcolor(b4j.example.b4xcolortemplate __ref,int _i) throws Exception{
@@ -940,13 +941,13 @@ __ref = this;
 RDebugUtils.currentModule="b4xcolortemplate";
 if (Debug.shouldDelegate(ba, "setselectedcolor", true))
 	 {return ((String) Debug.delegate(ba, "setselectedcolor", new Object[] {_i}));}
-RDebugUtils.currentLine=3735552;
- //BA.debugLineNum = 3735552;BA.debugLine="Public Sub setSelectedColor(i As Int)";
-RDebugUtils.currentLine=3735553;
- //BA.debugLineNum = 3735553;BA.debugLine="setSelectedHSVColor(ColorToHSV(i))";
+RDebugUtils.currentLine=7274496;
+ //BA.debugLineNum = 7274496;BA.debugLine="Public Sub setSelectedColor(i As Int)";
+RDebugUtils.currentLine=7274497;
+ //BA.debugLineNum = 7274497;BA.debugLine="setSelectedHSVColor(ColorToHSV(i))";
 __ref._setselectedhsvcolor /*String*/ (null,__ref._colortohsv /*Object[]*/ (null,_i));
-RDebugUtils.currentLine=3735554;
- //BA.debugLineNum = 3735554;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7274498;
+ //BA.debugLineNum = 7274498;BA.debugLine="End Sub";
 return "";
 }
 public void  _show(b4j.example.b4xcolortemplate __ref,b4j.example.b4xdialog _dialog) throws Exception{
@@ -979,14 +980,14 @@ return;
 case 0:
 //C
 this.state = -1;
-RDebugUtils.currentLine=4063233;
- //BA.debugLineNum = 4063233;BA.debugLine="InitialColor = getSelectedHSVColor";
+RDebugUtils.currentLine=7602177;
+ //BA.debugLineNum = 7602177;BA.debugLine="InitialColor = getSelectedHSVColor";
 __ref._initialcolor /*Object[]*/  = __ref._getselectedhsvcolor /*Object[]*/ (null);
-RDebugUtils.currentLine=4063234;
- //BA.debugLineNum = 4063234;BA.debugLine="xDialog = Dialog";
+RDebugUtils.currentLine=7602178;
+ //BA.debugLineNum = 7602178;BA.debugLine="xDialog = Dialog";
 __ref._xdialog /*b4j.example.b4xdialog*/  = _dialog;
-RDebugUtils.currentLine=4063235;
- //BA.debugLineNum = 4063235;BA.debugLine="Sleep(0)";
+RDebugUtils.currentLine=7602179;
+ //BA.debugLineNum = 7602179;BA.debugLine="Sleep(0)";
 parent.__c.Sleep(ba,new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "b4xcolortemplate", "show"),(int) (0));
 this.state = 1;
 return;
@@ -994,11 +995,11 @@ case 1:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=4063236;
- //BA.debugLineNum = 4063236;BA.debugLine="UpdateBarColor";
+RDebugUtils.currentLine=7602180;
+ //BA.debugLineNum = 7602180;BA.debugLine="UpdateBarColor";
 __ref._updatebarcolor /*String*/ (null);
-RDebugUtils.currentLine=4063237;
- //BA.debugLineNum = 4063237;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7602181;
+ //BA.debugLineNum = 7602181;BA.debugLine="End Sub";
 if (true) break;
 
             }

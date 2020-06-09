@@ -28,6 +28,7 @@ public static RemoteObject _sideheight = RemoteObject.createImmutable(0);
 public static RemoteObject _dateutils = RemoteObject.declareNull("b4j.example.dateutils");
 public static RemoteObject _cssutils = RemoteObject.declareNull("b4j.example.cssutils");
 public static b4j.example.main _main = null;
+public static b4j.example.players _players = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"clr1",_ref.getField(false, "_clr1"),"clr2",_ref.getField(false, "_clr2"),"CornersRadius",_ref.getField(false, "_cornersradius"),"CSSUtils",_ref.getField(false, "_cssutils"),"cvs",_ref.getField(false, "_cvs"),"DateUtils",_ref.getField(false, "_dateutils"),"disabledColor",_ref.getField(false, "_disabledcolor"),"mBase",_ref.getField(false, "_mbase"),"mCallBack",_ref.getField(false, "_mcallback"),"mDisabled",_ref.getField(false, "_mdisabled"),"mEventName",_ref.getField(false, "_meventname"),"pressed",_ref.getField(false, "_pressed"),"SideHeight",_ref.getField(false, "_sideheight"),"Tag",_ref.getField(false, "_tag"),"xLBL",_ref.getField(false, "_xlbl"),"xui",_ref.getField(false, "_xui")};
 }

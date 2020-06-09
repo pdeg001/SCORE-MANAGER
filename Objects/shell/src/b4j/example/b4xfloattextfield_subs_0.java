@@ -8,7 +8,7 @@ public class b4xfloattextfield_subs_0 {
 
 public static RemoteObject  _base_resize(RemoteObject __ref,RemoteObject _width,RemoteObject _height) throws Exception{
 try {
-		Debug.PushSubsStack("Base_Resize (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,178);
+		Debug.PushSubsStack("Base_Resize (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,178);
 if (RapidSub.canDelegate("base_resize")) { return __ref.runUserSub(false, "b4xfloattextfield","base_resize", __ref, _width, _height);}
 RemoteObject _firstdistance = RemoteObject.createImmutable(0);
 Debug.locals.put("Width", _width);
@@ -118,7 +118,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _createacceptbutton(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("CreateAcceptButton (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,122);
+		Debug.PushSubsStack("CreateAcceptButton (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,122);
 if (RapidSub.canDelegate("createacceptbutton")) { return __ref.runUserSub(false, "b4xfloattextfield","createacceptbutton", __ref);}
  BA.debugLineNum = 122;BA.debugLine="Private Sub CreateAcceptButton";
 Debug.JustUpdateDeviceLine();
@@ -144,7 +144,7 @@ finally {
 		}}
 public static RemoteObject  _createbitmap(RemoteObject __ref,RemoteObject _r,RemoteObject _color,RemoteObject _fnt) throws Exception{
 try {
-		Debug.PushSubsStack("CreateBitmap (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,234);
+		Debug.PushSubsStack("CreateBitmap (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,234);
 if (RapidSub.canDelegate("createbitmap")) { return __ref.runUserSub(false, "b4xfloattextfield","createbitmap", __ref, _r, _color, _fnt);}
 RemoteObject _p = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper");
 RemoteObject _c = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XCanvas");
@@ -196,7 +196,7 @@ finally {
 		}}
 public static RemoteObject  _createbutton(RemoteObject __ref,RemoteObject _text) throws Exception{
 try {
-		Debug.PushSubsStack("CreateButton (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,164);
+		Debug.PushSubsStack("CreateButton (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,164);
 if (RapidSub.canDelegate("createbutton")) { return __ref.runUserSub(false, "b4xfloattextfield","createbutton", __ref, _text);}
 RemoteObject _lc = RemoteObject.declareNull("anywheresoftware.b4j.objects.LabelWrapper");
 RemoteObject _x = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper");
@@ -249,7 +249,7 @@ finally {
 		}}
 public static RemoteObject  _createclearbutton(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("CreateClearButton (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,114);
+		Debug.PushSubsStack("CreateClearButton (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,114);
 if (RapidSub.canDelegate("createclearbutton")) { return __ref.runUserSub(false, "b4xfloattextfield","createclearbutton", __ref);}
  BA.debugLineNum = 114;BA.debugLine="Private Sub CreateClearButton";
 Debug.JustUpdateDeviceLine();
@@ -279,7 +279,7 @@ finally {
 		}}
 public static RemoteObject  _createrevealbutton(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("CreateRevealButton (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,129);
+		Debug.PushSubsStack("CreateRevealButton (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,129);
 if (RapidSub.canDelegate("createrevealbutton")) { return __ref.runUserSub(false, "b4xfloattextfield","createrevealbutton", __ref);}
  BA.debugLineNum = 129;BA.debugLine="Private Sub CreateRevealButton";
 Debug.JustUpdateDeviceLine();
@@ -301,7 +301,7 @@ finally {
 		}}
 public static RemoteObject  _createtextfield(RemoteObject __ref,RemoteObject _password) throws Exception{
 try {
-		Debug.PushSubsStack("CreateTextField (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,305);
+		Debug.PushSubsStack("CreateTextField (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,305);
 if (RapidSub.canDelegate("createtextfield")) { return __ref.runUserSub(false, "b4xfloattextfield","createtextfield", __ref, _password);}
 RemoteObject _tf = RemoteObject.declareNull("anywheresoftware.b4j.objects.TextInputControlWrapper.TextFieldWrapper");
 RemoteObject _ta = RemoteObject.declareNull("anywheresoftware.b4j.objects.TextInputControlWrapper.TextAreaWrapper");
@@ -357,7 +357,7 @@ finally {
 		}}
 public static RemoteObject  _createtextfieldall(RemoteObject __ref,RemoteObject _passwordmode,RemoteObject _font1,RemoteObject _textcolor) throws Exception{
 try {
-		Debug.PushSubsStack("CreateTextFieldAll (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,106);
+		Debug.PushSubsStack("CreateTextFieldAll (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,106);
 if (RapidSub.canDelegate("createtextfieldall")) { return __ref.runUserSub(false, "b4xfloattextfield","createtextfieldall", __ref, _passwordmode, _font1, _textcolor);}
 Debug.locals.put("PasswordMode", _passwordmode);
 Debug.locals.put("Font1", _font1);
@@ -391,7 +391,7 @@ finally {
 		}}
 public static RemoteObject  _designercreateview(RemoteObject __ref,RemoteObject _base,RemoteObject _lbl,RemoteObject _props) throws Exception{
 try {
-		Debug.PushSubsStack("DesignerCreateView (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,64);
+		Debug.PushSubsStack("DesignerCreateView (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,64);
 if (RapidSub.canDelegate("designercreateview")) { return __ref.runUserSub(false, "b4xfloattextfield","designercreateview", __ref, _base, _lbl, _props);}
 RemoteObject _passedlabel = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper");
 RemoteObject _iv = RemoteObject.declareNull("anywheresoftware.b4j.objects.ImageViewWrapper");
@@ -520,7 +520,7 @@ finally {
 		}}
 public static RemoteObject  _getnextfield(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("getNextField (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,272);
+		Debug.PushSubsStack("getNextField (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,272);
 if (RapidSub.canDelegate("getnextfield")) { return __ref.runUserSub(false, "b4xfloattextfield","getnextfield", __ref);}
  BA.debugLineNum = 272;BA.debugLine="Public Sub getNextField As B4XFloatTextField";
 Debug.JustUpdateDeviceLine();
@@ -539,7 +539,7 @@ finally {
 		}}
 public static RemoteObject  _gettext(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("getText (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,365);
+		Debug.PushSubsStack("getText (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,365);
 if (RapidSub.canDelegate("gettext")) { return __ref.runUserSub(false, "b4xfloattextfield","gettext", __ref);}
  BA.debugLineNum = 365;BA.debugLine="Public Sub getText As String";
 Debug.JustUpdateDeviceLine();
@@ -558,7 +558,7 @@ finally {
 		}}
 public static RemoteObject  _gettextfield(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("getTextField (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,416);
+		Debug.PushSubsStack("getTextField (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,416);
 if (RapidSub.canDelegate("gettextfield")) { return __ref.runUserSub(false, "b4xfloattextfield","gettextfield", __ref);}
  BA.debugLineNum = 416;BA.debugLine="Public Sub getTextField As B4XView";
 Debug.JustUpdateDeviceLine();
@@ -577,7 +577,7 @@ finally {
 		}}
 public static RemoteObject  _ime_handleaction(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ime_HandleAction (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,291);
+		Debug.PushSubsStack("ime_HandleAction (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,291);
 if (RapidSub.canDelegate("ime_handleaction")) { return __ref.runUserSub(false, "b4xfloattextfield","ime_handleaction", __ref);}
  BA.debugLineNum = 291;BA.debugLine="Private Sub ime_HandleAction As Boolean";
 Debug.JustUpdateDeviceLine();
@@ -603,7 +603,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _callback,RemoteObject _eventname) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,47);
+		Debug.PushSubsStack("Initialize (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,47);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "b4xfloattextfield","initialize", __ref, _ba, _callback, _eventname);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 RemoteObject _jo = RemoteObject.declareNull("anywheresoftware.b4j.object.JavaObject");
@@ -648,7 +648,7 @@ finally {
 		}}
 public static RemoteObject  _lc_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("lc_Click (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,380);
+		Debug.PushSubsStack("lc_Click (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,380);
 if (RapidSub.canDelegate("lc_click")) { return __ref.runUserSub(false, "b4xfloattextfield","lc_click", __ref);}
 RemoteObject _btn = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper");
  BA.debugLineNum = 380;BA.debugLine="Private Sub lc_Click";
@@ -701,7 +701,7 @@ finally {
 		}}
 public static RemoteObject  _lc_mouseclicked(RemoteObject __ref,RemoteObject _eventdata) throws Exception{
 try {
-		Debug.PushSubsStack("lc_MouseClicked (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,406);
+		Debug.PushSubsStack("lc_MouseClicked (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,406);
 if (RapidSub.canDelegate("lc_mouseclicked")) { return __ref.runUserSub(false, "b4xfloattextfield","lc_mouseclicked", __ref, _eventdata);}
 Debug.locals.put("EventData", _eventdata);
  BA.debugLineNum = 406;BA.debugLine="Private Sub lc_MouseClicked(EventData As MouseEven";
@@ -724,7 +724,7 @@ finally {
 		}}
 public static RemoteObject  _lc_mousepressed(RemoteObject __ref,RemoteObject _eventdata) throws Exception{
 try {
-		Debug.PushSubsStack("lc_MousePressed (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,402);
+		Debug.PushSubsStack("lc_MousePressed (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,402);
 if (RapidSub.canDelegate("lc_mousepressed")) { return __ref.runUserSub(false, "b4xfloattextfield","lc_mousepressed", __ref, _eventdata);}
 Debug.locals.put("EventData", _eventdata);
  BA.debugLineNum = 402;BA.debugLine="Private Sub lc_MousePressed (EventData As MouseEve";
@@ -744,7 +744,7 @@ finally {
 		}}
 public static RemoteObject  _lc_mousereleased(RemoteObject __ref,RemoteObject _eventdata) throws Exception{
 try {
-		Debug.PushSubsStack("lc_MouseReleased (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,411);
+		Debug.PushSubsStack("lc_MouseReleased (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,411);
 if (RapidSub.canDelegate("lc_mousereleased")) { return __ref.runUserSub(false, "b4xfloattextfield","lc_mousereleased", __ref, _eventdata);}
 Debug.locals.put("EventData", _eventdata);
  BA.debugLineNum = 411;BA.debugLine="Private Sub lc_MouseReleased(EventData As MouseEve";
@@ -764,7 +764,7 @@ finally {
 		}}
 public static RemoteObject  _requestfocusandshowkeyboard(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("RequestFocusAndShowKeyboard (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,421);
+		Debug.PushSubsStack("RequestFocusAndShowKeyboard (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,421);
 if (RapidSub.canDelegate("requestfocusandshowkeyboard")) { return __ref.runUserSub(false, "b4xfloattextfield","requestfocusandshowkeyboard", __ref);}
  BA.debugLineNum = 421;BA.debugLine="Public Sub RequestFocusAndShowKeyboard";
 Debug.JustUpdateDeviceLine();
@@ -783,7 +783,7 @@ finally {
 		}}
 public static RemoteObject  _setnextfield(RemoteObject __ref,RemoteObject _field) throws Exception{
 try {
-		Debug.PushSubsStack("setNextField (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,276);
+		Debug.PushSubsStack("setNextField (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,276);
 if (RapidSub.canDelegate("setnextfield")) { return __ref.runUserSub(false, "b4xfloattextfield","setnextfield", __ref, _field);}
 RemoteObject _o = RemoteObject.declareNull("Object");
 Debug.locals.put("Field", _field);
@@ -811,7 +811,7 @@ finally {
 		}}
 public static RemoteObject  _settext(RemoteObject __ref,RemoteObject _s) throws Exception{
 try {
-		Debug.PushSubsStack("setText (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,369);
+		Debug.PushSubsStack("setText (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,369);
 if (RapidSub.canDelegate("settext")) { return __ref.runUserSub(false, "b4xfloattextfield","settext", __ref, _s);}
 RemoteObject _old = RemoteObject.createImmutable("");
 Debug.locals.put("s", _s);
@@ -835,7 +835,7 @@ finally {
 		}}
 public static RemoteObject  _switchfrompasswordtoregular(RemoteObject __ref,RemoteObject _toregular) throws Exception{
 try {
-		Debug.PushSubsStack("SwitchFromPasswordToRegular (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,134);
+		Debug.PushSubsStack("SwitchFromPasswordToRegular (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,134);
 if (RapidSub.canDelegate("switchfrompasswordtoregular")) { return __ref.runUserSub(false, "b4xfloattextfield","switchfrompasswordtoregular", __ref, _toregular);}
 RemoteObject _text = RemoteObject.createImmutable("");
 RemoteObject _textcolor = RemoteObject.createImmutable(0);
@@ -919,7 +919,7 @@ finally {
 		}}
 public static RemoteObject  _tf_action(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("tf_Action (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,254);
+		Debug.PushSubsStack("tf_Action (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,254);
 if (RapidSub.canDelegate("tf_action")) { return __ref.runUserSub(false, "b4xfloattextfield","tf_action", __ref);}
  BA.debugLineNum = 254;BA.debugLine="Private Sub tf_Action";
 Debug.JustUpdateDeviceLine();
@@ -949,7 +949,7 @@ finally {
 		}}
 public static RemoteObject  _tf_beginedit(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("tf_BeginEdit (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,246);
+		Debug.PushSubsStack("tf_BeginEdit (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,246);
 if (RapidSub.canDelegate("tf_beginedit")) { return __ref.runUserSub(false, "b4xfloattextfield","tf_beginedit", __ref);}
  BA.debugLineNum = 246;BA.debugLine="Private Sub tf_BeginEdit";
 Debug.JustUpdateDeviceLine();
@@ -968,7 +968,7 @@ finally {
 		}}
 public static RemoteObject  _tf_endedit(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("tf_EndEdit (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,250);
+		Debug.PushSubsStack("tf_EndEdit (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,250);
 if (RapidSub.canDelegate("tf_endedit")) { return __ref.runUserSub(false, "b4xfloattextfield","tf_endedit", __ref);}
  BA.debugLineNum = 250;BA.debugLine="Private Sub tf_EndEdit";
 Debug.JustUpdateDeviceLine();
@@ -987,7 +987,7 @@ finally {
 		}}
 public static RemoteObject  _tf_enterpressed(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("tf_EnterPressed (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,297);
+		Debug.PushSubsStack("tf_EnterPressed (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,297);
 if (RapidSub.canDelegate("tf_enterpressed")) { return __ref.runUserSub(false, "b4xfloattextfield","tf_enterpressed", __ref);}
  BA.debugLineNum = 297;BA.debugLine="Private Sub tf_EnterPressed";
 Debug.JustUpdateDeviceLine();
@@ -1006,7 +1006,7 @@ finally {
 		}}
 public static RemoteObject  _tf_focuschanged(RemoteObject __ref,RemoteObject _hasfocus) throws Exception{
 try {
-		Debug.PushSubsStack("tf_FocusChanged (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,216);
+		Debug.PushSubsStack("tf_FocusChanged (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,216);
 if (RapidSub.canDelegate("tf_focuschanged")) { return __ref.runUserSub(false, "b4xfloattextfield","tf_focuschanged", __ref, _hasfocus);}
 Debug.locals.put("HasFocus", _hasfocus);
  BA.debugLineNum = 216;BA.debugLine="Private Sub tf_FocusChanged (HasFocus As Boolean)";
@@ -1029,7 +1029,7 @@ finally {
 		}}
 public static RemoteObject  _tf_textchanged(RemoteObject __ref,RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("tf_TextChanged (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,264);
+		Debug.PushSubsStack("tf_TextChanged (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,264);
 if (RapidSub.canDelegate("tf_textchanged")) { return __ref.runUserSub(false, "b4xfloattextfield","tf_textchanged", __ref, _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -1057,7 +1057,7 @@ finally {
 		}}
 public static RemoteObject  _update(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Update (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,222);
+		Debug.PushSubsStack("Update (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,222);
 if (RapidSub.canDelegate("update")) { return __ref.runUserSub(false, "b4xfloattextfield","update", __ref);}
 RemoteObject _f = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper.B4XFont");
 RemoteObject _r = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XCanvas.B4XRect");
@@ -1103,7 +1103,7 @@ finally {
 		}}
 public static RemoteObject  _updatelabel(RemoteObject __ref,RemoteObject _txt,RemoteObject _force) throws Exception{
 try {
-		Debug.PushSubsStack("UpdateLabel (b4xfloattextfield) ","b4xfloattextfield",8,__ref.getField(false, "ba"),__ref,192);
+		Debug.PushSubsStack("UpdateLabel (b4xfloattextfield) ","b4xfloattextfield",12,__ref.getField(false, "ba"),__ref,192);
 if (RapidSub.canDelegate("updatelabel")) { return __ref.runUserSub(false, "b4xfloattextfield","updatelabel", __ref, _txt, _force);}
 RemoteObject _lbl = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper");
 RemoteObject _goingtolarge = RemoteObject.createImmutable(false);

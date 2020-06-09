@@ -29,7 +29,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _configurefornumbers(RemoteObject __ref,RemoteObject _allowdecimals,RemoteObject _allownegative) throws Exception{
 try {
-		Debug.PushSubsStack("ConfigureForNumbers (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,31);
+		Debug.PushSubsStack("ConfigureForNumbers (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,31);
 if (RapidSub.canDelegate("configurefornumbers")) { return __ref.runUserSub(false, "b4xinputtemplate","configurefornumbers", __ref, _allowdecimals, _allownegative);}
 Debug.locals.put("AllowDecimals", _allowdecimals);
 Debug.locals.put("AllowNegative", _allownegative);
@@ -79,7 +79,7 @@ finally {
 		}}
 public static RemoteObject  _dialogclosed(RemoteObject __ref,RemoteObject _result) throws Exception{
 try {
-		Debug.PushSubsStack("DialogClosed (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,124);
+		Debug.PushSubsStack("DialogClosed (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,124);
 if (RapidSub.canDelegate("dialogclosed")) { return __ref.runUserSub(false, "b4xinputtemplate","dialogclosed", __ref, _result);}
 Debug.locals.put("Result", _result);
  BA.debugLineNum = 124;BA.debugLine="Private Sub DialogClosed(Result As Int)";
@@ -103,7 +103,7 @@ finally {
 		}}
 public static RemoteObject  _getpanel(RemoteObject __ref,RemoteObject _dialog) throws Exception{
 try {
-		Debug.PushSubsStack("GetPanel (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,103);
+		Debug.PushSubsStack("GetPanel (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,103);
 if (RapidSub.canDelegate("getpanel")) { return __ref.runUserSub(false, "b4xinputtemplate","getpanel", __ref, _dialog);}
 Debug.locals.put("Dialog", _dialog);
  BA.debugLineNum = 103;BA.debugLine="Public Sub GetPanel (Dialog As B4XDialog) As B4XVi";
@@ -123,7 +123,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,15);
+		Debug.PushSubsStack("Initialize (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,15);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "b4xinputtemplate","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -153,7 +153,7 @@ finally {
 		}}
 public static RemoteObject  _isvalid(RemoteObject __ref,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("IsValid (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,90);
+		Debug.PushSubsStack("IsValid (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,90);
 if (RapidSub.canDelegate("isvalid")) { return __ref.runUserSub(false, "b4xinputtemplate","isvalid", __ref, _new);}
 Debug.locals.put("New", _new);
  BA.debugLineNum = 90;BA.debugLine="Private Sub IsValid(New As String) As Boolean";
@@ -173,7 +173,7 @@ finally {
 		}}
 public static void  _show(RemoteObject __ref,RemoteObject _dialog) throws Exception{
 try {
-		Debug.PushSubsStack("Show (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,107);
+		Debug.PushSubsStack("Show (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,107);
 if (RapidSub.canDelegate("show")) { __ref.runUserSub(false, "b4xinputtemplate","show", __ref, _dialog); return;}
 ResumableSub_Show rsub = new ResumableSub_Show(null,__ref,_dialog);
 rsub.resume(null, null);
@@ -198,7 +198,7 @@ RemoteObject _dialog;
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("Show (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,107);
+		Debug.PushSubsStack("Show (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,107);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -251,7 +251,7 @@ finally {
 }
 public static RemoteObject  _textfield1_action(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("TextField1_Action (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,94);
+		Debug.PushSubsStack("TextField1_Action (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,94);
 if (RapidSub.canDelegate("textfield1_action")) { return __ref.runUserSub(false, "b4xinputtemplate","textfield1_action", __ref);}
  BA.debugLineNum = 94;BA.debugLine="Private Sub TextField1_Action";
 Debug.JustUpdateDeviceLine();
@@ -270,7 +270,7 @@ finally {
 		}}
 public static RemoteObject  _textfield1_enterpressed(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("TextField1_EnterPressed (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,98);
+		Debug.PushSubsStack("TextField1_EnterPressed (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,98);
 if (RapidSub.canDelegate("textfield1_enterpressed")) { return __ref.runUserSub(false, "b4xinputtemplate","textfield1_enterpressed", __ref);}
  BA.debugLineNum = 98;BA.debugLine="Private Sub TextField1_EnterPressed";
 Debug.JustUpdateDeviceLine();
@@ -290,7 +290,7 @@ finally {
 		}}
 public static RemoteObject  _textfield1_textchanged(RemoteObject __ref,RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("TextField1_TextChanged (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,62);
+		Debug.PushSubsStack("TextField1_TextChanged (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,62);
 if (RapidSub.canDelegate("textfield1_textchanged")) { return __ref.runUserSub(false, "b4xinputtemplate","textfield1_textchanged", __ref, _old, _new);}
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
@@ -311,7 +311,7 @@ finally {
 		}}
 public static RemoteObject  _validate(RemoteObject __ref,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("Validate (b4xinputtemplate) ","b4xinputtemplate",9,__ref.getField(false, "ba"),__ref,77);
+		Debug.PushSubsStack("Validate (b4xinputtemplate) ","b4xinputtemplate",13,__ref.getField(false, "ba"),__ref,77);
 if (RapidSub.canDelegate("validate")) { return __ref.runUserSub(false, "b4xinputtemplate","validate", __ref, _new);}
 RemoteObject _bordercolor = RemoteObject.createImmutable(0);
 RemoteObject _enabled = RemoteObject.createImmutable(false);

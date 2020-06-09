@@ -28,6 +28,7 @@ public static RemoteObject _presseditem = RemoteObject.createImmutable(0);
 public static RemoteObject _dateutils = RemoteObject.declareNull("b4j.example.dateutils");
 public static RemoteObject _cssutils = RemoteObject.declareNull("b4j.example.cssutils");
 public static b4j.example.main _main = null;
+public static b4j.example.players _players = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"bc",_ref.getField(false, "_bc"),"CrumbColor",_ref.getField(false, "_crumbcolor"),"CSSUtils",_ref.getField(false, "_cssutils"),"cvs",_ref.getField(false, "_cvs"),"DateUtils",_ref.getField(false, "_dateutils"),"fnt",_ref.getField(false, "_fnt"),"mBase",_ref.getField(false, "_mbase"),"mCallBack",_ref.getField(false, "_mcallback"),"mEventName",_ref.getField(false, "_meventname"),"mItems",_ref.getField(false, "_mitems"),"offset",_ref.getField(false, "_offset"),"PressedItem",_ref.getField(false, "_presseditem"),"RightPositions",_ref.getField(false, "_rightpositions"),"TextColor",_ref.getField(false, "_textcolor"),"TouchPanel",_ref.getField(false, "_touchpanel"),"xui",_ref.getField(false, "_xui")};
 }

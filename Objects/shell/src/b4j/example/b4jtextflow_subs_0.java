@@ -8,7 +8,7 @@ public class b4jtextflow_subs_0 {
 
 public static RemoteObject  _append(RemoteObject __ref,RemoteObject _text) throws Exception{
 try {
-		Debug.PushSubsStack("Append (b4jtextflow) ","b4jtextflow",24,__ref.getField(false, "ba"),__ref,16);
+		Debug.PushSubsStack("Append (b4jtextflow) ","b4jtextflow",27,__ref.getField(false, "ba"),__ref,16);
 if (RapidSub.canDelegate("append")) { return __ref.runUserSub(false, "b4jtextflow","append", __ref, _text);}
 Debug.locals.put("text", _text);
  BA.debugLineNum = 16;BA.debugLine="Public Sub Append(text As String) As B4JTextFlow";
@@ -48,7 +48,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _createtextflow(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("CreateTextFlow (b4jtextflow) ","b4jtextflow",24,__ref.getField(false, "ba"),__ref,45);
+		Debug.PushSubsStack("CreateTextFlow (b4jtextflow) ","b4jtextflow",27,__ref.getField(false, "ba"),__ref,45);
 if (RapidSub.canDelegate("createtextflow")) { return __ref.runUserSub(false, "b4jtextflow","createtextflow", __ref);}
 RemoteObject _tf = RemoteObject.declareNull("anywheresoftware.b4j.object.JavaObject");
  BA.debugLineNum = 45;BA.debugLine="Public Sub CreateTextFlow As Pane";
@@ -80,7 +80,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (b4jtextflow) ","b4jtextflow",24,__ref.getField(false, "ba"),__ref,7);
+		Debug.PushSubsStack("Initialize (b4jtextflow) ","b4jtextflow",27,__ref.getField(false, "ba"),__ref,7);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "b4jtextflow","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -101,7 +101,7 @@ finally {
 		}}
 public static RemoteObject  _reset(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Reset (b4jtextflow) ","b4jtextflow",24,__ref.getField(false, "ba"),__ref,11);
+		Debug.PushSubsStack("Reset (b4jtextflow) ","b4jtextflow",27,__ref.getField(false, "ba"),__ref,11);
 if (RapidSub.canDelegate("reset")) { return __ref.runUserSub(false, "b4jtextflow","reset", __ref);}
  BA.debugLineNum = 11;BA.debugLine="Public Sub Reset As B4JTextFlow";
 Debug.JustUpdateDeviceLine();
@@ -123,7 +123,7 @@ finally {
 		}}
 public static RemoteObject  _setcolor(RemoteObject __ref,RemoteObject _color) throws Exception{
 try {
-		Debug.PushSubsStack("SetColor (b4jtextflow) ","b4jtextflow",24,__ref.getField(false, "ba"),__ref,28);
+		Debug.PushSubsStack("SetColor (b4jtextflow) ","b4jtextflow",27,__ref.getField(false, "ba"),__ref,28);
 if (RapidSub.canDelegate("setcolor")) { return __ref.runUserSub(false, "b4jtextflow","setcolor", __ref, _color);}
 Debug.locals.put("Color", _color);
  BA.debugLineNum = 28;BA.debugLine="Public Sub SetColor(Color As Int) As B4JTextFlow";
@@ -146,7 +146,7 @@ finally {
 		}}
 public static RemoteObject  _setfont(RemoteObject __ref,RemoteObject _font) throws Exception{
 try {
-		Debug.PushSubsStack("SetFont (b4jtextflow) ","b4jtextflow",24,__ref.getField(false, "ba"),__ref,23);
+		Debug.PushSubsStack("SetFont (b4jtextflow) ","b4jtextflow",27,__ref.getField(false, "ba"),__ref,23);
 if (RapidSub.canDelegate("setfont")) { return __ref.runUserSub(false, "b4jtextflow","setfont", __ref, _font);}
 Debug.locals.put("Font", _font);
  BA.debugLineNum = 23;BA.debugLine="Public Sub SetFont(Font As Font) As B4JTextFlow";
@@ -169,7 +169,7 @@ finally {
 		}}
 public static RemoteObject  _setstrikethrough(RemoteObject __ref,RemoteObject _strikethrough) throws Exception{
 try {
-		Debug.PushSubsStack("SetStrikethrough (b4jtextflow) ","b4jtextflow",24,__ref.getField(false, "ba"),__ref,38);
+		Debug.PushSubsStack("SetStrikethrough (b4jtextflow) ","b4jtextflow",27,__ref.getField(false, "ba"),__ref,38);
 if (RapidSub.canDelegate("setstrikethrough")) { return __ref.runUserSub(false, "b4jtextflow","setstrikethrough", __ref, _strikethrough);}
 Debug.locals.put("Strikethrough", _strikethrough);
  BA.debugLineNum = 38;BA.debugLine="Public Sub SetStrikethrough(Strikethrough As Boole";
@@ -192,7 +192,7 @@ finally {
 		}}
 public static RemoteObject  _setunderline(RemoteObject __ref,RemoteObject _underline) throws Exception{
 try {
-		Debug.PushSubsStack("SetUnderline (b4jtextflow) ","b4jtextflow",24,__ref.getField(false, "ba"),__ref,33);
+		Debug.PushSubsStack("SetUnderline (b4jtextflow) ","b4jtextflow",27,__ref.getField(false, "ba"),__ref,33);
 if (RapidSub.canDelegate("setunderline")) { return __ref.runUserSub(false, "b4jtextflow","setunderline", __ref, _underline);}
 Debug.locals.put("Underline", _underline);
  BA.debugLineNum = 33;BA.debugLine="Public Sub SetUnderline(Underline As Boolean) As B";

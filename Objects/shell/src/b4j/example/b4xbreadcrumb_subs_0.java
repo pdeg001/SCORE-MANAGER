@@ -8,7 +8,7 @@ public class b4xbreadcrumb_subs_0 {
 
 public static RemoteObject  _base_resize(RemoteObject __ref,RemoteObject _width,RemoteObject _height) throws Exception{
 try {
-		Debug.PushSubsStack("Base_Resize (b4xbreadcrumb) ","b4xbreadcrumb",3,__ref.getField(false, "ba"),__ref,46);
+		Debug.PushSubsStack("Base_Resize (b4xbreadcrumb) ","b4xbreadcrumb",7,__ref.getField(false, "ba"),__ref,46);
 if (RapidSub.canDelegate("base_resize")) { return __ref.runUserSub(false, "b4xbreadcrumb","base_resize", __ref, _width, _height);}
 Debug.locals.put("Width", _width);
 Debug.locals.put("Height", _height);
@@ -68,7 +68,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _designercreateview(RemoteObject __ref,RemoteObject _base,RemoteObject _lbl,RemoteObject _props) throws Exception{
 try {
-		Debug.PushSubsStack("DesignerCreateView (b4xbreadcrumb) ","b4xbreadcrumb",3,__ref.getField(false, "ba"),__ref,30);
+		Debug.PushSubsStack("DesignerCreateView (b4xbreadcrumb) ","b4xbreadcrumb",7,__ref.getField(false, "ba"),__ref,30);
 if (RapidSub.canDelegate("designercreateview")) { return __ref.runUserSub(false, "b4xbreadcrumb","designercreateview", __ref, _base, _lbl, _props);}
 RemoteObject _xlbl = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper");
 RemoteObject _items = RemoteObject.createImmutable("");
@@ -137,7 +137,7 @@ finally {
 		}}
 public static RemoteObject  _draw(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Draw (b4xbreadcrumb) ","b4xbreadcrumb",3,__ref.getField(false, "ba"),__ref,52);
+		Debug.PushSubsStack("Draw (b4xbreadcrumb) ","b4xbreadcrumb",7,__ref.getField(false, "ba"),__ref,52);
 if (RapidSub.canDelegate("draw")) { return __ref.runUserSub(false, "b4xbreadcrumb","draw", __ref);}
 RemoteObject _bcolor = RemoteObject.declareNull("b4j.example.bitmapcreator._argbcolor");
 RemoteObject _strokecolor = RemoteObject.createImmutable(0);
@@ -238,7 +238,7 @@ finally {
 		}}
 public static RemoteObject  _drawitem(RemoteObject __ref,RemoteObject _left,RemoteObject _text,RemoteObject _first,RemoteObject _last,RemoteObject _clr,RemoteObject _strokecolor) throws Exception{
 try {
-		Debug.PushSubsStack("DrawItem (b4xbreadcrumb) ","b4xbreadcrumb",3,__ref.getField(false, "ba"),__ref,80);
+		Debug.PushSubsStack("DrawItem (b4xbreadcrumb) ","b4xbreadcrumb",7,__ref.getField(false, "ba"),__ref,80);
 if (RapidSub.canDelegate("drawitem")) { return __ref.runUserSub(false, "b4xbreadcrumb","drawitem", __ref, _left, _text, _first, _last, _clr, _strokecolor);}
 RemoteObject _r = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XCanvas.B4XRect");
 RemoteObject _itemwidth = RemoteObject.createImmutable(0);
@@ -332,7 +332,7 @@ finally {
 		}}
 public static RemoteObject  _finditem(RemoteObject __ref,RemoteObject _x,RemoteObject _y) throws Exception{
 try {
-		Debug.PushSubsStack("FindItem (b4xbreadcrumb) ","b4xbreadcrumb",3,__ref.getField(false, "ba"),__ref,130);
+		Debug.PushSubsStack("FindItem (b4xbreadcrumb) ","b4xbreadcrumb",7,__ref.getField(false, "ba"),__ref,130);
 if (RapidSub.canDelegate("finditem")) { return __ref.runUserSub(false, "b4xbreadcrumb","finditem", __ref, _x, _y);}
 RemoteObject _r = RemoteObject.createImmutable(0);
 int _i = 0;
@@ -388,7 +388,7 @@ finally {
 		}}
 public static RemoteObject  _getitems(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("getItems (b4xbreadcrumb) ","b4xbreadcrumb",3,__ref.getField(false, "ba"),__ref,147);
+		Debug.PushSubsStack("getItems (b4xbreadcrumb) ","b4xbreadcrumb",7,__ref.getField(false, "ba"),__ref,147);
 if (RapidSub.canDelegate("getitems")) { return __ref.runUserSub(false, "b4xbreadcrumb","getitems", __ref);}
  BA.debugLineNum = 147;BA.debugLine="Public Sub getItems As List";
 Debug.JustUpdateDeviceLine();
@@ -407,7 +407,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _callback,RemoteObject _eventname) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (b4xbreadcrumb) ","b4xbreadcrumb",3,__ref.getField(false, "ba"),__ref,21);
+		Debug.PushSubsStack("Initialize (b4xbreadcrumb) ","b4xbreadcrumb",7,__ref.getField(false, "ba"),__ref,21);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "b4xbreadcrumb","initialize", __ref, _ba, _callback, _eventname);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -442,7 +442,7 @@ finally {
 		}}
 public static RemoteObject  _setitems(RemoteObject __ref,RemoteObject _i) throws Exception{
 try {
-		Debug.PushSubsStack("setItems (b4xbreadcrumb) ","b4xbreadcrumb",3,__ref.getField(false, "ba"),__ref,142);
+		Debug.PushSubsStack("setItems (b4xbreadcrumb) ","b4xbreadcrumb",7,__ref.getField(false, "ba"),__ref,142);
 if (RapidSub.canDelegate("setitems")) { return __ref.runUserSub(false, "b4xbreadcrumb","setitems", __ref, _i);}
 Debug.locals.put("i", _i);
  BA.debugLineNum = 142;BA.debugLine="Public Sub setItems (i As List)";
@@ -465,7 +465,7 @@ finally {
 		}}
 public static RemoteObject  _touch_touch(RemoteObject __ref,RemoteObject _action,RemoteObject _x,RemoteObject _y) throws Exception{
 try {
-		Debug.PushSubsStack("Touch_Touch (b4xbreadcrumb) ","b4xbreadcrumb",3,__ref.getField(false, "ba"),__ref,109);
+		Debug.PushSubsStack("Touch_Touch (b4xbreadcrumb) ","b4xbreadcrumb",7,__ref.getField(false, "ba"),__ref,109);
 if (RapidSub.canDelegate("touch_touch")) { return __ref.runUserSub(false, "b4xbreadcrumb","touch_touch", __ref, _action, _x, _y);}
 RemoteObject _prev = RemoteObject.createImmutable(0);
 RemoteObject _index = RemoteObject.createImmutable(0);

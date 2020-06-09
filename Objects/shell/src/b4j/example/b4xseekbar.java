@@ -35,6 +35,7 @@ public static RemoteObject _size = RemoteObject.createImmutable(0);
 public static RemoteObject _dateutils = RemoteObject.declareNull("b4j.example.dateutils");
 public static RemoteObject _cssutils = RemoteObject.declareNull("b4j.example.cssutils");
 public static b4j.example.main _main = null;
+public static b4j.example.players _players = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"Color1",_ref.getField(false, "_color1"),"Color2",_ref.getField(false, "_color2"),"CSSUtils",_ref.getField(false, "_cssutils"),"cvs",_ref.getField(false, "_cvs"),"DateUtils",_ref.getField(false, "_dateutils"),"Interval",_ref.getField(false, "_interval"),"MaxValue",_ref.getField(false, "_maxvalue"),"mBase",_ref.getField(false, "_mbase"),"mCallBack",_ref.getField(false, "_mcallback"),"mEventName",_ref.getField(false, "_meventname"),"MinValue",_ref.getField(false, "_minvalue"),"mValue",_ref.getField(false, "_mvalue"),"Pressed",_ref.getField(false, "_pressed"),"Radius1",_ref.getField(false, "_radius1"),"Radius2",_ref.getField(false, "_radius2"),"size",_ref.getField(false, "_size"),"Size1",_ref.getField(false, "_size1"),"Size2",_ref.getField(false, "_size2"),"Tag",_ref.getField(false, "_tag"),"ThumbColor",_ref.getField(false, "_thumbcolor"),"TouchPanel",_ref.getField(false, "_touchpanel"),"Vertical",_ref.getField(false, "_vertical"),"xui",_ref.getField(false, "_xui")};
 }

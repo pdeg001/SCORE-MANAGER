@@ -26,6 +26,7 @@ public static RemoteObject _mtextcolor = RemoteObject.createImmutable(0);
 public static RemoteObject _dateutils = RemoteObject.declareNull("b4j.example.dateutils");
 public static RemoteObject _cssutils = RemoteObject.declareNull("b4j.example.cssutils");
 public static b4j.example.main _main = null;
+public static b4j.example.players _players = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"CSSUtils",_ref.getField(false, "_cssutils"),"cvs",_ref.getField(false, "_cvs"),"DateUtils",_ref.getField(false, "_dateutils"),"fnt",_ref.getField(false, "_fnt"),"mBase",_ref.getField(false, "_mbase"),"mCallBack",_ref.getField(false, "_mcallback"),"mEventName",_ref.getField(false, "_meventname"),"mText",_ref.getField(false, "_mtext"),"mTextColor",_ref.getField(false, "_mtextcolor"),"StartPositionDelay",_ref.getField(false, "_startpositiondelay"),"Tag",_ref.getField(false, "_tag"),"taskIndex",_ref.getField(false, "_taskindex"),"WidthPerSecond",_ref.getField(false, "_widthpersecond"),"xui",_ref.getField(false, "_xui")};
 }

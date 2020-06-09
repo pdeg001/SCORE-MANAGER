@@ -33,7 +33,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _customlistview1_itemclick(RemoteObject __ref,RemoteObject _index,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("CustomListView1_ItemClick (b4xlisttemplate) ","b4xlisttemplate",10,__ref.getField(false, "ba"),__ref,76);
+		Debug.PushSubsStack("CustomListView1_ItemClick (b4xlisttemplate) ","b4xlisttemplate",14,__ref.getField(false, "ba"),__ref,76);
 if (RapidSub.canDelegate("customlistview1_itemclick")) { return __ref.runUserSub(false, "b4xlisttemplate","customlistview1_itemclick", __ref, _index, _value);}
 RemoteObject _item = RemoteObject.declareNull("b4j.example.customlistview._clvitem");
 Debug.locals.put("Index", _index);
@@ -79,7 +79,7 @@ finally {
 		}}
 public static RemoteObject  _dialogclosed(RemoteObject __ref,RemoteObject _result) throws Exception{
 try {
-		Debug.PushSubsStack("DialogClosed (b4xlisttemplate) ","b4xlisttemplate",10,__ref.getField(false, "ba"),__ref,89);
+		Debug.PushSubsStack("DialogClosed (b4xlisttemplate) ","b4xlisttemplate",14,__ref.getField(false, "ba"),__ref,89);
 if (RapidSub.canDelegate("dialogclosed")) { return __ref.runUserSub(false, "b4xlisttemplate","dialogclosed", __ref, _result);}
 Debug.locals.put("Result", _result);
  BA.debugLineNum = 89;BA.debugLine="Private Sub DialogClosed(Result As Int) 'ignore";
@@ -96,7 +96,7 @@ finally {
 		}}
 public static RemoteObject  _getpanel(RemoteObject __ref,RemoteObject _dialog) throws Exception{
 try {
-		Debug.PushSubsStack("GetPanel (b4xlisttemplate) ","b4xlisttemplate",10,__ref.getField(false, "ba"),__ref,37);
+		Debug.PushSubsStack("GetPanel (b4xlisttemplate) ","b4xlisttemplate",14,__ref.getField(false, "ba"),__ref,37);
 if (RapidSub.canDelegate("getpanel")) { return __ref.runUserSub(false, "b4xlisttemplate","getpanel", __ref, _dialog);}
 Debug.locals.put("Dialog", _dialog);
  BA.debugLineNum = 37;BA.debugLine="Public Sub GetPanel (Dialog As B4XDialog) As B4XVi";
@@ -116,7 +116,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (b4xlisttemplate) ","b4xlisttemplate",10,__ref.getField(false, "ba"),__ref,14);
+		Debug.PushSubsStack("Initialize (b4xlisttemplate) ","b4xlisttemplate",14,__ref.getField(false, "ba"),__ref,14);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "b4xlisttemplate","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 RemoteObject _sv = RemoteObject.declareNull("anywheresoftware.b4j.objects.NodeWrapper.ConcreteNodeWrapper");
@@ -169,7 +169,7 @@ finally {
 		}}
 public static RemoteObject  _resize(RemoteObject __ref,RemoteObject _width,RemoteObject _height) throws Exception{
 try {
-		Debug.PushSubsStack("Resize (b4xlisttemplate) ","b4xlisttemplate",10,__ref.getField(false, "ba"),__ref,31);
+		Debug.PushSubsStack("Resize (b4xlisttemplate) ","b4xlisttemplate",14,__ref.getField(false, "ba"),__ref,31);
 if (RapidSub.canDelegate("resize")) { return __ref.runUserSub(false, "b4xlisttemplate","resize", __ref, _width, _height);}
 Debug.locals.put("Width", _width);
 Debug.locals.put("Height", _height);
@@ -193,7 +193,7 @@ finally {
 		}}
 public static RemoteObject  _selectitem(RemoteObject __ref,RemoteObject _item,RemoteObject _toggle) throws Exception{
 try {
-		Debug.PushSubsStack("SelectItem (b4xlisttemplate) ","b4xlisttemplate",10,__ref.getField(false, "ba"),__ref,59);
+		Debug.PushSubsStack("SelectItem (b4xlisttemplate) ","b4xlisttemplate",14,__ref.getField(false, "ba"),__ref,59);
 if (RapidSub.canDelegate("selectitem")) { return __ref.runUserSub(false, "b4xlisttemplate","selectitem", __ref, _item, _toggle);}
 RemoteObject _index = RemoteObject.createImmutable(0);
 RemoteObject _selected = RemoteObject.createImmutable(false);
@@ -253,7 +253,7 @@ finally {
 		}}
 public static void  _show(RemoteObject __ref,RemoteObject _dialog) throws Exception{
 try {
-		Debug.PushSubsStack("Show (b4xlisttemplate) ","b4xlisttemplate",10,__ref.getField(false, "ba"),__ref,41);
+		Debug.PushSubsStack("Show (b4xlisttemplate) ","b4xlisttemplate",14,__ref.getField(false, "ba"),__ref,41);
 if (RapidSub.canDelegate("show")) { __ref.runUserSub(false, "b4xlisttemplate","show", __ref, _dialog); return;}
 ResumableSub_Show rsub = new ResumableSub_Show(null,__ref,_dialog);
 rsub.resume(null, null);
@@ -286,7 +286,7 @@ int limit8;
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("Show (b4xlisttemplate) ","b4xlisttemplate",10,__ref.getField(false, "ba"),__ref,41);
+		Debug.PushSubsStack("Show (b4xlisttemplate) ","b4xlisttemplate",14,__ref.getField(false, "ba"),__ref,41);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {

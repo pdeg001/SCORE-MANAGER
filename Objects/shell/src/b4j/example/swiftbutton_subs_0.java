@@ -8,7 +8,7 @@ public class swiftbutton_subs_0 {
 
 public static RemoteObject  _base_resize(RemoteObject __ref,RemoteObject _width,RemoteObject _height) throws Exception{
 try {
-		Debug.PushSubsStack("Base_Resize (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,50);
+		Debug.PushSubsStack("Base_Resize (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,50);
 if (RapidSub.canDelegate("base_resize")) { return __ref.runUserSub(false, "swiftbutton","base_resize", __ref, _width, _height);}
 RemoteObject _v = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper");
 Debug.locals.put("Width", _width);
@@ -80,7 +80,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _designercreateview(RemoteObject __ref,RemoteObject _base,RemoteObject _lbl,RemoteObject _props) throws Exception{
 try {
-		Debug.PushSubsStack("DesignerCreateView (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,31);
+		Debug.PushSubsStack("DesignerCreateView (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,31);
 if (RapidSub.canDelegate("designercreateview")) { return __ref.runUserSub(false, "swiftbutton","designercreateview", __ref, _base, _lbl, _props);}
 RemoteObject _p = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper");
 Debug.locals.put("Base", _base);
@@ -152,7 +152,7 @@ finally {
 		}}
 public static RemoteObject  _draw(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Draw (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,116);
+		Debug.PushSubsStack("Draw (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,116);
 if (RapidSub.canDelegate("draw")) { return __ref.runUserSub(false, "swiftbutton","draw", __ref);}
 RemoteObject _r = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XCanvas.B4XRect");
 RemoteObject _p = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XCanvas.B4XPath");
@@ -227,7 +227,7 @@ finally {
 		}}
 public static RemoteObject  _getenabled(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("getEnabled (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,58);
+		Debug.PushSubsStack("getEnabled (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,58);
 if (RapidSub.canDelegate("getenabled")) { return __ref.runUserSub(false, "swiftbutton","getenabled", __ref);}
  BA.debugLineNum = 58;BA.debugLine="Public Sub getEnabled As Boolean";
 Debug.JustUpdateDeviceLine();
@@ -246,7 +246,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _callback,RemoteObject _eventname) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,26);
+		Debug.PushSubsStack("Initialize (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,26);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "swiftbutton","initialize", __ref, _ba, _callback, _eventname);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -272,7 +272,7 @@ finally {
 		}}
 public static RemoteObject  _p_mouseclicked(RemoteObject __ref,RemoteObject _eventdata) throws Exception{
 try {
-		Debug.PushSubsStack("p_MouseClicked (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,101);
+		Debug.PushSubsStack("p_MouseClicked (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,101);
 if (RapidSub.canDelegate("p_mouseclicked")) { return __ref.runUserSub(false, "swiftbutton","p_mouseclicked", __ref, _eventdata);}
 Debug.locals.put("EventData", _eventdata);
  BA.debugLineNum = 101;BA.debugLine="Private Sub p_MouseClicked (EventData As MouseEven";
@@ -292,7 +292,7 @@ finally {
 		}}
 public static RemoteObject  _p_touch(RemoteObject __ref,RemoteObject _action,RemoteObject _x,RemoteObject _y) throws Exception{
 try {
-		Debug.PushSubsStack("p_Touch (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,68);
+		Debug.PushSubsStack("p_Touch (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,68);
 if (RapidSub.canDelegate("p_touch")) { return __ref.runUserSub(false, "swiftbutton","p_touch", __ref, _action, _x, _y);}
 RemoteObject _inside = RemoteObject.createImmutable(false);
 Debug.locals.put("Action", _action);
@@ -359,7 +359,7 @@ finally {
 		}}
 public static RemoteObject  _setcolors(RemoteObject __ref,RemoteObject _primary,RemoteObject _secondary) throws Exception{
 try {
-		Debug.PushSubsStack("SetColors (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,106);
+		Debug.PushSubsStack("SetColors (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,106);
 if (RapidSub.canDelegate("setcolors")) { return __ref.runUserSub(false, "swiftbutton","setcolors", __ref, _primary, _secondary);}
 Debug.locals.put("Primary", _primary);
 Debug.locals.put("Secondary", _secondary);
@@ -386,7 +386,7 @@ finally {
 		}}
 public static RemoteObject  _setenabled(RemoteObject __ref,RemoteObject _b) throws Exception{
 try {
-		Debug.PushSubsStack("setEnabled (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,62);
+		Debug.PushSubsStack("setEnabled (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,62);
 if (RapidSub.canDelegate("setenabled")) { return __ref.runUserSub(false, "swiftbutton","setenabled", __ref, _b);}
 Debug.locals.put("b", _b);
  BA.debugLineNum = 62;BA.debugLine="Public Sub setEnabled(b As Boolean)";
@@ -412,7 +412,7 @@ finally {
 		}}
 public static RemoteObject  _setpressedstate(RemoteObject __ref,RemoteObject _newstate) throws Exception{
 try {
-		Debug.PushSubsStack("SetPressedState (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,89);
+		Debug.PushSubsStack("SetPressedState (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,89);
 if (RapidSub.canDelegate("setpressedstate")) { return __ref.runUserSub(false, "swiftbutton","setpressedstate", __ref, _newstate);}
 Debug.locals.put("NewState", _newstate);
  BA.debugLineNum = 89;BA.debugLine="Private Sub SetPressedState(NewState As Boolean)";
@@ -450,7 +450,7 @@ finally {
 		}}
 public static RemoteObject  _update(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Update (swiftbutton) ","swiftbutton",23,__ref.getField(false, "ba"),__ref,112);
+		Debug.PushSubsStack("Update (swiftbutton) ","swiftbutton",26,__ref.getField(false, "ba"),__ref,112);
 if (RapidSub.canDelegate("update")) { return __ref.runUserSub(false, "swiftbutton","update", __ref);}
  BA.debugLineNum = 112;BA.debugLine="Public Sub Update";
 Debug.JustUpdateDeviceLine();
