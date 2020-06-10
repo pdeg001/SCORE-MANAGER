@@ -3,13 +3,15 @@ Build1=Default,b4j.example
 File1=clvPlayer.bjl
 File2=main.bjl
 File3=playerlist.bjl
-File4=scoremanager.db
-File5=scrollpane.bjl
-FileGroup1=Default Group
+File4=scoremanager.css
+File5=scoremanager.db
+File6=scrollpane.bjl
+FileGroup1=Form
 FileGroup2=Form
 FileGroup3=Form
-FileGroup4=Db
-FileGroup5=Form
+FileGroup4=Default Group
+FileGroup5=Db
+FileGroup6=Form
 Group=Default Group
 Library1=jcore
 Library2=jfx
@@ -21,7 +23,7 @@ Library7=xui views
 Module1=FuncClass
 Module2=Players
 Module3=Sqlite
-NumberOfFiles=5
+NumberOfFiles=6
 NumberOfLibraries=7
 NumberOfModules=3
 Version=8.3
@@ -57,6 +59,7 @@ Sub Process_Globals
 	Private clvPlaying As CustomListView
 	Private btnPlayer As Button
 	Private lstPlayerId As List
+	Private cmbGameType As ComboBox
 End Sub
 
 Sub AppStart (Form1 As Form, Args() As String)
@@ -66,15 +69,17 @@ Sub AppStart (Form1 As Form, Args() As String)
 	sp.Initialize("SP")
 	
 	MainForm = Form1
+	MainForm.Stylesheets.Add(File.GetUri(File.DirAssets, "scoremanager.css"))
 	MainForm.RootPane.LoadLayout("main") 'Load the layout file.
 	MainForm.WindowHeight = 720
-	MainForm.WindowWidth = 1024
+	MainForm.WindowWidth = 1028
 	MainForm.Resizable = True
 	MainForm.Show
 	paneBlockInput.Visible = True
 	
 	Sleep(0)
 	lblTest.Text = "Sjaak van Duivenvoorde"
+	PopulateGameCombo
 	InitScollPanes
 End Sub
 
@@ -127,7 +132,8 @@ Sub SetVerticalNames
 		
 		lbl = lblTest
 		lbl.TooltipText = $"Moyenne ${clsFunc.GetFormatNumber(player.moyenne, 3, 3).Replace(",", ".")} Maken ${player.to_make}"$
-		lbl.Initialize("lblWeek")
+		'lbl.Initialize("lblWeek")
+		lbl.Initialize("")
 		lbl.TextSize = 15
 		lbl.Alignment = "CENTER_RIGHT"
 		lbl.Tag = $"speler-${player.player_id}-L${loopCount}"$
@@ -177,14 +183,15 @@ Private Sub SetHorizontalNames
 		playerId = lstPlayerId.Get(loopCount)
 		playerId.player2_id = player.player_id
 		
-		Label1.Initialize("lblWeek")
+		'Label1.Initialize("lblWeek")
+		Label1.Initialize("")
 		Label1.Alignment = "CENTER_RIGHT"
 		Label1.Style = "-fx-padding: 0 10 0 0;"
 		Label1.TooltipText = $"Moyenne ${clsFunc.GetFormatNumber(player.moyenne, 3, 3).Replace(",", ".")} Maken ${player.to_make}"$
 		baseLbl = Label1
 		baseLbl.Rotation = 90
 		
-		SetToolTip(baseLbl, $"Moyenne ${clsFunc.GetFormatNumber(player.moyenne, 3, 3).Replace(",", ".")} Maken ${player.to_make}"$)
+		SetToolTip(baseLbl, $"Moyenne ${clsFunc.GetFormatNumber(player.moyenne/1000, 3, 3).Replace(",", ".")} Maken ${player.to_make}"$)
 		CSSUtils.SetBorder(baseLbl, 1, fx.Colors.Gray, 4)
 		
 		baseLbl= baseLbl
@@ -235,6 +242,14 @@ Private Sub SetWeeks(top As Int, playerCount As Int)
 		top = top + 31
 	Next
 	
+End Sub
+
+Sub PopulateGameCombo
+	Dim lstGame As List
+	lstGame.Initialize
+	
+	lstGame.AddAll(Array As String("Bandstoten", "Libre", "Driebanden"))
+	cmbGameType.Items.AddAll(Array As String("Bandstoten", "Libre", "Driebanden"))
 End Sub
 
 
@@ -337,15 +352,7 @@ Sub ScrollPane2_HScrollChanged (Position As Double)
 End Sub
 
 
-'Public Sub CreateplayerCurs (player_id As Int, player As String, moyenne As Float, to_make As Int) As playerCurs
-'	Dim t1 As playerCurs
-'	t1.Initialize
-'	t1.player_id = player_id
-'	t1.player = player
-'	t1.moyenne = moyenne
-'	t1.to_make = to_make
-'	Return t1
-'End Sub
+
 
 Sub lblWeek_MouseReleased (EventData As MouseEvent)
 	If fx.Msgbox2(MainForm, $"${pleft.Text} tegen ${ptop.text} laten spelen"$, "Score Manager", "JA", "NEE", "", _
@@ -356,4 +363,8 @@ End Sub
 
 Sub btnPlayer_MouseReleased (EventData As MouseEvent)
 	Players.ShowPlayerForm
+End Sub
+
+Sub cmbGameType_SelectedIndexChanged(Index As Int, Value As Object)
+	
 End Sub

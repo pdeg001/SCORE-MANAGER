@@ -52,94 +52,102 @@ roundslider
 scrollinglabel
 swiftbutton
 b4jtextflow
-main,application_error,0,0,65,67
+main,application_error,0,0,68,70
 
 
 
-main,appstart,1,0,34,51
-,clsfunc,,sql,,sp,,mainform,,btnplayer,,clvplaying,,label1,,lblbaseweek,,lbltest,,paneblockinput,,scrollpane1,,scrollpane2,,scrollpane3,players,sql,players,clsfunc,players,edtmoyenne,players,playerform,players,btnclose,players,btnnew,players,btnsave,players,clvplayer,players,edtmake,players,edtname,players,fledtplayermake,players,fledtplayermoyenne,players,fledtplayername,players,xui,players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer,players,fx,,lstplayerid,,fx,,lblheight
-,mainform,,btnplayer,,clvplaying,,label1,,lblbaseweek,,lbltest,,paneblockinput,,scrollpane1,,scrollpane2,,scrollpane3,players,btnclose,players,btnnew,players,btnsave,players,clvplayer,players,edtmake,players,edtmoyenne,players,edtname,players,fledtplayermake,players,fledtplayermoyenne,players,fledtplayername,players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer
-players,initform,funcclass,initialize,sqlite,initialize,,initscollpanes,funcclass,configurefornumbers,players,getplayers,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,sqlite,getplayerlist,players,createclv,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,getformatnumber,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,,setverticalnames,,sethorizontalnames,,setweeks,,setscrollbarsize,,settooltip
-main,initscollpanes,1,0,69,79
+main,appstart,1,0,35,54
+,clsfunc,,sql,,sp,,mainform,,btnplayer,,clvplaying,,cmbgametype,,label1,,lblbaseweek,,lbltest,,paneblockinput,,scrollpane1,,scrollpane2,,scrollpane3,players,sql,players,clsfunc,players,edtmoyenne,players,playerform,players,btnclose,players,btnnew,players,btnsave,players,clvplayer,players,edtmake,players,edtname,players,xui,players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer,players,fx,,lstplayerid,,fx,,lblheight
+,mainform,,btnplayer,,clvplaying,,cmbgametype,,label1,,lblbaseweek,,lbltest,,paneblockinput,,scrollpane1,,scrollpane2,,scrollpane3,players,btnclose,players,btnnew,players,btnsave,players,clvplayer,players,edtmake,players,edtmoyenne,players,edtname,players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer
+players,initform,funcclass,initialize,sqlite,initialize,,populategamecombo,,initscollpanes,funcclass,configurefornumbers,players,setscrollbarsize,players,getplayers,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,sqlite,getplayerlist,players,createclv,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,getformatnumber,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,,setverticalnames,,sethorizontalnames,,setweeks,,setscrollbarsize,,settooltip
+main,populategamecombo,0,0,217,223
+,cmbgametype
+
+
+main,initscollpanes,1,0,72,82
 ,scrollpane1,,scrollpane2,,scrollpane3,,sql,,lstplayerid,,lbltest,,clsfunc,,fx,,lblheight,,label1
 
 ,setverticalnames,sqlite,getplayerlist,funcclass,getformatnumber,,sethorizontalnames,,setweeks,,setscrollbarsize,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,,settooltip
-main,btnplayer_mousereleased,1,0,329,331
+main,btnplayer_mousereleased,1,0,334,336
 ,paneblockinput,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,,clsfunc,players,sql,players,clvplayer,players,xui,players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer,players,clsfunc,players,fx
 players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer
 players,showplayerform,,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,sqlite,getplayerlist,players,createclv,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,getformatnumber,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-main,highlitespeler,0,0,264,266
+main,cmbgametype_selectedindexchanged,0,0,338,340
+
+
+
+main,highlitespeler,0,0,277,279
 ,fx
 
 
-main,setverticalnames,0,0,81,126
+main,setverticalnames,0,0,84,130
 ,scrollpane1,,sql,,lstplayerid,,lbltest,,clsfunc,,fx,,lblheight,,scrollpane2,,scrollpane3,,label1
 
 sqlite,getplayerlist,funcclass,getformatnumber,,sethorizontalnames,,setweeks,,setscrollbarsize,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,,settooltip
-main,label1_mouseentered,0,0,213,215
+main,label1_mouseentered,0,0,226,228
 
 
 
-main,label1_mouseexited,0,0,217,219
+main,label1_mouseexited,0,0,230,232
 
 
 
-main,lblweek_mouseentered,0,0,233,262
+main,lblweek_mouseentered,0,0,246,275
 ,fx,,scrollpane1,,pleft,,scrollpane3,,ptop
 ,pleft,,ptop
 ,highlitespeler
-main,lblweek_mouseexited,0,0,221,231
+main,lblweek_mouseexited,0,0,234,244
 ,fx,,ptop,,pleft
 
 
-main,lblweek_mousereleased,1,0,322,327
+main,lblweek_mousereleased,1,0,327,332
 ,fx,,mainform,,pleft,,ptop
 
 
-main,mainform_closerequest,0,0,53,57
+main,mainform_closerequest,0,0,56,60
 ,clsfunc
 
 funcclass,getdisablecloseform
-main,process_globals,0,1,8,32
+main,process_globals,0,1,8,33
 ,lblheight
 ,lblheight
 
-main,scrollpane1_vscrollchanged,0,0,299,301
+main,scrollpane1_vscrollchanged,0,0,312,314
 ,scrollpane2,,scrollpane1
 
 
-main,scrollpane2_hscrollchanged,0,0,307,309
+main,scrollpane2_hscrollchanged,0,0,320,322
 ,scrollpane3
 
 
-main,scrollpane2_vscrollchanged,0,0,303,305
+main,scrollpane2_vscrollchanged,0,0,316,318
 ,scrollpane1,,scrollpane2
 
 
-main,setdisableclosemain,0,0,59,61
+main,setdisableclosemain,0,0,62,64
 ,clsfunc
 
 funcclass,setdisablecloseform
-main,sethorizontalnames,0,0,135,174
+main,sethorizontalnames,0,0,139,179
 ,label1,,scrollpane3,,sql,,lstplayerid,,clsfunc,,fx,,lbltest
 
 sqlite,getplayerlist,funcclass,getformatnumber,,settooltip,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-main,settooltip,0,0,128,133
+main,settooltip,0,0,132,137
 
 
 
-main,setscrollbarsize,0,0,272,297
+main,setscrollbarsize,0,0,285,310
 
 
 
-main,setweeks,0,1,177,210
+main,setweeks,0,0,182,215
 ,lbltest,,scrollpane2,,lstplayerid,,fx
 
 
-players,initform,1,0,28,41
-,sql,,clsfunc,,edtmoyenne,,playerform,,btnclose,,btnnew,,btnsave,,clvplayer,,edtmake,,edtname,,fledtplayermake,,fledtplayermoyenne,,fledtplayername,,xui,,lblmake,,lblmoyenne,,lblname,,pnplayer,,fx
-,btnclose,,btnnew,,btnsave,,clvplayer,,edtmake,,edtmoyenne,,edtname,,fledtplayermake,,fledtplayermoyenne,,fledtplayername,,lblmake,,lblmoyenne,,lblname,,pnplayer
-sqlite,initialize,funcclass,initialize,funcclass,configurefornumbers,,getplayers,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,sqlite,getplayerlist,,createclv,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,getformatnumber,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
+players,initform,1,0,25,41
+,sql,,clsfunc,,edtmoyenne,,playerform,,btnclose,,btnnew,,btnsave,,clvplayer,,edtmake,,edtname,,xui,,lblmake,,lblmoyenne,,lblname,,pnplayer,,fx
+,btnclose,,btnnew,,btnsave,,clvplayer,,edtmake,,edtmoyenne,,edtname,,lblmake,,lblmoyenne,,lblname,,pnplayer
+sqlite,initialize,funcclass,initialize,funcclass,configurefornumbers,,setscrollbarsize,,getplayers,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,sqlite,getplayerlist,,createclv,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,getformatnumber,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
 players,showplayerform,1,0,54,62
 main,paneblockinput,,edtmake,,edtmoyenne,,edtname,,playerform,main,clsfunc,,sql,,clvplayer,,xui,,lblmake,,lblmoyenne,,lblname,,pnplayer,,clsfunc,,fx
 ,lblmake,,lblmoyenne,,lblname,,pnplayer
@@ -188,6 +196,10 @@ players,getplayers,1,0,64,75
 ,sql,,clvplayer,,xui,,lblmake,,lblmoyenne,,lblname,,pnplayer,,clsfunc,,fx
 ,lblmake,,lblmoyenne,,lblname,,pnplayer
 sqlite,getplayerlist,,createclv,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,getformatnumber,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
+players,setscrollbarsize,0,0,230,255
+
+
+
 players,playerform_closerequest,0,0,43,45
 ,clsfunc
 
@@ -196,7 +208,7 @@ players,pnplayer_mousereleased,0,0,89,93
 
 
 
-players,process_globals,0,1,5,26
+players,process_globals,0,1,5,23
 
 
 

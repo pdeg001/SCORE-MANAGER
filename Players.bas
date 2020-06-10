@@ -12,7 +12,6 @@ Sub Process_Globals
 	Private sql As Sqlite
 	Private fx As JFX
 	Private PlayerForm As Form
-	Private flEdtPlayerName As B4XFloatTextField
 	Private clvPlayer As CustomListView
 	Private btnClose As Button
 	Private clsFunc As FuncClass
@@ -21,8 +20,6 @@ Sub Process_Globals
 	Private lblMoyenne As B4XView
 	Private xui As XUI
 	Private lblMake As B4XView
-	Private flEdtPlayerMoyenne As B4XFloatTextField
-	Private flEdtPlayerMake As B4XFloatTextField
 	Private selectedPlayerId, selectedIndex As String
 	Private edtMake As TextField
 	Private edtMoyenne As TextField
@@ -42,7 +39,10 @@ Public Sub InitForm
 	PlayerForm.WindowWidth = 500
 	PlayerForm.Resizable = False
 	PlayerForm.AlwaysOnTop = True
-	
+	SetScrollbarSize(clvPlayer.AsView, "VERTICAL", 20)
+	Dim n As Node = clvPlayer.sv
+	n.Id = "clv1"
+	PlayerForm.Stylesheets.Add(File.GetUri(File.DirAssets, "scoremanager.css"))
 	GetPlayers
 End Sub
 
@@ -85,7 +85,7 @@ Private Sub CreateClv(player As playerCurs) As B4XView
 	p.SetLayoutAnimated(0, 0, 0, 0, 45)
 	p.LoadLayout("clvPlayer")
 	lblName.Text = player.player
-	lblMoyenne.Text = clsFunc.GetFormatNumber(player.moyenne, 3, 3).Replace(",", ".")
+	lblMoyenne.Text = clsFunc.GetFormatNumber(player.moyenne/1000, 3, 3).Replace(",", ".")
 	lblMake.Text = player.to_make
 	p.Tag = player.player_id
 	CSSUtils.SetBackgroundColor(p, fx.Colors.Transparent)
@@ -227,4 +227,35 @@ Sub btnNew_MouseReleased (EventData As MouseEvent)
 	
 	edtName.RequestFocus
 	
+End Sub
+
+
+'Parent - The Node that ontains a scrollbar i.e. ListView, TableView etc.
+'Orientation - can be VERTICAL, HORIZONTAL or BOTH
+'Size - The required width for a VERTICAl scrollbar or height for a HORIZONTAL scroll bar
+Public Sub SetScrollbarSize(Parent As JavaObject, Orientation As String, Size As Double)
+	'Get a Set that contains the scrollbars attached to the parent and convert it to an array
+	Dim Arr() As Object = Parent.RunMethodJO("lookupAll",Array(".scroll-bar")).RunMethod("toArray",Null)
+
+	For Each N As Node In Arr
+
+		'Check this object is a scrolbar
+		If GetType(N) = "com.sun.javafx.scene.control.skin.VirtualScrollBar" Or GetType(N) = "javafx.scene.control.ScrollBar" Then
+			Dim SB As JavaObject = N
+
+			'Get the orientation of the scrollbar as a string
+			Dim BarOrientation As String = SB.RunMethodJO("getOrientation",Null).RunMethod("toString",Null)
+
+			'Required Orientation is VERTICAL or BOTH
+			If BarOrientation = "VERTICAL" And (Orientation  = BarOrientation Or Orientation = "BOTH") Then
+				N.PrefWidth = Size
+			End If
+
+			'Required Orientation is HORIZONTAL or BOTH
+			If BarOrientation = "HORIZONTAL" And (Orientation = BarOrientation Or Orientation = "BOTH") Then
+				N.PrefHeight = Size
+			End If
+		End If
+ 
+	Next
 End Sub

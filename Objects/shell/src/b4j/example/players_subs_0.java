@@ -226,7 +226,7 @@ Debug.ShouldStop(65536);
 players._lblname.runMethod(true,"setText",_player.getField(true,"player" /*RemoteObject*/ ));
  BA.debugLineNum = 82;BA.debugLine="lblMoyenne.Text = clsFunc.GetFormatNumber(player.";
 Debug.ShouldStop(131072);
-players._lblmoyenne.runMethod(true,"setText",players._clsfunc.runClassMethod (b4j.example.funcclass.class, "_getformatnumber" /*RemoteObject*/ ,(Object)(_player.getField(true,"moyenne" /*RemoteObject*/ )),(Object)(BA.numberCast(int.class, 3)),(Object)(BA.numberCast(int.class, 3))).runMethod(true,"replace",(Object)(BA.ObjectToString(",")),(Object)(RemoteObject.createImmutable("."))));
+players._lblmoyenne.runMethod(true,"setText",players._clsfunc.runClassMethod (b4j.example.funcclass.class, "_getformatnumber" /*RemoteObject*/ ,(Object)(BA.numberCast(float.class, RemoteObject.solve(new RemoteObject[] {_player.getField(true,"moyenne" /*RemoteObject*/ ),RemoteObject.createImmutable(1000)}, "/",0, 0))),(Object)(BA.numberCast(int.class, 3)),(Object)(BA.numberCast(int.class, 3))).runMethod(true,"replace",(Object)(BA.ObjectToString(",")),(Object)(RemoteObject.createImmutable("."))));
  BA.debugLineNum = 83;BA.debugLine="lblMake.Text = player.to_make";
 Debug.ShouldStop(262144);
 players._lblmake.runMethod(true,"setText",BA.NumberToString(_player.getField(true,"to_make" /*RemoteObject*/ )));
@@ -406,37 +406,51 @@ finally {
 		}}
 public static RemoteObject  _initform() throws Exception{
 try {
-		Debug.PushSubsStack("InitForm (players) ","players",1,players.ba,players.mostCurrent,28);
+		Debug.PushSubsStack("InitForm (players) ","players",1,players.ba,players.mostCurrent,25);
 if (RapidSub.canDelegate("initform")) { return b4j.example.players.remoteMe.runUserSub(false, "players","initform");}
- BA.debugLineNum = 28;BA.debugLine="Public Sub InitForm";
-Debug.ShouldStop(134217728);
- BA.debugLineNum = 29;BA.debugLine="sql.Initialize";
-Debug.ShouldStop(268435456);
+RemoteObject _n = RemoteObject.declareNull("anywheresoftware.b4j.objects.NodeWrapper.ConcreteNodeWrapper");
+ BA.debugLineNum = 25;BA.debugLine="Public Sub InitForm";
+Debug.ShouldStop(16777216);
+ BA.debugLineNum = 26;BA.debugLine="sql.Initialize";
+Debug.ShouldStop(33554432);
 players._sql.runClassMethod (b4j.example.sqlite.class, "_initialize" /*RemoteObject*/ ,players.ba);
- BA.debugLineNum = 30;BA.debugLine="clsFunc.Initialize";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 27;BA.debugLine="clsFunc.Initialize";
+Debug.ShouldStop(67108864);
 players._clsfunc.runClassMethod (b4j.example.funcclass.class, "_initialize" /*RemoteObject*/ ,players.ba);
- BA.debugLineNum = 31;BA.debugLine="clsFunc.ConfigureForNumbers(True, False, edtMoyen";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 28;BA.debugLine="clsFunc.ConfigureForNumbers(True, False, edtMoyen";
+Debug.ShouldStop(134217728);
 players._clsfunc.runClassMethod (b4j.example.funcclass.class, "_configurefornumbers" /*RemoteObject*/ ,(Object)(players.__c.getField(true,"True")),(Object)(players.__c.getField(true,"False")),(Object)(players._edtmoyenne));
- BA.debugLineNum = 33;BA.debugLine="PlayerForm.Initialize(Me, -1, -1)";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 30;BA.debugLine="PlayerForm.Initialize(Me, -1, -1)";
+Debug.ShouldStop(536870912);
 players._playerform.runVoidMethod ("Initialize",players.ba,(Object)(BA.ObjectToString(players.getObject())),(Object)(BA.numberCast(double.class, -(double) (0 + 1))),(Object)(BA.numberCast(double.class, -(double) (0 + 1))));
- BA.debugLineNum = 34;BA.debugLine="PlayerForm.RootPane.LoadLayout(\"playerlist\")";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 31;BA.debugLine="PlayerForm.RootPane.LoadLayout(\"playerlist\")";
+Debug.ShouldStop(1073741824);
 players._playerform.runMethod(false,"getRootPane").runMethodAndSync(false,"LoadLayout",players.ba,(Object)(RemoteObject.createImmutable("playerlist")));
- BA.debugLineNum = 35;BA.debugLine="PlayerForm.WindowHeight = 500";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 32;BA.debugLine="PlayerForm.WindowHeight = 500";
+Debug.ShouldStop(-2147483648);
 players._playerform.runMethod(true,"setWindowHeight",BA.numberCast(double.class, 500));
- BA.debugLineNum = 36;BA.debugLine="PlayerForm.WindowWidth = 500";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 33;BA.debugLine="PlayerForm.WindowWidth = 500";
+Debug.ShouldStop(1);
 players._playerform.runMethod(true,"setWindowWidth",BA.numberCast(double.class, 500));
- BA.debugLineNum = 37;BA.debugLine="PlayerForm.Resizable = False";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 34;BA.debugLine="PlayerForm.Resizable = False";
+Debug.ShouldStop(2);
 players._playerform.runMethod(true,"setResizable",players.__c.getField(true,"False"));
- BA.debugLineNum = 38;BA.debugLine="PlayerForm.AlwaysOnTop = True";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 35;BA.debugLine="PlayerForm.AlwaysOnTop = True";
+Debug.ShouldStop(4);
 players._playerform.runMethod(true,"setAlwaysOnTop",players.__c.getField(true,"True"));
+ BA.debugLineNum = 36;BA.debugLine="SetScrollbarSize(clvPlayer.AsView, \"VERTICAL\", 20";
+Debug.ShouldStop(8);
+_setscrollbarsize(RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4j.object.JavaObject"), players._clvplayer.runMethod(false,"_asview").getObject()),BA.ObjectToString("VERTICAL"),BA.numberCast(double.class, 20));
+ BA.debugLineNum = 37;BA.debugLine="Dim n As Node = clvPlayer.sv";
+Debug.ShouldStop(16);
+_n = RemoteObject.createNew ("anywheresoftware.b4j.objects.NodeWrapper.ConcreteNodeWrapper");
+_n = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4j.objects.NodeWrapper.ConcreteNodeWrapper"), players._clvplayer.getField(false,"_sv").getObject());Debug.locals.put("n", _n);
+ BA.debugLineNum = 38;BA.debugLine="n.Id = \"clv1\"";
+Debug.ShouldStop(32);
+_n.runMethod(true,"setId",BA.ObjectToString("clv1"));
+ BA.debugLineNum = 39;BA.debugLine="PlayerForm.Stylesheets.Add(File.GetUri(File.DirAs";
+Debug.ShouldStop(64);
+players._playerform.runMethod(false,"getStylesheets").runVoidMethod ("Add",(Object)((players.__c.getField(false,"File").runMethod(true,"GetUri",(Object)(players.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("scoremanager.css"))))));
  BA.debugLineNum = 40;BA.debugLine="GetPlayers";
 Debug.ShouldStop(128);
 _getplayers();
@@ -503,44 +517,103 @@ players._sql = RemoteObject.createNew ("b4j.example.sqlite");
 players._fx = RemoteObject.createNew ("anywheresoftware.b4j.objects.JFX");
  //BA.debugLineNum = 8;BA.debugLine="Private PlayerForm As Form";
 players._playerform = RemoteObject.createNew ("anywheresoftware.b4j.objects.Form");
- //BA.debugLineNum = 9;BA.debugLine="Private flEdtPlayerName As B4XFloatTextField";
-players._fledtplayername = RemoteObject.createNew ("b4j.example.b4xfloattextfield");
- //BA.debugLineNum = 10;BA.debugLine="Private clvPlayer As CustomListView";
+ //BA.debugLineNum = 9;BA.debugLine="Private clvPlayer As CustomListView";
 players._clvplayer = RemoteObject.createNew ("b4j.example.customlistview");
- //BA.debugLineNum = 11;BA.debugLine="Private btnClose As Button";
+ //BA.debugLineNum = 10;BA.debugLine="Private btnClose As Button";
 players._btnclose = RemoteObject.createNew ("anywheresoftware.b4j.objects.ButtonWrapper");
- //BA.debugLineNum = 12;BA.debugLine="Private clsFunc As FuncClass";
+ //BA.debugLineNum = 11;BA.debugLine="Private clsFunc As FuncClass";
 players._clsfunc = RemoteObject.createNew ("b4j.example.funcclass");
- //BA.debugLineNum = 13;BA.debugLine="Private pnPlayer As Pane";
+ //BA.debugLineNum = 12;BA.debugLine="Private pnPlayer As Pane";
 players._pnplayer = RemoteObject.createNew ("anywheresoftware.b4j.objects.PaneWrapper.ConcretePaneWrapper");
- //BA.debugLineNum = 14;BA.debugLine="Private lblName As B4XView";
+ //BA.debugLineNum = 13;BA.debugLine="Private lblName As B4XView";
 players._lblname = RemoteObject.createNew ("anywheresoftware.b4a.objects.B4XViewWrapper");
- //BA.debugLineNum = 15;BA.debugLine="Private lblMoyenne As B4XView";
+ //BA.debugLineNum = 14;BA.debugLine="Private lblMoyenne As B4XView";
 players._lblmoyenne = RemoteObject.createNew ("anywheresoftware.b4a.objects.B4XViewWrapper");
- //BA.debugLineNum = 16;BA.debugLine="Private xui As XUI";
+ //BA.debugLineNum = 15;BA.debugLine="Private xui As XUI";
 players._xui = RemoteObject.createNew ("anywheresoftware.b4a.objects.B4XViewWrapper.XUI");
- //BA.debugLineNum = 17;BA.debugLine="Private lblMake As B4XView";
+ //BA.debugLineNum = 16;BA.debugLine="Private lblMake As B4XView";
 players._lblmake = RemoteObject.createNew ("anywheresoftware.b4a.objects.B4XViewWrapper");
- //BA.debugLineNum = 18;BA.debugLine="Private flEdtPlayerMoyenne As B4XFloatTextField";
-players._fledtplayermoyenne = RemoteObject.createNew ("b4j.example.b4xfloattextfield");
- //BA.debugLineNum = 19;BA.debugLine="Private flEdtPlayerMake As B4XFloatTextField";
-players._fledtplayermake = RemoteObject.createNew ("b4j.example.b4xfloattextfield");
- //BA.debugLineNum = 20;BA.debugLine="Private selectedPlayerId, selectedIndex As String";
+ //BA.debugLineNum = 17;BA.debugLine="Private selectedPlayerId, selectedIndex As String";
 players._selectedplayerid = RemoteObject.createImmutable("");
 players._selectedindex = RemoteObject.createImmutable("");
- //BA.debugLineNum = 21;BA.debugLine="Private edtMake As TextField";
+ //BA.debugLineNum = 18;BA.debugLine="Private edtMake As TextField";
 players._edtmake = RemoteObject.createNew ("anywheresoftware.b4j.objects.TextInputControlWrapper.TextFieldWrapper");
- //BA.debugLineNum = 22;BA.debugLine="Private edtMoyenne As TextField";
+ //BA.debugLineNum = 19;BA.debugLine="Private edtMoyenne As TextField";
 players._edtmoyenne = RemoteObject.createNew ("anywheresoftware.b4j.objects.TextInputControlWrapper.TextFieldWrapper");
- //BA.debugLineNum = 23;BA.debugLine="Private edtName As TextField";
+ //BA.debugLineNum = 20;BA.debugLine="Private edtName As TextField";
 players._edtname = RemoteObject.createNew ("anywheresoftware.b4j.objects.TextInputControlWrapper.TextFieldWrapper");
- //BA.debugLineNum = 24;BA.debugLine="Private btnSave As Button";
+ //BA.debugLineNum = 21;BA.debugLine="Private btnSave As Button";
 players._btnsave = RemoteObject.createNew ("anywheresoftware.b4j.objects.ButtonWrapper");
- //BA.debugLineNum = 25;BA.debugLine="Private btnNew As Button";
+ //BA.debugLineNum = 22;BA.debugLine="Private btnNew As Button";
 players._btnnew = RemoteObject.createNew ("anywheresoftware.b4j.objects.ButtonWrapper");
- //BA.debugLineNum = 26;BA.debugLine="End Sub";
+ //BA.debugLineNum = 23;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
 }
+public static RemoteObject  _setscrollbarsize(RemoteObject _parent,RemoteObject _orientation,RemoteObject _size) throws Exception{
+try {
+		Debug.PushSubsStack("SetScrollbarSize (players) ","players",1,players.ba,players.mostCurrent,230);
+if (RapidSub.canDelegate("setscrollbarsize")) { return b4j.example.players.remoteMe.runUserSub(false, "players","setscrollbarsize", _parent, _orientation, _size);}
+RemoteObject _arr = null;
+RemoteObject _n = RemoteObject.declareNull("anywheresoftware.b4j.objects.NodeWrapper.ConcreteNodeWrapper");
+RemoteObject _sb = RemoteObject.declareNull("anywheresoftware.b4j.object.JavaObject");
+RemoteObject _barorientation = RemoteObject.createImmutable("");
+Debug.locals.put("Parent", _parent);
+Debug.locals.put("Orientation", _orientation);
+Debug.locals.put("Size", _size);
+ BA.debugLineNum = 230;BA.debugLine="Public Sub SetScrollbarSize(Parent As JavaObject,";
+Debug.ShouldStop(32);
+ BA.debugLineNum = 232;BA.debugLine="Dim Arr() As Object = Parent.RunMethodJO(\"lookupA";
+Debug.ShouldStop(128);
+_arr = (_parent.runMethod(false,"RunMethodJO",(Object)(BA.ObjectToString("lookupAll")),(Object)(RemoteObject.createNewArray("Object",new int[] {1},new Object[] {(RemoteObject.createImmutable(".scroll-bar"))}))).runMethod(false,"RunMethod",(Object)(BA.ObjectToString("toArray")),(Object)((players.__c.getField(false,"Null")))));Debug.locals.put("Arr", _arr);Debug.locals.put("Arr", _arr);
+ BA.debugLineNum = 234;BA.debugLine="For Each N As Node In Arr";
+Debug.ShouldStop(512);
+_n = RemoteObject.createNew ("anywheresoftware.b4j.objects.NodeWrapper.ConcreteNodeWrapper");
+{
+final RemoteObject group2 = _arr;
+final int groupLen2 = group2.getField(true,"length").<Integer>get()
+;int index2 = 0;
+;
+for (; index2 < groupLen2;index2++){
+_n = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4j.objects.NodeWrapper.ConcreteNodeWrapper"), group2.getArrayElement(false,RemoteObject.createImmutable(index2)));
+Debug.locals.put("N", _n);
+ BA.debugLineNum = 237;BA.debugLine="If GetType(N) = \"com.sun.javafx.scene.control.sk";
+Debug.ShouldStop(4096);
+if (RemoteObject.solveBoolean("=",players.__c.runMethod(true,"GetType",(Object)((_n.getObject()))),BA.ObjectToString("com.sun.javafx.scene.control.skin.VirtualScrollBar")) || RemoteObject.solveBoolean("=",players.__c.runMethod(true,"GetType",(Object)((_n.getObject()))),BA.ObjectToString("javafx.scene.control.ScrollBar"))) { 
+ BA.debugLineNum = 238;BA.debugLine="Dim SB As JavaObject = N";
+Debug.ShouldStop(8192);
+_sb = RemoteObject.createNew ("anywheresoftware.b4j.object.JavaObject");
+_sb = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4j.object.JavaObject"), _n.getObject());Debug.locals.put("SB", _sb);
+ BA.debugLineNum = 241;BA.debugLine="Dim BarOrientation As String = SB.RunMethodJO(\"";
+Debug.ShouldStop(65536);
+_barorientation = BA.ObjectToString(_sb.runMethod(false,"RunMethodJO",(Object)(BA.ObjectToString("getOrientation")),(Object)((players.__c.getField(false,"Null")))).runMethod(false,"RunMethod",(Object)(BA.ObjectToString("toString")),(Object)((players.__c.getField(false,"Null")))));Debug.locals.put("BarOrientation", _barorientation);Debug.locals.put("BarOrientation", _barorientation);
+ BA.debugLineNum = 244;BA.debugLine="If BarOrientation = \"VERTICAL\" And (Orientation";
+Debug.ShouldStop(524288);
+if (RemoteObject.solveBoolean("=",_barorientation,BA.ObjectToString("VERTICAL")) && RemoteObject.solveBoolean(".",BA.ObjectToBoolean((RemoteObject.solveBoolean("=",_orientation,_barorientation) || RemoteObject.solveBoolean("=",_orientation,RemoteObject.createImmutable("BOTH")))))) { 
+ BA.debugLineNum = 245;BA.debugLine="N.PrefWidth = Size";
+Debug.ShouldStop(1048576);
+_n.runMethod(true,"setPrefWidth",_size);
+ };
+ BA.debugLineNum = 249;BA.debugLine="If BarOrientation = \"HORIZONTAL\" And (Orientati";
+Debug.ShouldStop(16777216);
+if (RemoteObject.solveBoolean("=",_barorientation,BA.ObjectToString("HORIZONTAL")) && RemoteObject.solveBoolean(".",BA.ObjectToBoolean((RemoteObject.solveBoolean("=",_orientation,_barorientation) || RemoteObject.solveBoolean("=",_orientation,RemoteObject.createImmutable("BOTH")))))) { 
+ BA.debugLineNum = 250;BA.debugLine="N.PrefHeight = Size";
+Debug.ShouldStop(33554432);
+_n.runMethod(true,"setPrefHeight",_size);
+ };
+ };
+ }
+}Debug.locals.put("N", _n);
+;
+ BA.debugLineNum = 255;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public static RemoteObject  _showplayerform() throws Exception{
 try {
 		Debug.PushSubsStack("ShowPlayerForm (players) ","players",1,players.ba,players.mostCurrent,54);

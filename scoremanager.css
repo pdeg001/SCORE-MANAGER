@@ -1,0 +1,11 @@
+.tooltip {
+    -fx-show-delay: 150ms;
+    -fx-show-duration: 5000ms;
+    -fx-hide-delay: 200ms;
+    -fx-background-radius: 2 2 2 2;
+    -fx-background-color: blue;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-family: 'monospace';
+    -fx-font-style: oblique;
+}

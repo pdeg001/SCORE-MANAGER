@@ -72,10 +72,11 @@ public static RemoteObject _paneblockinput = RemoteObject.declareNull("anywheres
 public static RemoteObject _clvplaying = RemoteObject.declareNull("b4j.example.customlistview");
 public static RemoteObject _btnplayer = RemoteObject.declareNull("anywheresoftware.b4j.objects.ButtonWrapper");
 public static RemoteObject _lstplayerid = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");
+public static RemoteObject _cmbgametype = RemoteObject.declareNull("anywheresoftware.b4j.objects.ComboBoxWrapper");
 public static RemoteObject _dateutils = RemoteObject.declareNull("b4j.example.dateutils");
 public static RemoteObject _cssutils = RemoteObject.declareNull("b4j.example.cssutils");
 public static b4j.example.players _players = null;
   public Object[] GetGlobals() {
-		return new Object[] {"btnPlayer",main._btnplayer,"clsFunc",main._clsfunc,"clvPlaying",main._clvplaying,"CSSUtils",main._cssutils,"DateUtils",main._dateutils,"fx",main._fx,"Label1",main._label1,"lblBaseweek",main._lblbaseweek,"lblHeight",main._lblheight,"lblTest",main._lbltest,"lstPlayerId",main._lstplayerid,"MainForm",main._mainform,"paneBlockInput",main._paneblockinput,"Players",Debug.moduleToString(b4j.example.players.class),"pleft",main._pleft,"ptop",main._ptop,"ScrollPane1",main._scrollpane1,"ScrollPane2",main._scrollpane2,"ScrollPane3",main._scrollpane3,"sp",main._sp,"sql",main._sql};
+		return new Object[] {"btnPlayer",main._btnplayer,"clsFunc",main._clsfunc,"clvPlaying",main._clvplaying,"cmbGameType",main._cmbgametype,"CSSUtils",main._cssutils,"DateUtils",main._dateutils,"fx",main._fx,"Label1",main._label1,"lblBaseweek",main._lblbaseweek,"lblHeight",main._lblheight,"lblTest",main._lbltest,"lstPlayerId",main._lstplayerid,"MainForm",main._mainform,"paneBlockInput",main._paneblockinput,"Players",Debug.moduleToString(b4j.example.players.class),"pleft",main._pleft,"ptop",main._ptop,"ScrollPane1",main._scrollpane1,"ScrollPane2",main._scrollpane2,"ScrollPane3",main._scrollpane3,"sp",main._sp,"sql",main._sql};
 }
 }

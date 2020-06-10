@@ -57,7 +57,6 @@ public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.
 public static RemoteObject _sql = RemoteObject.declareNull("b4j.example.sqlite");
 public static RemoteObject _fx = RemoteObject.declareNull("anywheresoftware.b4j.objects.JFX");
 public static RemoteObject _playerform = RemoteObject.declareNull("anywheresoftware.b4j.objects.Form");
-public static RemoteObject _fledtplayername = RemoteObject.declareNull("b4j.example.b4xfloattextfield");
 public static RemoteObject _clvplayer = RemoteObject.declareNull("b4j.example.customlistview");
 public static RemoteObject _btnclose = RemoteObject.declareNull("anywheresoftware.b4j.objects.ButtonWrapper");
 public static RemoteObject _clsfunc = RemoteObject.declareNull("b4j.example.funcclass");
@@ -66,8 +65,6 @@ public static RemoteObject _lblname = RemoteObject.declareNull("anywheresoftware
 public static RemoteObject _lblmoyenne = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper");
 public static RemoteObject _xui = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper.XUI");
 public static RemoteObject _lblmake = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper");
-public static RemoteObject _fledtplayermoyenne = RemoteObject.declareNull("b4j.example.b4xfloattextfield");
-public static RemoteObject _fledtplayermake = RemoteObject.declareNull("b4j.example.b4xfloattextfield");
 public static RemoteObject _selectedplayerid = RemoteObject.createImmutable("");
 public static RemoteObject _selectedindex = RemoteObject.createImmutable("");
 public static RemoteObject _edtmake = RemoteObject.declareNull("anywheresoftware.b4j.objects.TextInputControlWrapper.TextFieldWrapper");
@@ -79,6 +76,6 @@ public static RemoteObject _dateutils = RemoteObject.declareNull("b4j.example.da
 public static RemoteObject _cssutils = RemoteObject.declareNull("b4j.example.cssutils");
 public static b4j.example.main _main = null;
   public Object[] GetGlobals() {
-		return new Object[] {"btnClose",players._btnclose,"btnNew",players._btnnew,"btnSave",players._btnsave,"clsFunc",players._clsfunc,"clvPlayer",players._clvplayer,"CSSUtils",players._cssutils,"DateUtils",players._dateutils,"edtMake",players._edtmake,"edtMoyenne",players._edtmoyenne,"edtName",players._edtname,"flEdtPlayerMake",players._fledtplayermake,"flEdtPlayerMoyenne",players._fledtplayermoyenne,"flEdtPlayerName",players._fledtplayername,"fx",players._fx,"lblMake",players._lblmake,"lblMoyenne",players._lblmoyenne,"lblName",players._lblname,"Main",Debug.moduleToString(b4j.example.main.class),"PlayerForm",players._playerform,"pnPlayer",players._pnplayer,"selectedIndex",players._selectedindex,"selectedPlayerId",players._selectedplayerid,"sql",players._sql,"xui",players._xui};
+		return new Object[] {"btnClose",players._btnclose,"btnNew",players._btnnew,"btnSave",players._btnsave,"clsFunc",players._clsfunc,"clvPlayer",players._clvplayer,"CSSUtils",players._cssutils,"DateUtils",players._dateutils,"edtMake",players._edtmake,"edtMoyenne",players._edtmoyenne,"edtName",players._edtname,"fx",players._fx,"lblMake",players._lblmake,"lblMoyenne",players._lblmoyenne,"lblName",players._lblname,"Main",Debug.moduleToString(b4j.example.main.class),"PlayerForm",players._playerform,"pnPlayer",players._pnplayer,"selectedIndex",players._selectedindex,"selectedPlayerId",players._selectedplayerid,"sql",players._sql,"xui",players._xui};
 }
 }
