@@ -1,39 +1,56 @@
 ﻿AppType=JavaFX
-Build1=Default,b4j.example
-File1=clvPlayer.bjl
-File2=main.bjl
-File3=playerlist.bjl
-File4=scoremanager.css
-File5=scoremanager.db
-File6=scrollpane.bjl
-FileGroup1=Form
-FileGroup2=Form
-FileGroup3=Form
-FileGroup4=Default Group
-FileGroup5=Db
+Build1=Default,nl.pdeg.scoremanager
+File1=app_icon.png
+File10=scoremanager.css
+File11=scoremanager.db
+File12=scrollpane.bjl
+File2=bal.png
+File3=baloo2-regular.ttf
+File4=clvPlayer.bjl
+File5=login.bjl
+File6=main.bjl
+File7=materialdesignicons-webfont.ttf
+File8=newclub.bjl
+File9=playerlist.bjl
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Db
+FileGroup12=Form
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Form
+FileGroup5=Form
 FileGroup6=Form
+FileGroup7=Default Group
+FileGroup8=Form
+FileGroup9=Form
 Group=Default Group
 Library1=jcore
 Library2=jfx
 Library3=xcustomlistview
 Library4=jsql
-Library5=jrandomaccessfile
-Library6=b4xformatter
-Library7=xui views
+Library5=b4xformatter
+Library6=xui views
+Library7=jb4xencryption
+Library8=jstringutils
 Module1=FuncClass
-Module2=Players
-Module3=Sqlite
-NumberOfFiles=6
-NumberOfLibraries=7
-NumberOfModules=3
-Version=8.3
+Module2=|relative|..\newClub
+Module3=|relative|..\playermatrix
+Module4=Players
+Module5=Sqlite
+NumberOfFiles=12
+NumberOfLibraries=8
+NumberOfModules=5
+Version=8.31
 @EndOfDesignText@
 #Region Project Attributes 
 	#MainFormWidth: 1024
 	#MainFormHeight: 768 
+	
+	#AdditionalJar: sqlite-jdbc-3.30.1.jar
+    #AdditionalJar: bcprov-jdk15on-165
 #End Region
 
-#AdditionalJar: sqlite-jdbc-3.30.1.jar
 
 Sub Process_Globals
 	Type playerCurs(player_id As Int, player As String, moyenne As Float, to_make As Int)
@@ -41,217 +58,52 @@ Sub Process_Globals
 	
 	Private clsFunc As FuncClass
 	Private sql As Sqlite
+	Public pincode As String
+	Public clubId As String
+	Private ox, oy As Double
+	
 	Private fx As JFX
 	Private MainForm As Form
-	Private lblTest As B4XView
-	
-	Dim sp As ScrollPane
-	Private ScrollPane1 As ScrollPane
-	Private lblBaseweek As Label
-	Private ScrollPane2 As ScrollPane
-	Private lblHeight As Int = 30
-'	Private numberOfPlayers As Int = 30
-	Private ScrollPane3 As ScrollPane
-'	Private currWeek As Int
-	Dim Label1 As Label 'ignore
-	Private ptop, pleft As B4XView' = Label1
-	Public paneBlockInput As Pane
-	Private clvPlaying As CustomListView
-	Private btnPlayer As Button
-	Private lstPlayerId As List
-	Private cmbGameType As ComboBox
+	Private iconFont As Font
+	Private lblLogin As Label
+	Private edtPincode As TextField
+	Private lblExit As Label
+	Private btnNewClub As Button
+	Private cmbClub As ComboBox
 End Sub
 
 Sub AppStart (Form1 As Form, Args() As String)
+	iconFont = fx.LoadFont(File.DirAssets, "materialdesignicons-webfont.ttf", 30)
 	Players.InitForm
 	clsFunc.Initialize
 	sql.Initialize
-	sp.Initialize("SP")
-	
+'	sql.CreateClub("Peter")
 	MainForm = Form1
 	MainForm.Stylesheets.Add(File.GetUri(File.DirAssets, "scoremanager.css"))
-	MainForm.RootPane.LoadLayout("main") 'Load the layout file.
-	MainForm.WindowHeight = 720
-	MainForm.WindowWidth = 1028
-	MainForm.Resizable = True
-	MainForm.Show
-	paneBlockInput.Visible = True
+	MainForm.BackColor = fx.Colors.Transparent
+	MainForm.RootPane.LoadLayout("login") 'Load the layout file.
+	MainForm.WindowHeight = 300
+	MainForm.WindowWidth = 300
+	MainForm.Resizable = False
+	MainForm.Icon =  clsFunc.GetAppIcon
+	MainForm.SetFormStyle("TRANSPARENT")
 	
-	Sleep(0)
-	lblTest.Text = "Sjaak van Duivenvoorde"
-	PopulateGameCombo
-	InitScollPanes
+	lblLogin.Font = iconFont
+	lblLogin.Text = Chr(0xf5fc)
+	lblExit.Font = iconFont
+	lblExit.Text = Chr(0xf5fd)
+	GetClubs
+'	ShowForm
 End Sub
 
-Sub MainForm_CloseRequest(EventData As Event)
-	If clsFunc.GetDisableCloseForm = True Then
-		EventData.Consume
-	End If
+Sub ShowForm
+	MainForm.Show
 End Sub
-
-Sub SetDisableCloseMain(disable As Boolean)
-	clsFunc.SetDisableCloseForm(disable)
-End Sub
-
 
 'Return true to allow the default exceptions handler to handle the uncaught exception.
 Sub Application_Error (Error As Exception, StackTrace As String) As Boolean
 	Return True
 End Sub
-
-Sub InitScollPanes
-	ScrollPane1.LoadLayout("scrollpane",200,0)
-	ScrollPane2.LoadLayout("scrollpane",0 ,0)
-	ScrollPane3.LoadLayout("scrollpane",0 ,160)
-	
-	ScrollPane2.SetHScrollVisibility("ALWAYS")
-	ScrollPane1.SetHScrollVisibility("ALWAYS")
-	ScrollPane1.SetVScrollVisibility("NEVER")
-	
-	SetVerticalNames
-End Sub
-
-Sub SetVerticalNames
-	
-	Dim p As Pane= ScrollPane1.InnerNode
-	'Dim baseLabel As Label' = lblTest
-	Dim lbl As Label
-	Dim left As Int = 1'baseLabel.Left
-'	Dim width As Int = ScrollPane1.Width-10
-	Dim top As Int = 0' baseLabel.Top + height
-	Dim lstPlayers As List = sql.GetPlayerList
-	Dim loopCount As Int = 0
-	
-	lstPlayerId.Initialize
-	For Each player As playerCurs In lstPlayers
-		Dim playerId As playerIdForGrid
-		playerId.player1_id = player.player_id
-		lstPlayerId.Add(playerId)
-		loopCount = loopCount + 1
-		
-		
-		lbl = lblTest
-		lbl.TooltipText = $"Moyenne ${clsFunc.GetFormatNumber(player.moyenne, 3, 3).Replace(",", ".")} Maken ${player.to_make}"$
-		'lbl.Initialize("lblWeek")
-		lbl.Initialize("")
-		lbl.TextSize = 15
-		lbl.Alignment = "CENTER_RIGHT"
-		lbl.Tag = $"speler-${player.player_id}-L${loopCount}"$
-		lbl.Text = player.player
-		lbl.Style = "-fx-padding: 0 10 0 0;"
-		CSSUtils.SetBorder(lbl, 1, fx.Colors.Gray, 4)
-		p.AddNode(lbl, left, top, 210, 30)
-		
-		top = top + 31
-	Next
-	
-	SetHorizontalNames
-	SetWeeks(lbl.Top, lstPlayers.Size)
-
-
-	p.PrefHeight = (lstPlayers.Size * lblHeight) '+ 25
-	ScrollPane2.InnerNode.PrefHeight = p.PrefHeight '(39*lblHeight)'+25
-	ScrollPane2.InnerNode.PrefWidth = (lstPlayers.Size * 31) + 10
-	ScrollPane3.InnerNode.PrefWidth = (lstPlayers.Size * 31) + 10
-	SetScrollbarSize(ScrollPane1, "HORIZONTAL", 20)
-	SetScrollbarSize(ScrollPane2, "VERTICAL", 20)
-	SetScrollbarSize(ScrollPane2, "HORIZONTAL", 20)
-	SetScrollbarSize(ScrollPane3, "VERTICAL", 20)
-End Sub
-
-Sub SetToolTip (x As B4XView, Text As String)
-	If x Is Control Then
-		Dim c As Control = x
-		c.TooltipText = Text
-	End If
-End Sub
-
-Private Sub SetHorizontalNames
-	Dim left, loopCount, loopId As Int
-	Label1.Initialize("lblWeek")
-	Dim baseLbl As B4XView = Label1
-	Dim pw1 As Pane= ScrollPane3.InnerNode
-	left = 5
-	Dim lstPlayers As List = sql.GetPlayerList
-	loopCount = lstPlayers.Size -1
-	loopId = 0
-	
-	For Each player As playerCurs In lstPlayers	
-		loopId = loopId +1
-		Dim playerId As playerIdForGrid
-		playerId.Initialize
-		playerId = lstPlayerId.Get(loopCount)
-		playerId.player2_id = player.player_id
-		
-		'Label1.Initialize("lblWeek")
-		Label1.Initialize("")
-		Label1.Alignment = "CENTER_RIGHT"
-		Label1.Style = "-fx-padding: 0 10 0 0;"
-		Label1.TooltipText = $"Moyenne ${clsFunc.GetFormatNumber(player.moyenne, 3, 3).Replace(",", ".")} Maken ${player.to_make}"$
-		baseLbl = Label1
-		baseLbl.Rotation = 90
-		
-		SetToolTip(baseLbl, $"Moyenne ${clsFunc.GetFormatNumber(player.moyenne/1000, 3, 3).Replace(",", ".")} Maken ${player.to_make}"$)
-		CSSUtils.SetBorder(baseLbl, 1, fx.Colors.Gray, 4)
-		
-		baseLbl= baseLbl
-		baseLbl.Tag = $"speler-${player.player_id}-T${loopId}"$
-	
-		baseLbl.Text = player.player 'player.player'$"SPELER ${i} "$
-		baseLbl.TextSize = lblTest.TextSize
-		
-		
-		pw1.AddNode(baseLbl, left-75, 76, 180, 30)
-		left = left+31
-		loopCount = loopCount - 1
-	Next
-
-End Sub
-
-
-Private Sub SetWeeks(top As Int, playerCount As Int)
-	Dim left As Int
-	Dim lbl As Label = lblTest
-	Dim playerId As playerIdForGrid
-	Dim pw As Pane= ScrollPane2.InnerNode
-	left = 5
-	top = 0
-	playerId.Initialize
-	
-	For i = 1 To playerCount
-		left = 5
-		For j = 1 To playerCount
-			playerId = lstPlayerId.Get(j-1)
-		
-			lbl.id = "lbl"&i&""&DateTime.GetYear(DateTime.Now)
-			If i <> j Then
-				lbl.Initialize("lblWeek")
-			Else
-				lbl.Initialize("")
-				CSSUtils.SetBackgroundColor(lbl, fx.Colors.LightGray)
-			End If
-		
-			lbl.Tag = $"week-${i}-${j}"$
-			lbl.TextSize = lblTest.TextSize
-			lbl.Alignment = "CENTER"
-			CSSUtils.SetBorder(lbl, 1, fx.Colors.Gray, 2)
-		
-			pw.AddNode(lbl, left, top, 30, 30)
-			left = left+31
-		Next
-		top = top + 31
-	Next
-	
-End Sub
-
-Sub PopulateGameCombo
-	Dim lstGame As List
-	lstGame.Initialize
-	
-	lstGame.AddAll(Array As String("Bandstoten", "Libre", "Driebanden"))
-	cmbGameType.Items.AddAll(Array As String("Bandstoten", "Libre", "Driebanden"))
-End Sub
-
 
 Sub Label1_MouseEntered (EventData As MouseEvent)
 	
@@ -260,54 +112,6 @@ End Sub
 Sub Label1_MouseExited (EventData As MouseEvent)
 	
 End Sub
-
-Sub lblWeek_MouseExited (EventData As MouseEvent)
-	Dim lbl As Label
-	lbl = Sender
-	CSSUtils.SetBackgroundColor(lbl, fx.Colors.White)
-	Try
-		CSSUtils.SetBackgroundColor(ptop, fx.Colors.White)
-		CSSUtils.SetBackgroundColor(pleft, fx.Colors.White)
-	Catch
-		LogDebug("")
-	End Try
-End Sub
-
-Sub LblWeek_MouseEntered (EventData As MouseEvent)
-	Dim lbl As Label
-	lbl = Sender
-	CSSUtils.SetBackgroundColor(lbl, fx.Colors.Yellow)
-	Dim tag As String = lbl.Tag
-	If tag.IndexOf("week") > -1 Then
-		Dim strTag As String
-		Dim str() As String
-		Dim pn As Pane = ScrollPane1.InnerNode
-		str = Regex.Split("-", tag)
-
-		For Each v As B4XView In pn.GetAllViewsRecursive
-			strTag = v.tag
-			If strTag.IndexOf($"L${str(1)}"$) > -1 Then
-				pleft = v
-				HighliteSpeler(v)
-				Exit
-			End If
-		Next
-		pn = ScrollPane3.InnerNode
-		For Each v As B4XView In pn.GetAllViewsRecursive
-			strTag = v.tag
-			If strTag.IndexOf($"T${str(2)}"$) > -1 Then
-				ptop = v
-				HighliteSpeler(v)
-				Exit
-			End If
-		Next
-	End If
-End Sub
-
-Private Sub HighliteSpeler(v As B4XView)
-	CSSUtils.SetBackgroundColor(v, fx.Colors.Yellow)
-End Sub
-
 
 'Parent - The Node that ontains a scrollbar i.e. ListView, TableView etc.
 'Orientation - can be VERTICAL, HORIZONTAL or BOTH
@@ -339,32 +143,64 @@ Public Sub SetScrollbarSize(Parent As JavaObject, Orientation As String, Size As
 	Next
 End Sub
 
-Sub ScrollPane1_VScrollChanged (Position As Double)
-	ScrollPane2.VPosition = ScrollPane1.VPosition
-End Sub
-
-Sub ScrollPane2_VScrollChanged (Position As Double)
-	ScrollPane1.VPosition = ScrollPane2.VPosition
-End Sub
-
-Sub ScrollPane2_HScrollChanged (Position As Double)
-	ScrollPane3.HPosition = Position
-End Sub
-
-
-
-
-Sub lblWeek_MouseReleased (EventData As MouseEvent)
-	If fx.Msgbox2(MainForm, $"${pleft.Text} tegen ${ptop.text} laten spelen"$, "Score Manager", "JA", "NEE", "", _
-			fx.MSGBOX_CONFIRMATION) = fx.DialogResponse.POSITIVE Then
+Sub GetClubs
+	Dim lst As List = sql.GetClubList
+	If lst.Size = 0 Then
+		newClub.initForm
 		Return
+	End If
+	ShowForm
+		
+	cmbClub.Items.Add("")
+	For i = 0 To lst.Size -1
+		LogDebug(">"&lst.Get(i))
+		cmbClub.Items.Add(lst.Get(i))
+	Next
+
+End Sub
+
+Sub lblLogin_MouseReleased (EventData As MouseEvent)
+	If edtPincode.Text = "" Then
+		Return
+	End If
+	pincode = edtPincode.Text
+	sql.ValidateClub(cmbClub.Value)
+End Sub
+
+Sub lblExit_MouseReleased (EventData As MouseEvent)
+	ExitApplication
+End Sub
+
+Sub btnNewClub_MouseReleased (EventData As MouseEvent)
+	newClub.initForm
+	MainForm.Close
+End Sub
+
+Sub cmbClub_SelectedIndexChanged(Index As Int, Value As Object)
+	LogDebug(Index)
+	
+	If Index > 0 Then
+		edtPincode.Enabled = True
+		edtPincode.RequestFocus
 	End If
 End Sub
 
-Sub btnPlayer_MouseReleased (EventData As MouseEvent)
-	Players.ShowPlayerForm
+Sub MainForm_MousePressed (EventData As MouseEvent)
+	ox = EventData.X
+	oy = EventData.Y
 End Sub
 
-Sub cmbGameType_SelectedIndexChanged(Index As Int, Value As Object)
+Sub MainForm_MouseDragged (EventData As MouseEvent)
+	Dim jo As JavaObject = EventData
+	MainForm.WindowLeft = jo.RunMethod("getScreenX", Null) - ox
+	MainForm.WindowTop = jo.RunMethod("getScreenY", Null) - oy
+End Sub
+
+Sub GetFormPos As List
+	Dim lst As List
+	lst.Initialize
+	lst.Add(MainForm.WindowLeft)
+	lst.Add(MainForm.WindowTop)
 	
+	Return lst
 End Sub

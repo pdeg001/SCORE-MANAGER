@@ -26,6 +26,7 @@ Sub Process_Globals
 	Private edtName As TextField
 	Private btnSave As Button
 	Private btnNew As Button
+	
 End Sub
 
 Public Sub InitForm
@@ -37,13 +38,14 @@ Public Sub InitForm
 	PlayerForm.RootPane.LoadLayout("playerlist")
 	PlayerForm.WindowHeight = 500
 	PlayerForm.WindowWidth = 500
-	PlayerForm.Resizable = False
+	PlayerForm.Resizable = True
 	PlayerForm.AlwaysOnTop = True
-	SetScrollbarSize(clvPlayer.AsView, "VERTICAL", 20)
+	PlayerForm.Icon = clsFunc.GetAppIcon
+	'SetScrollbarSize(clvPlayer.AsView, "VERTICAL", 20)
 	Dim n As Node = clvPlayer.sv
 	n.Id = "clv1"
 	PlayerForm.Stylesheets.Add(File.GetUri(File.DirAssets, "scoremanager.css"))
-	GetPlayers
+'	GetPlayers
 End Sub
 
 Sub PlayerForm_CloseRequest(EventData As Event)
@@ -51,23 +53,24 @@ Sub PlayerForm_CloseRequest(EventData As Event)
 End Sub
 
 Sub btnClose_MouseReleased (EventData As MouseEvent)
-	Main.paneBlockInput.Visible = False
-	Main.SetDisableCloseMain(False)
-	Main.InitScollPanes
+	playermatrix.paneBlockInput.Visible = False
+	playermatrix.SetDisableCloseMain(False)
+	playermatrix.InitScollPanes
 	PlayerForm.Close
 End Sub
 
 Public Sub ShowPlayerForm
-	Main.paneBlockInput.Visible  = True
-	Main.SetDisableCloseMain(True)
-	GetPlayers
+	playermatrix.paneBlockInput.Visible  = True
+	playermatrix.SetDisableCloseMain(True)
+	'GetPlayers
 	edtMake.Text = ""
 	edtMoyenne.Text = ""
 	edtName.Text = ""
 	PlayerForm.Show
+	GetPlayers
 End Sub
 
-Private Sub GetPlayers
+Public Sub GetPlayers
 	Dim lstPlayers As List = sql.GetPlayerList
 	clvPlayer.Clear
 	If lstPlayers.Size <= 6 Then
@@ -84,7 +87,7 @@ Private Sub CreateClv(player As playerCurs) As B4XView
 	Dim p As B4XView = xui.CreatePanel("")
 	p.SetLayoutAnimated(0, 0, 0, 0, 45)
 	p.LoadLayout("clvPlayer")
-	lblName.Text = player.player
+	lblName.Text = clsFunc.DecryptString(player.player)'player.player
 	lblMoyenne.Text = clsFunc.GetFormatNumber(player.moyenne/1000, 3, 3).Replace(",", ".")
 	lblMake.Text = player.to_make
 	p.Tag = player.player_id
@@ -107,7 +110,7 @@ Sub clvPlayer_ItemClick (Index As Int, Value As Object)
 	Dim playerList As List = sql.GetPlayerData(selectedPlayerId)
 	Dim playerdata As playerCurs = playerList.Get(0)
 	
-	edtName.Text = playerdata.player
+	edtName.Text = clsFunc.DecryptString(playerdata.player)
 	edtMoyenne.Text = clsFunc.GetFormatNumber(playerdata.moyenne/1000, 3, 3)
 	edtMake.Text = playerdata.to_make
 	edtName.RequestFocus
@@ -115,8 +118,11 @@ Sub clvPlayer_ItemClick (Index As Int, Value As Object)
 	
 End Sub
 
-
 Sub UpdateClv
+	If clvPlayer.Size = 0 Then
+		Return
+	End If
+	
 	Dim p As Pane
 	Dim lbl As Label
 	p = clvPlayer.GetPanel(selectedIndex)
@@ -141,20 +147,20 @@ Sub UpdateClv
 End Sub
 
 Sub edtMoyenne_TextChanged (Old As String, New As String)
-'	Dim RegexPattern As String = "^(0|[1-9]\d*)?(\.\d+)?(?<=\d)$"
-'	
-'	Dim m As Matcher = Regex.Matcher2(RegexPattern, 0, New)
-'	Do While m.Find
-'		Log("Match: " & m.Match)
-'		For g = 1 To m.GroupCount
-'			Log("Group #" & g & ": " & m.Group(g))
-'		Next
-'	Loop
+	Dim strNew As String
+	If New = "" Then Return
 	
+	strNew = clsFunc.SetMoyenneFormat(New)
 	
-	Dim strMoy As String = edtMoyenne.Text
-	edtMoyenne.Text = strMoy.Replace(",", ".")
-	edtMoyenne.SetSelection(edtMoyenne.Text.Length,edtMoyenne.Text.Length)
+	Dim currPos As Int = edtMoyenne.SelectionStart
+	
+'	If IsNumber(New) = False Then
+'		edtMoyenne.Text = Old
+'		edtMoyenne.SetSelection(currPos,currPos)
+'		Return
+'	End If
+	edtMoyenne.Text = strNew
+	edtMoyenne.SetSelection(currPos,currPos)
 End Sub
 
 Sub edtMake_TextChanged(Old As String, New As String)
@@ -182,6 +188,8 @@ End Sub
 
 Sub btnSave_MouseReleased (EventData As MouseEvent)
 	Dim nMoyenne As Double
+	Dim name, encryptedName As String
+	
 	If ValidateInput = False Then
 		If fx.Msgbox2(PlayerForm, "Naam van de speler mag niet leeg zijn", "Score Manager", "OKE", "", "", _
 			fx.MSGBOX_WARNING) = fx.DialogResponse.POSITIVE Then
@@ -190,15 +198,18 @@ Sub btnSave_MouseReleased (EventData As MouseEvent)
 	End If
 	
 	nMoyenne = edtMoyenne.Text
-	
-	sql.SetPlayerData(selectedPlayerId, edtName.Text,nMoyenne, edtMake.Text)
-	If selectedPlayerId <> 0 Then
+	name = edtName.Text
+	encryptedName = clsFunc.EncryptString(name)
+	sql.SetPlayerData(selectedPlayerId, encryptedName, nMoyenne, edtMake.Text) 'ignore
+		
+	If selectedPlayerId <> "0" Then
 		UpdateClv
 	Else
 		Dim lstPlayer As List
 		Dim lastId As String = sql.GetLastId
 		lstPlayer.Initialize
-		lstPlayer.Add(clsFunc.CreateplayerCurs(lastId, edtName.Text, edtMoyenne.Text, edtMake.Text))
+		'lstPlayer.Add(clsFunc.CreateplayerCurs(lastId, name, edtMoyenne.Text, edtMake.Text))
+		lstPlayer.Add(clsFunc.CreateplayerCurs(lastId, encryptedName, edtMoyenne.Text, edtMake.Text))
 		For Each player As playerCurs In lstPlayer
 			clvPlayer.Add(CreateClv(player), "")
 		Next
@@ -212,15 +223,14 @@ Sub ValidateInput As Boolean
 	Return True
 End Sub
 
-
-
 Sub edtMoyenne_FocusChanged (HasFocus As Boolean)
+	If edtMoyenne.Text.Length = 0 Then Return
 	edtMoyenne.Text = clsFunc.GetFormatNumber(edtMoyenne.Text, 3, 3)
 End Sub
 
 Sub btnNew_MouseReleased (EventData As MouseEvent)
 	selectedIndex = 0
-	selectedPlayerId = 0
+	selectedPlayerId = "0"
 	edtMake.Text = "0"
 	edtMoyenne.Text = "0.000"
 	edtName.Text = ""
@@ -258,4 +268,8 @@ Public Sub SetScrollbarSize(Parent As JavaObject, Orientation As String, Size As
 		End If
  
 	Next
+End Sub
+
+Sub SetSelectedPlayerIdToEmpty
+	selectedPlayerId = "0"
 End Sub

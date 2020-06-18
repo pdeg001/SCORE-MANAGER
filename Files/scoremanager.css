@@ -1,3 +1,34 @@
+.root {
+  /*-fx-opacity: 1.0;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0); -fx-background-color: white;*/
+  -fx-background-color: palegreen; 
+  -fx-background-insets: 10;
+  -fx-background-radius: 10;
+  -fx-effect: dropshadow(three-pass-box, cadetblue, 10, 0, 0, 0);
+}
+
+/*
+.modal-dialog-glass {
+  -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4); 
+  -fx-background-color: derive(cadetblue, -20%); 
+  -fx-background-insets: 12; 
+  -fx-background-radius: 6;
+}
+
+.modal-dialog-content {
+  -fx-padding: 20;
+  -fx-spacing: 10;
+  -fx-alignment: center;
+  -fx-font-size: 20;
+  -fx-background-color: linear-gradient(to bottom, derive(cadetblue, 20%), cadetblue);
+  -fx-border-color: derive(cadetblue, -20%);
+  -fx-border-width: 5;
+  -fx-background-insets: 12;
+  -fx-border-insets: 10;
+  -fx-border-radius: 6;
+  -fx-background-radius: 6;
+}
+*/
 .tooltip {
     -fx-show-delay: 150ms;
     -fx-show-duration: 5000ms;
@@ -9,6 +40,13 @@
     -fx-font-family: 'monospace';
     -fx-font-style: normal;
 }
+
+.root { 
+
+-fx-focus-color: transparent;
+/*-fx-faint-focus-color: transparent;*/
+
+ }
 
 .scroll-bar .decrement-arrow {
     -fx-padding:6.25;

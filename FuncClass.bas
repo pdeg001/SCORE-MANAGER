@@ -10,6 +10,8 @@ Sub Class_Globals
 	Private DefaultFormat As B4XFormatData
 	Private disableCloseForm As Boolean
 	Private RegexPattern As String 'ignore
+	Private ecode As String = "0000"
+	Private su As StringUtils
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
@@ -110,4 +112,53 @@ Public Sub ConfigureForNumbers (AllowDecimals As Boolean, AllowNegative As Boole
 		RegexPattern = "^(0|[1-9]\d*)$"
 	End If
 	mAllowDecimals = AllowDecimals 'ignore
+End Sub
+
+Sub SetMoyenneFormat(moyenne As String) As String
+	Dim strValue As String
+	
+	strValue = moyenne.Replace(",", ".")
+	strValue = Regex.Replace("^-?\\d*(\\.\\d+)?$", strValue, "")
+	Return Regex.Replace("d", strValue, "")
+End Sub
+
+Sub GetAppIcon As Image
+	Return fx.LoadImage(File.DirApp, "images/bal.png")
+End Sub
+
+Sub EncryptString(Str As String) As String'Byte()
+	Dim c As B4XCipher
+	Return su.EncodeBase64(c.Encrypt(Str.GetBytes("UTF8"),Main.pincode))
+End Sub
+
+Sub DecryptString(EncryptedData As String) As String' As String
+	Dim c As B4XCipher
+	Try
+		Dim b() As Byte = c.Decrypt(su.DecodeBase64(EncryptedData), Main.pincode)
+	Catch
+		return "err"
+	End Try
+	Return EncryptToString(b)
+End Sub
+
+Private Sub EncryptToString(b() As Byte) As String
+	Return BytesToString(b, 0, b.Length, "UTF8")
+End Sub
+
+Public Sub StringToByte(str As String) As Byte()
+	Return str.GetBytes("UTF8")
+End Sub
+
+Public Sub CreateGuid As String
+	Dim sb As StringBuilder
+	sb.Initialize
+	For Each stp As Int In Array(8, 4, 4, 4, 12)
+		If sb.Length > 0 Then sb.Append("-")
+		For n = 1 To stp
+			Dim c As Int = Rnd(0, 16)
+			If c < 10 Then c = c + 48 Else c = c + 55
+			sb.Append(Chr(c))
+		Next
+	Next
+	Return sb.ToString
 End Sub
