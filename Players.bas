@@ -12,14 +12,17 @@ Sub Process_Globals
 	Private sql As Sqlite
 	Private fx As JFX
 	Private PlayerForm As Form
-	Private clvPlayer As CustomListView
+	Private cutils As ControlsUtils
+	Private clsTabelView As TableViewClass
+	Private clsForm As FormClass
+	
 	Private btnClose As Button
 	Private clsFunc As FuncClass
 	Private pnPlayer As Pane
-	Private lblName As B4XView
-	Private lblMoyenne As B4XView
+	Private lblName As Label
+	Private lblMoyenne As Label
 	Private xui As XUI
-	Private lblMake As B4XView
+	Private lblMake As Label
 	Private selectedPlayerId, selectedIndex As String
 	Private edtMake As TextField
 	Private edtMoyenne As TextField
@@ -27,25 +30,26 @@ Sub Process_Globals
 	Private btnSave As Button
 	Private btnNew As Button
 	
+	Private genPlayer As Button
+	Private tblPlayer As TableView
+	Private edtLastName As TextField
 End Sub
 
 Public Sub InitForm
 	sql.Initialize
 	clsFunc.Initialize
 	clsFunc.ConfigureForNumbers(True, False, edtMoyenne)
+	clsTabelView.Initialize(PlayerForm, tblPlayer)
 	
 	PlayerForm.Initialize(Me, -1, -1)
 	PlayerForm.RootPane.LoadLayout("playerlist")
-	PlayerForm.WindowHeight = 500
-	PlayerForm.WindowWidth = 500
+	PlayerForm.WindowHeight = 530
+	PlayerForm.WindowWidth = 530
 	PlayerForm.Resizable = True
 	PlayerForm.AlwaysOnTop = True
 	PlayerForm.Icon = clsFunc.GetAppIcon
-	'SetScrollbarSize(clvPlayer.AsView, "VERTICAL", 20)
-	Dim n As Node = clvPlayer.sv
-	n.Id = "clv1"
 	PlayerForm.Stylesheets.Add(File.GetUri(File.DirAssets, "scoremanager.css"))
-'	GetPlayers
+	
 End Sub
 
 Sub PlayerForm_CloseRequest(EventData As Event)
@@ -62,7 +66,6 @@ End Sub
 Public Sub ShowPlayerForm
 	playermatrix.paneBlockInput.Visible  = True
 	playermatrix.SetDisableCloseMain(True)
-	'GetPlayers
 	edtMake.Text = ""
 	edtMoyenne.Text = ""
 	edtName.Text = ""
@@ -72,78 +75,76 @@ End Sub
 
 Public Sub GetPlayers
 	Dim lstPlayers As List = sql.GetPlayerList
-	clvPlayer.Clear
-	If lstPlayers.Size <= 6 Then
-'		clvPlayer.sv.
-	End If
-	'For i = 0 To 30
-		For Each player As playerCurs In lstPlayers
-			clvPlayer.Add(CreateClv(player), "")
-		Next
-	'Next
+	Dim tblItem As List
+	tblItem.Initialize
+	tblPlayer.Items.Clear
+	
+	
+	tblPlayer.SetColumns(Array("Naam", "Moyenne", "Te maken"))
+	For Each player As playerCurs In lstPlayers
+		Dim row() As Object = CreateRow(Array As String($"${player.firstname} ${player.lastname}"$, player.moyenne/1000, player.to_make, player.player_id, player.firstname, player.lastname))
+		tblPlayer.Items.Add(row)
+	Next
+	
+	
+	SetColumnStyle(1, "-fx-alignment: CENTER;")
+	SetColumnStyle(2, "-fx-alignment: CENTER;")
 End Sub
 
-Private Sub CreateClv(player As playerCurs) As B4XView
-	Dim p As B4XView = xui.CreatePanel("")
-	p.SetLayoutAnimated(0, 0, 0, 0, 45)
-	p.LoadLayout("clvPlayer")
-	lblName.Text = clsFunc.DecryptString(player.player)'player.player
-	lblMoyenne.Text = clsFunc.GetFormatNumber(player.moyenne/1000, 3, 3).Replace(",", ".")
-	lblMake.Text = player.to_make
-	p.Tag = player.player_id
-	CSSUtils.SetBackgroundColor(p, fx.Colors.Transparent)
-	Return p
+Sub tblPlayer_SelectedRowChanged(Index As Int, Row() As Object)
+	If Index > -1 Then
+		selectedPlayerId = GetCellValue(Index, 3)
+		edtName.Text = GetCellValue(Index, 4)
+		edtLastName.Text = GetCellValue(Index, 5)
+		edtMoyenne.Text = GetCellValue(Index, 1)
+		edtMake.Text = GetCellValue(Index, 2)
+	End If
+	
 End Sub
+
+Sub tblPlayer_Resize (Width As Double, Height As Double)
+	Dim w As Double = (Width - 30) / tblPlayer.ColumnsCount
+	For i = 0 To tblPlayer.ColumnsCount - 1
+		tblPlayer.SetColumnWidth(i, w)
+	Next
+End Sub
+
+#Region Helper Methods
+Sub GetLabel(RowIndex As Int, CellIndex As Int) As Label
+	Dim row() As Object = tblPlayer.Items.Get(RowIndex)
+	Return row(CellIndex)
+End Sub
+
+Sub CreateRow(Row() As String) As Object()
+	Dim labels(Row.Length) As Object
+	For i = 0 To Row.Length - 1
+		Dim lbl As Label
+		lbl.Initialize("")
+		lbl.Text = Row(i)
+		labels(i) = lbl
+	Next
+	Return labels
+End Sub
+
+Sub GetCellValue(RowIndex As Int, CellIndex As Int) As String
+	Return GetLabel(RowIndex, CellIndex).Text
+End Sub
+
+Sub SetCellValue(RowIndex As Int, CellIndex As Int, Value As String)
+	GetLabel(RowIndex, CellIndex).Text = Value
+End Sub
+
+Sub SetColumnStyle(Index As Int, Style As String)
+	Dim jo As JavaObject = tblPlayer
+	Dim Column As JavaObject = jo.RunMethodJO("getColumns", Null).RunMethod("get", Array(Index))
+	Column.RunMethod("setStyle", Array(Style))
+End Sub
+#End Region
 
 Sub pnPlayer_MouseReleased (EventData As MouseEvent)
 	Dim p As Pane = Sender
 	
 	LogDebug(p.Tag)
-End Sub
-
-Sub clvPlayer_ItemClick (Index As Int, Value As Object)
-	Dim p As Pane = clvPlayer.GetPanel(Index)
-	
-	clsFunc.SetClvSelectedColor(clvPlayer, Index)
-	selectedPlayerId = p.Tag	
-	selectedIndex = Index
-	Dim playerList As List = sql.GetPlayerData(selectedPlayerId)
-	Dim playerdata As playerCurs = playerList.Get(0)
-	
-	edtName.Text = clsFunc.DecryptString(playerdata.player)
-	edtMoyenne.Text = clsFunc.GetFormatNumber(playerdata.moyenne/1000, 3, 3)
-	edtMake.Text = playerdata.to_make
-	edtName.RequestFocus
-	edtName.SetSelection(edtName.Text.Length,edtName.Text.Length)
-	
-End Sub
-
-Sub UpdateClv
-	If clvPlayer.Size = 0 Then
-		Return
-	End If
-	
-	Dim p As Pane
-	Dim lbl As Label
-	p = clvPlayer.GetPanel(selectedIndex)
-	For Each v As Node In p.GetAllViewsRecursive
-		If v.Tag = "name" Then
-			lbl = v
-			lbl.Text = edtName.Text
-			Continue
-		End If
-		If v.Tag = "moyenne" Then
-			lbl = v
-			lbl.Text =clsFunc.GetFormatNumber(edtMoyenne.Text, 3, 3)
-			Continue
-		End If
-		If v.Tag = "tomake" Then
-			lbl = v
-			lbl.Text = edtMake.Text
-			Continue
-		End If
-	Next
-	
 End Sub
 
 Sub edtMoyenne_TextChanged (Old As String, New As String)
@@ -154,11 +155,7 @@ Sub edtMoyenne_TextChanged (Old As String, New As String)
 	
 	Dim currPos As Int = edtMoyenne.SelectionStart
 	
-'	If IsNumber(New) = False Then
-'		edtMoyenne.Text = Old
-'		edtMoyenne.SetSelection(currPos,currPos)
-'		Return
-'	End If
+
 	edtMoyenne.Text = strNew
 	edtMoyenne.SetSelection(currPos,currPos)
 End Sub
@@ -186,38 +183,55 @@ Sub edtMake_TextChanged(Old As String, New As String)
 	End If
 End Sub
 
+Private Sub GenMembers
+	Dim name, lastname, encryptedName As String
+	Dim nMoyenne As Double
+	Dim make As Int
+	For i = 0 To 43
+		name = clsFunc.EncryptString($"Speler"$)
+		lastname = clsFunc.EncryptString($"nummer ${i+1}"$)
+		nMoyenne = Rnd(0, 12)
+		clsFunc.GetFormatNumber(nMoyenne, 3, 3)
+		make = Rnd(1,100)
+		
+		sql.SetPlayerData("0", name, lastname, nMoyenne, make) 'ignore
+	Next
+	
+	
+End Sub
+
 Sub btnSave_MouseReleased (EventData As MouseEvent)
 	Dim nMoyenne As Double
-	Dim name, encryptedName As String
+	Dim name, lastname, encryptedName As String
 	
 	If ValidateInput = False Then
-		If fx.Msgbox2(PlayerForm, "Naam van de speler mag niet leeg zijn", "Score Manager", "OKE", "", "", _
-			fx.MSGBOX_WARNING) = fx.DialogResponse.POSITIVE Then
-			Return
-		End If
+		cutils.ShowNotification3(cmVars.appName, "Naam van de speler mag niet leeg zijn", cutils.ICON_INFORMATION, _
+		PlayerForm, "BOTTOM_CENTER", 2000)
+		Return
 	End If
 	
 	nMoyenne = edtMoyenne.Text
 	name = edtName.Text
 	encryptedName = clsFunc.EncryptString(name)
-	sql.SetPlayerData(selectedPlayerId, encryptedName, nMoyenne, edtMake.Text) 'ignore
-		
-	If selectedPlayerId <> "0" Then
-		UpdateClv
-	Else
-		Dim lstPlayer As List
-		Dim lastId As String = sql.GetLastId
-		lstPlayer.Initialize
-		'lstPlayer.Add(clsFunc.CreateplayerCurs(lastId, name, edtMoyenne.Text, edtMake.Text))
-		lstPlayer.Add(clsFunc.CreateplayerCurs(lastId, encryptedName, edtMoyenne.Text, edtMake.Text))
-		For Each player As playerCurs In lstPlayer
-			clvPlayer.Add(CreateClv(player), "")
-		Next
-	End If
+	lastname = clsFunc.EncryptString(edtLastName.Text)
+	
+	
+	
+'	If CheckPlayerInList = True And selectedPlayerId = "0" Then
+'		cutils.ShowNotification3(cmVars.appName, "Naam van de speler komt reeds voor", cutils.ICON_INFORMATION, _
+'		PlayerForm, "BOTTOM_CENTER", 2000)
+'		Return
+'	End If
+	sql.SetPlayerData(selectedPlayerId, encryptedName, lastname, nMoyenne, edtMake.Text) 'ignore
+	If tblPlayer.SelectedRow = -1 Then Return
+	SetCellValue(tblPlayer.SelectedRow, 0, $"${edtName.Text} ${edtLastName.Text}"$)
+	SetCellValue(tblPlayer.SelectedRow, 1, edtMoyenne.Text)
+	SetCellValue(tblPlayer.SelectedRow, 2, edtMake.Text)
+	
 End Sub
 
 Sub ValidateInput As Boolean
-	If edtName.Text = "" Then
+	If edtName.Text = "" Or edtLastName.Text = "" Then
 		Return False
 	End If
 	Return True
@@ -239,37 +253,10 @@ Sub btnNew_MouseReleased (EventData As MouseEvent)
 	
 End Sub
 
-
-'Parent - The Node that ontains a scrollbar i.e. ListView, TableView etc.
-'Orientation - can be VERTICAL, HORIZONTAL or BOTH
-'Size - The required width for a VERTICAl scrollbar or height for a HORIZONTAL scroll bar
-Public Sub SetScrollbarSize(Parent As JavaObject, Orientation As String, Size As Double)
-	'Get a Set that contains the scrollbars attached to the parent and convert it to an array
-	Dim Arr() As Object = Parent.RunMethodJO("lookupAll",Array(".scroll-bar")).RunMethod("toArray",Null)
-
-	For Each N As Node In Arr
-
-		'Check this object is a scrolbar
-		If GetType(N) = "com.sun.javafx.scene.control.skin.VirtualScrollBar" Or GetType(N) = "javafx.scene.control.ScrollBar" Then
-			Dim SB As JavaObject = N
-
-			'Get the orientation of the scrollbar as a string
-			Dim BarOrientation As String = SB.RunMethodJO("getOrientation",Null).RunMethod("toString",Null)
-
-			'Required Orientation is VERTICAL or BOTH
-			If BarOrientation = "VERTICAL" And (Orientation  = BarOrientation Or Orientation = "BOTH") Then
-				N.PrefWidth = Size
-			End If
-
-			'Required Orientation is HORIZONTAL or BOTH
-			If BarOrientation = "HORIZONTAL" And (Orientation = BarOrientation Or Orientation = "BOTH") Then
-				N.PrefHeight = Size
-			End If
-		End If
- 
-	Next
-End Sub
-
 Sub SetSelectedPlayerIdToEmpty
 	selectedPlayerId = "0"
+End Sub
+
+Sub genPlayer_MouseReleased (EventData As MouseEvent)
+	GenMembers
 End Sub

@@ -10,7 +10,6 @@ Sub Class_Globals
 	Private DefaultFormat As B4XFormatData
 	Private disableCloseForm As Boolean
 	Private RegexPattern As String 'ignore
-	Private ecode As String = "0000"
 	Private su As StringUtils
 End Sub
 
@@ -20,13 +19,16 @@ Public Sub Initialize
 	'DefaultFormat = numFormat.GetDefaultFormat
 End Sub
 
-Public Sub CreateplayerCurs (player_id As Int, player As String, moyenne As Long, to_make As Int) As playerCurs
+Public Sub CreateplayerCurs (player_id As String, firstname As String, lastname As String, moyenne As Long, to_make As Int) As playerCurs
 	Dim t1 As playerCurs
+	
 	t1.Initialize
 	t1.player_id = player_id
-	t1.player = player
+	t1.firstname = DecryptString(firstname)
+	t1.lastname = DecryptString(lastname)
 	t1.moyenne = moyenne
 	t1.to_make = to_make
+	
 	Return t1
 End Sub
 
@@ -35,6 +37,7 @@ Public Sub GetFormatNumber(number As Float, minFractions As Int, maxFractions As
 End Sub
 
 Private Sub SetNumberFormat(number As Float, minFractions As Int, maxFractions As Int) As String
+	Return NumberFormat2(number,1, maxFractions, maxFractions, False)
 	numFormat.GetDefaultFormat.FractionPaddingChar = "0"
 	DefaultFormat.MinimumFractions = minFractions
 	DefaultFormat.MaximumFractions = maxFractions
@@ -126,18 +129,21 @@ Sub GetAppIcon As Image
 	Return fx.LoadImage(File.DirApp, "images/bal.png")
 End Sub
 
-Sub EncryptString(Str As String) As String'Byte()
+Sub EncryptString(Str As String) As String
 	Dim c As B4XCipher
-	Return su.EncodeBase64(c.Encrypt(Str.GetBytes("UTF8"),Main.pincode))
+	Return su.EncodeBase64(c.Encrypt(Str.GetBytes("UTF8"), cmVars.pincode))
 End Sub
 
-Sub DecryptString(EncryptedData As String) As String' As String
+Sub DecryptString(str As String) As String
 	Dim c As B4XCipher
+	Dim baseStr() As Byte = su.DecodeBase64(str)
+	
 	Try
-		Dim b() As Byte = c.Decrypt(su.DecodeBase64(EncryptedData), Main.pincode)
+		Dim b() As Byte = c.Decrypt(baseStr, cmVars.pincode)
 	Catch
-		return "err"
+		Return "err"
 	End Try
+	
 	Return EncryptToString(b)
 End Sub
 
@@ -150,15 +156,55 @@ Public Sub StringToByte(str As String) As Byte()
 End Sub
 
 Public Sub CreateGuid As String
-	Dim sb As StringBuilder
-	sb.Initialize
-	For Each stp As Int In Array(8, 4, 4, 4, 12)
-		If sb.Length > 0 Then sb.Append("-")
-		For n = 1 To stp
-			Dim c As Int = Rnd(0, 16)
-			If c < 10 Then c = c + 48 Else c = c + 55
-			sb.Append(Chr(c))
-		Next
+	Dim r As Reflector
+	r.Target = r.RunStaticMethod("java.util.UUID", "randomUUID", Null, Null)
+	Return r.RunMethod("toString")
+'	Dim stp As String = "00000000-0000-1000-a000-000000000000"
+'	Dim sb As String = ""
+' 
+'	For Index = 0 To stp.Length-1
+'		If stp.CharAt(Index)="0" Then
+'			sb=sb & "0123456789ABCDEF".CharAt(Rnd(0, 16))
+'		Else
+'			sb=sb & stp.CharAt(Index)
+'		End If
+'	Next
+'	Return sb.ToLowerCase
+End Sub
+
+Sub SetCLVScrollBars(clv As CustomListView, Visible As Boolean)
+	Dim nsv As ScrollPane = clv.sv
+	If Visible Then
+		nsv.SetVScrollVisibility("ALWAYS")
+	Else
+		nsv.SetVScrollVisibility("NEVER")
+	End If
+	Dim jo As JavaObject = clv 'ignore
+	jo.SetField("_scrollbarsvisible", Visible)
+	clv.Base_Resize(clv.AsView.Width, clv.AsView.Height)
+End Sub
+
+Sub RotateNode(n As Node, Degree As Double)
+	Dim jo As JavaObject = n
+	jo.RunMethod("setRotate", Array(Degree))
+End Sub
+
+'padText e.g. "9", padChar e.g. "0", padSide 0=left 1=right, padCount e.g. 2
+Public Sub padString(padText As String ,padChr As String, padSide As Int, padCount As Int) As String
+	Dim padStr As String
+	
+	If padText.Length = padCount Then
+		Return padText
+	End If
+	
+	For i = 1 To padCount-padText.Length
+		padStr = padStr&padChr
 	Next
-	Return sb.ToString
+	
+	If padSide = 0 Then
+		Return padStr&padText
+	Else
+		Return padText&padStr
+	End If
+	
 End Sub

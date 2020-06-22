@@ -1,1 +1,1 @@
---add-modules b4j,java.base,java.desktop,java.logging,java.sql,javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing
+--add-modules b4j,java.base,java.desktop,java.logging,java.naming,java.sql,javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing

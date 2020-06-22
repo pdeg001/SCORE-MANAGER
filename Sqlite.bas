@@ -24,8 +24,8 @@ End Sub
 
 Sub GetPlayerList As List
 	InitSql
-	qry = "SELECT player_id, player, moyenne, to_make FROM player ORDER BY LOWER(player) ASC"
-	rs = sql.ExecQuery(qry)
+	qry = "SELECT player_id, firstname, lastname, moyenne, to_make FROM player where club_id = ?"
+	rs = sql.ExecQuery2(qry, Array As String(cmVars.clubId))
 
 	Return CreatePlayerDataList
 End Sub
@@ -36,26 +36,30 @@ Sub GetPlayerData(player_id As String) As List
 	rs = sql.ExecQuery2(qry, Array As String(player_id))
 
 	Return CreatePlayerDataList
+	
 End Sub
 
 Private Sub CreatePlayerDataList As List
 	Dim lstPlayer As List
 	lstPlayer.Initialize
 	Do While rs.NextRow
-		lstPlayer.Add(clsFunc.CreateplayerCurs( rs.GetString("player_id"), rs.GetString("player"), rs.GetInt("moyenne"), rs.GetInt("to_make")))
+		lstPlayer.Add(clsFunc.CreateplayerCurs(rs.GetString("player_id"), rs.GetString("firstname"), rs.GetString("lastname"), rs.GetInt("moyenne"), rs.GetInt("to_make")))
 	Loop
 	rs.Close
+	lstPlayer.SortType("lastname", True)
 	Return lstPlayer
 End Sub
 
-Sub SetPlayerData(player_id As String, player As String, moyenne As Double, to_make As String)
+Sub SetPlayerData(player_id As String, name As String, lastname As String, moyenne As Double, to_make As String)
 	InitSql
 	If player_id <> "0" Then
-		qry = "UPDATE player set player = ?, moyenne = ?, to_make = ? WHERE player_id = ?"
-		sql.ExecNonQuery2(qry, Array As String(player, moyenne*1000, to_make, player_id))
+		qry = "UPDATE player set firstname = ?, lastname = ?, moyenne = ?, to_make = ? WHERE player_id = ?"
+		sql.ExecNonQuery2(qry, Array As String(name, lastname, moyenne*1000, to_make, player_id))
 	Else
-		qry = "INSERT INTO player (player_id, club_id, player, moyenne, to_make) VALUES (?,?,?,?,?)"
-		sql.ExecNonQuery2(qry, Array As String(clsFunc.CreateGuid, Main.clubId, player, moyenne*1000, to_make))
+		'Log(clsFunc.CreateGuid)
+		'Sleep(1)
+		qry = "INSERT INTO player (player_id, club_id, firstname, lastname, moyenne, to_make) VALUES (?,?,?,?,?,?)"
+		sql.ExecNonQuery2(qry, Array As String(clsFunc.CreateGuid, cmVars.clubId, name, lastname, moyenne*1000, to_make))
 	End If
 End Sub
 
@@ -77,7 +81,6 @@ Sub GetClubList As List
 	qry = "select * from club order by name asc"
 	rs = sql.ExecQuery(qry)
 	lst.Initialize
-	
 	Do While rs.NextRow
 		lst.Add(rs.GetString("name"))
 	Loop
@@ -87,15 +90,17 @@ Sub GetClubList As List
 End Sub
 
 Sub ValidateClub(name As String) As Boolean
+	Dim loc As String
 	InitSql
 	qry = "select location from club where name = ?"
 	rs = sql.ExecQuery2(qry, Array As String(name))
 	
 	
 	Do While rs.NextRow
-		LogDebug(rs.GetString("location"))
-		If clsFunc.DecryptString(rs.GetString("location")) = name Then
-			LogDebug("club match")
+		loc = rs.GetString("location")
+		
+		If clsFunc.DecryptString(loc) = name Then
+			rs.Close
 			Return True
 		End If
 	Loop
@@ -103,14 +108,38 @@ Sub ValidateClub(name As String) As Boolean
 	Return False	
 End Sub
 
+Sub GetClubId(name As String)
+	Dim rowCount As Int
+	InitSql
+	qry = "select club_id, count(*) as count from club where name = ?"
+	rs = sql.ExecQuery2(qry, Array As String(name))
+	rowCount = rs.GetInt("count")
+	
+	If rowCount = 0 Then
+		
+	End If
+	
+	If rowCount > 1 Then
+		
+	End If
+	
+	
+	Do While rs.NextRow
+		cmVars.clubId = rs.GetString("club_id")
+	Loop
+	rs.Close
+End Sub
+
 Sub CreateClub(name As String) As Boolean
 	If ClubExists(name) Then
+		rs.Close
 		Return True
 	End If
 	
 	InitSql
 	qry = "insert into club (club_id, name, location) values (?,?,?)"
 	sql.ExecNonQuery2(qry, Array As String(clsFunc.CreateGuid, name, clsFunc.EncryptString(name)))
+	rs.Close
 	Return True
 End Sub
 
@@ -121,8 +150,44 @@ Sub ClubExists(name As String) As Boolean
 	
 	Do While rs.NextRow
 		If rs.GetInt("found") > 0 Then
+			rs.Close
+			Return True
+		End If
+	Loop
+	rs.Close
+	Return False
+End Sub
+
+Sub CheckPlayerExists(name As String) As Boolean
+	Dim str As String
+	str = clsFunc.DecryptString(name)
+	LogDebug(str)
+	InitSql
+	qry = "select player as count from player where player = ? and club_id = ?"
+	LogDebug(clsFunc.EncryptString(name))
+	rs = sql.ExecQuery2(qry, Array As String(name, cmVars.clubId))
+	
+	Do While rs.NextRow
+		If clsFunc.DecryptString(rs.GetString("player")) = name Then
 			Return True
 		End If
 	Loop
 	Return False
+End Sub
+
+Sub GetClubInfo As String
+	Dim info, day, month, year As String
+	Dim dateNow As Long = DateTime.Now
+	
+	day = $"${clsFunc.padString(DateTime.GetDayOfMonth(dateNow),"0", 0, 2)}"$
+	month = $"${clsFunc.padString(DateTime.GetMonth(dateNow),"0", 0, 2)}"$
+	year = DateTime.GetYear(dateNow)
+	InitSql
+	qry = "Select name from club where club_id = ?"
+	rs = sql.ExecQuery2(qry, Array As String(cmVars.clubId))
+	
+	Do While rs.NextRow
+		info = $"${rs.GetString("name")} ${day}-${month}-${year}"$
+	Loop
+	Return info
 End Sub

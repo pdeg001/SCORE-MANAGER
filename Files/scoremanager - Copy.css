@@ -1,0 +1,164 @@
+.root {
+  /*-fx-opacity: 1.0;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0); -fx-background-color: white;
+  -fx-background-color: palegreen; */
+  -fx-background-insets: 10;
+  -fx-background-radius: 10;
+  -fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);
+  -fx-font-family: 'Helvetica', Arial, sans-serif;
+}
+
+/*
+.modal-dialog-glass {
+  -fx-effect: dropshadow(three-pass-box, derive(cadetblue, -20%), 10, 0, 4, 4); 
+  -fx-background-color: derive(cadetblue, -20%); 
+  -fx-background-insets: 12; 
+  -fx-background-radius: 6;
+}
+
+.modal-dialog-content {
+  -fx-padding: 20;
+  -fx-spacing: 10;
+  -fx-alignment: center;
+  -fx-font-size: 20;
+  -fx-background-color: linear-gradient(to bottom, derive(cadetblue, 20%), cadetblue);
+  -fx-border-color: derive(cadetblue, -20%);
+  -fx-border-width: 5;
+  -fx-background-insets: 12;
+  -fx-border-insets: 10;
+  -fx-border-radius: 6;
+  -fx-background-radius: 6;
+}
+*/
+.tooltip {
+    -fx-show-delay: 0ms;
+    -fx-show-duration: 5000ms;
+    -fx-hide-delay: 0ms;
+    -fx-background-radius: 2 2 2 2;
+    -fx-background-color: yellow;
+    -fx-text-fill: black;
+    -fx-font-size: 12px;
+    -fx-font-family: 'Helvetica', Arial, sans-serif;
+    -fx-font-style: normal;
+}
+
+.root { 
+
+-fx-focus-color: transparent;
+/*-fx-faint-focus-color: transparent;*/
+
+ }
+.label {
+	/*-fx-background-insets: 0, 0 0 1 0 ;	
+	-fx-border-color: red;*/
+}
+
+.scroll-bar .decrement-arrow {
+    -fx-padding:6.25;
+ }
+.scroll-bar .increment-arrow {
+    -fx-padding:6.25;
+}
+
+/*
+#clv1 .scroll-bar:vertical .track{
+    -fx-background-color: blue;
+    -fx-border-color: blue;
+}
+*/
+/*
+.scroll-bar:vertical .track{
+    -fx-background-color: blue;
+    -fx-border-color: blue;
+}
+.scroll-bar:vertical .thumb {
+    -fx-background-color: green;
+}
+*/
+.combo-box .list-cell 
+{
+    -fx-background: white;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 1.66667em; 
+}
+
+.combo-box-popup .list-view 
+{
+    -fx-background-color: white, white;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}    
+
+.combo-box-popup .list-view .list-cell 
+{
+    -fx-padding: 4 0 4 5;
+
+    /* No alternate highlighting */
+    -fx-background-color: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover 
+{
+    -fx-background: -fx-accent;
+    -fx-background-color: -fx-selection-bar;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: blue;
+    -fx-text-fill: white;/*-fx-text-inner-color;*/
+}
+
+/*.combo-box-base  
+{
+    -fx-skin: "com.sun.javafx.scene.control.skin.ComboBoxBaseSkin";
+    -fx-background-color: white, white, white, white;
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-padding: 0;
+}*/
+
+.combo-box-base:hover
+{
+    -fx-color: -fx-hover-base;
+	 
+}
+
+.combo-box-base:showing 
+{
+    -fx-color: -fx-pressed-base;
+}
+
+.combo-box-base:focused {
+    -fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-radius: 6.4, 4, 5, 3;
+    -fx-background-insets: -1.4, 0, 1, 2;
+}
+
+.combo-box-base:disabled {
+    -fx-opacity: .4;
+}
+
+.text-field {
+    -fx-background-color: -fx-text-box-border, -fx-background ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 4 ;
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+}
+/*
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-background ;
+}
+*/
+
+.scroll-pane{
+   -fx-background-color:transparent;
+  
+}
+.scroll-pane .viewport {
+       -fx-background-color: transparent;
+	  
+}

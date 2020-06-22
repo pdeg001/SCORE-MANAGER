@@ -1,8 +1,11 @@
 nl.pdeg.scoremanager
 0
-26
-funcclass
+29
+formclass
 sqlite
+funcclass
+tableviewclass
+mqttconnector
 b4xformatter
 animatedcounter
 anotherprogressbar
@@ -52,215 +55,251 @@ roundslider
 scrollinglabel
 swiftbutton
 b4jtextflow
-main,application_error,0,0,59,61
+main,application_error,0,0,69,71
 
 
 
-main,appstart,1,0,30,52
-,iconfont,,fx,,clsfunc,,sql,,mainform,,btnnewclub,,cmbclub,,edtpincode,,lblexit,,lbllogin,players,sql,players,clsfunc,players,edtmoyenne,players,playerform,players,btnclose,players,btnnew,players,btnsave,players,clvplayer,players,edtmake,players,edtname,newclub,clsfunc,newclub,sql,newclub,formposlist,newclub,iconfont,newclub,fx,newclub,ncform,newclub,btnsaveclub,newclub,edtnameclub,newclub,edtpincode,newclub,edtpincode1,newclub,lblexit
-,iconfont,,mainform,,btnnewclub,,cmbclub,,edtpincode,,lblexit,,lbllogin,players,btnclose,players,btnnew,players,btnsave,players,clvplayer,players,edtmake,players,edtmoyenne,players,edtname,newclub,formposlist,newclub,iconfont,newclub,btnsaveclub,newclub,edtnameclub,newclub,edtpincode,newclub,edtpincode1,newclub,lblexit
-players,initform,funcclass,initialize,sqlite,initialize,funcclass,getappicon,,getclubs,funcclass,configurefornumbers,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,sqlite,getclublist,newclub,initform,,showform,sqlite,initsql,,getformpos
-main,getclubs,1,0,101,115
-,sql,,cmbclub,newclub,clsfunc,newclub,sql,newclub,formposlist,newclub,iconfont,newclub,fx,newclub,ncform,newclub,btnsaveclub,newclub,edtnameclub,newclub,edtpincode,newclub,edtpincode1,newclub,lblexit,,mainform
+main,appstart,1,0,35,62
+,iconfont,,fx,,clsfunc,,sql,,mainform,,btnnewclub,,cmbclub,,edtpincode,,label4,,lblexit,,lbllogin,players,sql,players,clsfunc,players,edtmoyenne,players,clstabelview,players,playerform,players,tblplayer,players,btnclose,players,btnnew,players,btnsave,players,edtlastname,players,edtmake,players,edtname,players,genplayer,players,lblname,newclub,clsfunc,newclub,sql,newclub,formposlist,newclub,iconfont,newclub,fx,newclub,ncform,newclub,btnsaveclub,newclub,edtnameclub,newclub,edtpincode,newclub,edtpincode1,newclub,lblexit,newclub,clsform
+,iconfont,,mainform,,btnnewclub,,cmbclub,,edtpincode,,label4,,lblexit,,lbllogin,players,btnclose,players,btnnew,players,btnsave,players,edtlastname,players,edtmake,players,edtmoyenne,players,edtname,players,genplayer,players,lblname,players,tblplayer,newclub,formposlist,newclub,iconfont,newclub,btnsaveclub,newclub,edtnameclub,newclub,edtpincode,newclub,edtpincode1,newclub,lblexit
+players,initform,funcclass,initialize,sqlite,initialize,funcclass,getappicon,,getclubs,funcclass,configurefornumbers,tableviewclass,initialize,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,sqlite,getclublist,newclub,initform,,showform,newclub,setwinpos,sqlite,initsql,,getformpos,formclass,initialize
+main,getclubs,1,0,81,97
+,sql,,mainform,,cmbclub,newclub,clsfunc,newclub,sql,newclub,formposlist,newclub,iconfont,newclub,fx,newclub,ncform,newclub,btnsaveclub,newclub,edtnameclub,newclub,edtpincode,newclub,edtpincode1,newclub,lblexit,newclub,clsform
 newclub,formposlist,newclub,iconfont,newclub,btnsaveclub,newclub,edtnameclub,newclub,edtpincode,newclub,edtpincode1,newclub,lblexit
-sqlite,getclublist,newclub,initform,,showform,sqlite,initsql,funcclass,initialize,sqlite,initialize,,getformpos,funcclass,getappicon,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
-main,btnnewclub_mousereleased,1,0,129,132
-,mainform,newclub,clsfunc,newclub,sql,newclub,formposlist,newclub,iconfont,newclub,fx,newclub,ncform,newclub,btnsaveclub,newclub,edtnameclub,newclub,edtpincode,newclub,edtpincode1,newclub,lblexit
+sqlite,getclublist,newclub,initform,,showform,newclub,setwinpos,sqlite,initsql,funcclass,initialize,sqlite,initialize,,getformpos,funcclass,getappicon,formclass,initialize,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
+main,btnnewclub_mousereleased,1,0,107,110
+,mainform,newclub,clsfunc,newclub,sql,newclub,formposlist,newclub,iconfont,newclub,fx,newclub,ncform,newclub,btnsaveclub,newclub,edtnameclub,newclub,edtpincode,newclub,edtpincode1,newclub,lblexit,newclub,clsform
 newclub,formposlist,newclub,iconfont,newclub,btnsaveclub,newclub,edtnameclub,newclub,edtpincode,newclub,edtpincode1,newclub,lblexit
-newclub,initform,funcclass,initialize,sqlite,initialize,,getformpos,funcclass,getappicon,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
-main,cmbclub_selectedindexchanged,0,0,134,141
+newclub,initform,funcclass,initialize,sqlite,initialize,,getformpos,funcclass,getappicon,formclass,initialize,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
+main,cmbclub_selectedindexchanged,0,0,112,119
 ,edtpincode
 
 
-main,showform,1,0,54,56
+main,edtpincode_action,1,0,143,145
+,edtpincode,cmvars,pincode,,sql,,cmbclub,,mainform,,cutils,cmvars,appname,cmvars,clubid,playermatrix,sp,playermatrix,clsfunc,playermatrix,mqtt,playermatrix,sql,playermatrix,mform,playermatrix,btngame,playermatrix,btngamecancel,playermatrix,btngameok,playermatrix,btnplayer,playermatrix,btnsettings,playermatrix,btntest,playermatrix,cmbgametype,playermatrix,label1,playermatrix,lblbaseweek,playermatrix,lblclubinfo,playermatrix,lblp1name,playermatrix,lblp2name,playermatrix,lbltest,playermatrix,paneblockinput,playermatrix,panegame,playermatrix,scrollpane1,playermatrix,scrollpane2,playermatrix,scrollpane3,playermatrix,base,playermatrix,dialog,playermatrix,lstplayerid,playermatrix,fx,players,selectedplayerid,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,players,sql,players,tblplayer,playermatrix,formx,playermatrix,formy,playermatrix,formright,playermatrix,fwidth,playermatrix,screenwidth
+cmvars,pincode,cmvars,clubid,playermatrix,btngame,playermatrix,btngamecancel,playermatrix,btngameok,playermatrix,btnplayer,playermatrix,btnsettings,playermatrix,btntest,playermatrix,cmbgametype,playermatrix,label1,playermatrix,lblbaseweek,playermatrix,lblclubinfo,playermatrix,lblp1name,playermatrix,lblp2name,playermatrix,lbltest,playermatrix,paneblockinput,playermatrix,panegame,playermatrix,scrollpane1,playermatrix,scrollpane2,playermatrix,scrollpane3,playermatrix,base,players,selectedplayerid,playermatrix,formx,playermatrix,formy,playermatrix,formright,playermatrix,fwidth,playermatrix,screenwidth
+,login,sqlite,validateclub,sqlite,getclubid,playermatrix,initmatrix,playermatrix,showform,sqlite,initsql,funcclass,decryptstring,funcclass,encrypttostring,funcclass,initialize,mqttconnector,initialize,sqlite,initialize,funcclass,getappicon,b4xdialog,initialize,sqlite,getclubinfo,playermatrix,populategamecombo,playermatrix,initscollpanes,playermatrix,setformpos,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,funcclass,padstring,playermatrix,setverticalnames,sqlite,getplayerlist,players,setselectedplayeridtoempty,players,showplayerform,funcclass,getformatnumber,playermatrix,sethorizontalnames,playermatrix,setweeks,sqlite,createplayerdatalist,funcclass,createplayercurs,playermatrix,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,players,createrow,players,setcolumnstyle,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,funcclass,rotatenode,playermatrix,displaymetrics2
+main,login,1,0,147,161
+,edtpincode,cmvars,pincode,,sql,,cmbclub,,mainform,,cutils,cmvars,appname,cmvars,clubid,playermatrix,sp,playermatrix,clsfunc,playermatrix,mqtt,playermatrix,sql,playermatrix,mform,playermatrix,btngame,playermatrix,btngamecancel,playermatrix,btngameok,playermatrix,btnplayer,playermatrix,btnsettings,playermatrix,btntest,playermatrix,cmbgametype,playermatrix,label1,playermatrix,lblbaseweek,playermatrix,lblclubinfo,playermatrix,lblp1name,playermatrix,lblp2name,playermatrix,lbltest,playermatrix,paneblockinput,playermatrix,panegame,playermatrix,scrollpane1,playermatrix,scrollpane2,playermatrix,scrollpane3,playermatrix,base,playermatrix,dialog,playermatrix,lstplayerid,playermatrix,fx,players,selectedplayerid,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,players,sql,players,tblplayer,playermatrix,formx,playermatrix,formy,playermatrix,formright,playermatrix,fwidth,playermatrix,screenwidth
+cmvars,pincode,cmvars,clubid,playermatrix,btngame,playermatrix,btngamecancel,playermatrix,btngameok,playermatrix,btnplayer,playermatrix,btnsettings,playermatrix,btntest,playermatrix,cmbgametype,playermatrix,label1,playermatrix,lblbaseweek,playermatrix,lblclubinfo,playermatrix,lblp1name,playermatrix,lblp2name,playermatrix,lbltest,playermatrix,paneblockinput,playermatrix,panegame,playermatrix,scrollpane1,playermatrix,scrollpane2,playermatrix,scrollpane3,playermatrix,base,players,selectedplayerid,playermatrix,formx,playermatrix,formy,playermatrix,formright,playermatrix,fwidth,playermatrix,screenwidth
+sqlite,validateclub,sqlite,getclubid,playermatrix,initmatrix,playermatrix,showform,sqlite,initsql,funcclass,decryptstring,funcclass,encrypttostring,funcclass,initialize,mqttconnector,initialize,sqlite,initialize,funcclass,getappicon,b4xdialog,initialize,sqlite,getclubinfo,playermatrix,populategamecombo,playermatrix,initscollpanes,playermatrix,setformpos,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,funcclass,padstring,playermatrix,setverticalnames,sqlite,getplayerlist,players,setselectedplayeridtoempty,players,showplayerform,funcclass,getformatnumber,playermatrix,sethorizontalnames,playermatrix,setweeks,sqlite,createplayerdatalist,funcclass,createplayercurs,playermatrix,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,players,createrow,players,setcolumnstyle,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,funcclass,rotatenode,playermatrix,displaymetrics2
+main,showform,1,0,64,66
 ,mainform
 
 
-main,getformpos,0,0,154,161
+main,getformpos,0,0,134,141
 ,mainform
 
 
-main,label1_mouseentered,0,0,63,65
+main,label1_mouseentered,0,0,73,75
 
 
 
-main,label1_mouseexited,0,0,67,69
+main,label1_mouseexited,0,0,77,79
 
 
 
-main,lblexit_mousereleased,0,0,125,127
+main,lblexit_mousereleased,0,0,103,105
 
 
 
-main,lbllogin_mousereleased,0,0,117,123
-,edtpincode,,pincode,,sql,,cmbclub
-,pincode
-sqlite,validateclub,sqlite,initsql,funcclass,decryptstring,funcclass,encrypttostring
-main,mainform_mousedragged,0,0,148,152
-,mainform,,ox,,oy
-
-
-main,mainform_mousepressed,0,0,143,146
-,ox,,oy
-,ox,,oy
-
-main,process_globals,0,1,10,28
+main,lbllogin_mousereleased,1,0,99,101
+,edtpincode,cmvars,pincode,,sql,,cmbclub,,mainform,,cutils,cmvars,appname,cmvars,clubid,playermatrix,sp,playermatrix,clsfunc,playermatrix,mqtt,playermatrix,sql,playermatrix,mform,playermatrix,btngame,playermatrix,btngamecancel,playermatrix,btngameok,playermatrix,btnplayer,playermatrix,btnsettings,playermatrix,btntest,playermatrix,cmbgametype,playermatrix,label1,playermatrix,lblbaseweek,playermatrix,lblclubinfo,playermatrix,lblp1name,playermatrix,lblp2name,playermatrix,lbltest,playermatrix,paneblockinput,playermatrix,panegame,playermatrix,scrollpane1,playermatrix,scrollpane2,playermatrix,scrollpane3,playermatrix,base,playermatrix,dialog,playermatrix,lstplayerid,playermatrix,fx,players,selectedplayerid,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,players,sql,players,tblplayer,playermatrix,formx,playermatrix,formy,playermatrix,formright,playermatrix,fwidth,playermatrix,screenwidth
+cmvars,pincode,cmvars,clubid,playermatrix,btngame,playermatrix,btngamecancel,playermatrix,btngameok,playermatrix,btnplayer,playermatrix,btnsettings,playermatrix,btntest,playermatrix,cmbgametype,playermatrix,label1,playermatrix,lblbaseweek,playermatrix,lblclubinfo,playermatrix,lblp1name,playermatrix,lblp2name,playermatrix,lbltest,playermatrix,paneblockinput,playermatrix,panegame,playermatrix,scrollpane1,playermatrix,scrollpane2,playermatrix,scrollpane3,playermatrix,base,players,selectedplayerid,playermatrix,formx,playermatrix,formy,playermatrix,formright,playermatrix,fwidth,playermatrix,screenwidth
+,login,sqlite,validateclub,sqlite,getclubid,playermatrix,initmatrix,playermatrix,showform,sqlite,initsql,funcclass,decryptstring,funcclass,encrypttostring,funcclass,initialize,mqttconnector,initialize,sqlite,initialize,funcclass,getappicon,b4xdialog,initialize,sqlite,getclubinfo,playermatrix,populategamecombo,playermatrix,initscollpanes,playermatrix,setformpos,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,funcclass,padstring,playermatrix,setverticalnames,sqlite,getplayerlist,players,setselectedplayeridtoempty,players,showplayerform,funcclass,getformatnumber,playermatrix,sethorizontalnames,playermatrix,setweeks,sqlite,createplayerdatalist,funcclass,createplayercurs,playermatrix,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,players,createrow,players,setcolumnstyle,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,funcclass,rotatenode,playermatrix,displaymetrics2
+main,mainform_mousedragged,0,0,127,132
+,clsform,playermatrix,formx,playermatrix,mform,playermatrix,formy,playermatrix,formright,playermatrix,fwidth,playermatrix,screenwidth
+playermatrix,formx,playermatrix,formy,playermatrix,formright,playermatrix,fwidth,playermatrix,screenwidth
+formclass,mainform_mousedragged,playermatrix,setformpos,playermatrix,displaymetrics2
+main,mainform_mousepressed,0,0,121,125
 
 
 
-main,setscrollbarsize,0,0,74,99
+main,process_globals,0,1,10,33
 
 
 
-players,initform,1,0,26,43
-,sql,,clsfunc,,edtmoyenne,,playerform,,btnclose,,btnnew,,btnsave,,clvplayer,,edtmake,,edtname
-,btnclose,,btnnew,,btnsave,,clvplayer,,edtmake,,edtmoyenne,,edtname
-sqlite,initialize,funcclass,initialize,funcclass,configurefornumbers,funcclass,getappicon,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
-players,btnclose_mousereleased,1,0,49,54
-playermatrix,paneblockinput,,playerform,playermatrix,clsfunc,playermatrix,scrollpane1,playermatrix,scrollpane2,playermatrix,scrollpane3,playermatrix,sql,playermatrix,lstplayerid,playermatrix,lbltest,playermatrix,fx,playermatrix,lblheight,,selectedplayerid,,edtmake,,edtmoyenne,,edtname,,sql,,clvplayer,,xui,,lblmake,,lblmoyenne,,lblname,,pnplayer,,clsfunc,,fx,main,pincode,playermatrix,label1
-,selectedplayerid,,lblmake,,lblmoyenne,,lblname,,pnplayer
-playermatrix,setdisableclosemain,playermatrix,initscollpanes,funcclass,setdisablecloseform,playermatrix,setverticalnames,sqlite,getplayerlist,,setselectedplayeridtoempty,,showplayerform,funcclass,getformatnumber,funcclass,decryptstring,playermatrix,sethorizontalnames,playermatrix,setweeks,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,,getplayers,,createclv,funcclass,encrypttostring,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,playermatrix,settooltip
-players,btnnew_mousereleased,0,0,225,234
+players,initform,1,0,32,47
+,sql,,clsfunc,,edtmoyenne,,clstabelview,,playerform,,tblplayer,,btnclose,,btnnew,,btnsave,,edtlastname,,edtmake,,edtname,,genplayer,,lblname
+,btnclose,,btnnew,,btnsave,,edtlastname,,edtmake,,edtmoyenne,,edtname,,genplayer,,lblname,,tblplayer
+sqlite,initialize,funcclass,initialize,funcclass,configurefornumbers,tableviewclass,initialize,funcclass,getappicon,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
+players,btnclose_mousereleased,1,0,53,58
+playermatrix,paneblockinput,,playerform,playermatrix,clsfunc,playermatrix,scrollpane1,playermatrix,scrollpane2,playermatrix,scrollpane3,playermatrix,sql,playermatrix,lstplayerid,playermatrix,lbltest,playermatrix,fx,cmvars,clubid,cmvars,pincode,,selectedplayerid,,edtmake,,edtmoyenne,,edtname,,sql,,tblplayer
+,selectedplayerid
+playermatrix,setdisableclosemain,playermatrix,initscollpanes,funcclass,setdisablecloseform,playermatrix,setverticalnames,sqlite,getplayerlist,,setselectedplayeridtoempty,,showplayerform,funcclass,getformatnumber,playermatrix,sethorizontalnames,playermatrix,setweeks,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring,,getplayers,,createrow,,setcolumnstyle,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,funcclass,rotatenode
+players,btnnew_mousereleased,0,0,239,248
 ,selectedindex,,selectedplayerid,,edtmake,,edtmoyenne,,edtname
 ,selectedindex,,selectedplayerid
 
-players,btnsave_mousereleased,1,0,183,211
-,fx,,playerform,,edtmoyenne,,edtname,,clsfunc,,sql,,selectedplayerid,,edtmake,,clvplayer,main,pincode,main,clubid,,selectedindex,,xui,,lblmake,,lblmoyenne,,lblname,,pnplayer
-,lblmake,,lblmoyenne,,lblname,,pnplayer
-,validateinput,funcclass,encryptstring,sqlite,setplayerdata,,updateclv,sqlite,getlastid,funcclass,createplayercurs,,createclv,sqlite,initsql,funcclass,createguid,funcclass,getformatnumber,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,funcclass,decryptstring,funcclass,encrypttostring
-players,validateinput,0,0,213,218
-,edtname
+players,btnsave_mousereleased,0,0,197,225
+,cutils,cmvars,appname,,playerform,,edtmoyenne,,edtname,,clsfunc,,edtlastname,,sql,,selectedplayerid,,edtmake,,tblplayer,cmvars,pincode,cmvars,clubid
+
+,validateinput,funcclass,encryptstring,sqlite,setplayerdata,,setcellvalue,sqlite,initsql,funcclass,createguid,,getlabel
+players,validateinput,0,0,227,232
+,edtname,,edtlastname
 
 
-players,updateclv,0,0,115,141
-,clvplayer,,selectedindex,,edtname,,clsfunc,,edtmoyenne,,edtmake
+players,setcellvalue,0,0,127,129
+,tblplayer
 
-funcclass,getformatnumber,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-players,createclv,1,0,80,90
-,xui,,lblmake,,lblmoyenne,,lblname,,pnplayer,,clsfunc,,fx,main,pincode
-,lblmake,,lblmoyenne,,lblname,,pnplayer
-funcclass,decryptstring,funcclass,getformatnumber,funcclass,encrypttostring,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-players,clvplayer_itemclick,0,0,98,113
-,clvplayer,,clsfunc,,selectedplayerid,,selectedindex,,sql,,edtname,,edtmoyenne,,edtmake,main,pincode
-,selectedplayerid,,selectedindex
-funcclass,setclvselectedcolor,sqlite,getplayerdata,funcclass,decryptstring,funcclass,getformatnumber,funcclass,resetclvselectedcolor,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,encrypttostring,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-players,edtmake_textchanged,0,0,160,181
+,getlabel
+players,createrow,0,0,112,121
+
+
+
+players,edtmake_textchanged,0,0,157,178
 ,edtmake
 
 
-players,edtmoyenne_focuschanged,0,0,220,223
+players,edtmoyenne_focuschanged,0,0,234,237
 ,edtmoyenne,,clsfunc
 
 funcclass,getformatnumber,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-players,edtmoyenne_textchanged,0,0,143,158
+players,edtmoyenne_textchanged,0,0,144,155
 ,clsfunc,,edtmoyenne
 
 funcclass,setmoyenneformat
-players,getplayers,1,0,67,78
-,sql,,clvplayer,,xui,,lblmake,,lblmoyenne,,lblname,,pnplayer,,clsfunc,,fx,main,pincode
-,lblmake,,lblmoyenne,,lblname,,pnplayer
-sqlite,getplayerlist,,createclv,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,getformatnumber,funcclass,encrypttostring,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-players,playerform_closerequest,0,0,45,47
+players,genmembers,0,0,180,195
+,clsfunc,,sql,cmvars,pincode,cmvars,clubid
+
+funcclass,encryptstring,funcclass,getformatnumber,sqlite,setplayerdata,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,sqlite,initsql,funcclass,createguid
+players,genplayer_mousereleased,0,0,254,256
+,clsfunc,,sql,cmvars,pincode,cmvars,clubid
+
+,genmembers,funcclass,encryptstring,funcclass,getformatnumber,sqlite,setplayerdata,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,sqlite,initsql,funcclass,createguid
+players,getcellvalue,0,0,123,125
+,tblplayer
+
+,getlabel
+players,getlabel,0,0,107,110
+,tblplayer
+
+
+players,getplayers,0,0,70,86
+,sql,,tblplayer,cmvars,clubid,cmvars,pincode
+
+sqlite,getplayerlist,,createrow,,setcolumnstyle,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring
+players,setcolumnstyle,0,0,131,135
+,tblplayer
+
+
+players,playerform_closerequest,0,0,49,51
 ,clsfunc
 
 funcclass,setdisablecloseform
-players,pnplayer_mousereleased,0,0,92,96
+players,pnplayer_mousereleased,0,0,138,142
 
 
 
-players,process_globals,0,1,5,24
+players,process_globals,0,1,5,30
 
 
 
-players,setscrollbarsize,0,0,240,265
-
-
-
-players,setselectedplayeridtoempty,0,0,267,269
+players,setselectedplayeridtoempty,0,0,250,252
 ,selectedplayerid
 ,selectedplayerid
 
-players,showplayerform,1,0,56,65
-playermatrix,paneblockinput,,edtmake,,edtmoyenne,,edtname,,playerform,playermatrix,clsfunc,,sql,,clvplayer,,xui,,lblmake,,lblmoyenne,,lblname,,pnplayer,,clsfunc,,fx,main,pincode
-,lblmake,,lblmoyenne,,lblname,,pnplayer
-playermatrix,setdisableclosemain,,getplayers,funcclass,setdisablecloseform,sqlite,getplayerlist,,createclv,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,getformatnumber,funcclass,encrypttostring,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-funcclass,initialize,0,0,12,15
+players,showplayerform,1,0,60,68
+playermatrix,paneblockinput,,edtmake,,edtmoyenne,,edtname,,playerform,playermatrix,clsfunc,,sql,,tblplayer,cmvars,clubid,cmvars,pincode
+
+playermatrix,setdisableclosemain,,getplayers,funcclass,setdisablecloseform,sqlite,getplayerlist,,createrow,,setcolumnstyle,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring
+players,tblplayer_resize,0,0,99,104
+,tblplayer
+
+
+players,tblplayer_selectedrowchanged,0,0,88,97
+,selectedplayerid,,edtname,,edtlastname,,edtmoyenne,,edtmake,,tblplayer
+,selectedplayerid
+,getcellvalue,,getlabel
+funcclass,initialize,0,0,11,14
 
 
 b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
-funcclass,getappicon,0,0,119,121
+funcclass,getappicon,0,0,122,124
 
 
 
-funcclass,encryptstring,0,0,123,126
-main,pincode
+funcclass,encryptstring,0,0,126,129
+cmvars,pincode
 
 
-funcclass,createplayercurs,0,0,17,25
-
-
-
-funcclass,setclvselectedcolor,0,0,54,60
-
-
-,resetclvselectedcolor
-funcclass,decryptstring,0,0,128,136
-main,pincode
-
-,encrypttostring
-funcclass,getformatnumber,0,0,27,29
+funcclass,getformatnumber,0,0,29,31
 
 
 ,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-funcclass,setmoyenneformat,0,0,111,117
+funcclass,setmoyenneformat,0,0,114,120
 
 
 
-funcclass,configurefornumbers,0,0,80,109
+funcclass,configurefornumbers,0,0,83,112
 
 
 
-funcclass,setdisablecloseform,0,0,46,48
+funcclass,setdisablecloseform,0,0,49,51
 
 
 
-funcclass,class_globals,0,0,1,9
+funcclass,getdisablecloseform,0,0,53,55
 
 
 
-funcclass,createguid,0,0,146,158
+funcclass,rotatenode,0,0,181,184
 
 
 
-funcclass,encrypttostring,0,0,138,140
+funcclass,decryptstring,0,0,131,142
+cmvars,pincode
+
+,encrypttostring
+funcclass,createguid,0,0,152,167
 
 
 
-funcclass,displaydouble,0,0,71,78
+funcclass,createplayercurs,0,0,16,27
+cmvars,pincode
+
+,decryptstring,,encrypttostring
+funcclass,padstring,0,0,187,204
 
 
 
-funcclass,getdecimalvaluetointvalue,0,0,38,40
+funcclass,class_globals,0,0,1,8
+
+
+
+funcclass,encrypttostring,0,0,144,146
+
+
+
+funcclass,displaydouble,0,0,74,81
+
+
+
+funcclass,getdecimalvaluetointvalue,0,0,41,43
 
 
 ,setdecimaltoint
-funcclass,setdecimaltoint,0,0,42,44
+funcclass,setdecimaltoint,0,0,45,47
 
 
 
-funcclass,getdisablecloseform,0,0,50,52
-
-
-
-funcclass,setnumberformat,0,0,31,36
+funcclass,setnumberformat,0,0,33,39
 
 
 b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-funcclass,resetclvselectedcolor,0,0,62,69
+funcclass,resetclvselectedcolor,0,0,65,72
 
 
 
-funcclass,stringtobyte,0,0,142,144
+funcclass,setclvscrollbars,0,0,169,179
+
+
+
+funcclass,setclvselectedcolor,0,0,57,63
+
+
+,resetclvselectedcolor
+funcclass,stringtobyte,0,0,148,150
 
 
 
@@ -268,164 +307,464 @@ sqlite,initialize,0,0,9,11
 
 
 funcclass,initialize,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
-sqlite,getclublist,0,0,68,81
+sqlite,getclublist,0,0,72,84
 
 
 ,initsql
-sqlite,validateclub,0,0,83,98
-main,pincode
+sqlite,validateclub,0,0,86,103
+cmvars,pincode
 
 ,initsql,funcclass,decryptstring,funcclass,encrypttostring
-sqlite,setplayerdata,0,0,45,54
-main,clubid
+sqlite,getclubid,0,0,105,125
+cmvars,clubid
+cmvars,clubid
+,initsql
+sqlite,setplayerdata,0,0,47,58
+cmvars,clubid
 
 ,initsql,funcclass,createguid
-sqlite,getlastid,0,0,56,66
-
-
-,initsql
-sqlite,getplayerdata,0,0,27,33
-
-
-,initsql,,createplayerdatalist,funcclass,createplayercurs
 sqlite,getplayerlist,0,0,19,25
+cmvars,clubid,cmvars,pincode
 
+,initsql,,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring
+sqlite,getclubinfo,0,0,172,187
+cmvars,clubid
 
-,initsql,,createplayerdatalist,funcclass,createplayercurs
-sqlite,class_globals,0,0,1,6
+funcclass,padstring,,initsql
+sqlite,checkplayerexists,0,0,155,170
+cmvars,clubid,cmvars,pincode
 
-
-
-sqlite,clubexists,0,0,111,122
-
-
-,initsql
+funcclass,decryptstring,,initsql,funcclass,encryptstring,funcclass,encrypttostring
 sqlite,initsql,0,0,13,17
 
 
 
-sqlite,createclub,0,0,100,109
-main,pincode
+sqlite,class_globals,0,0,1,6
+
+
+
+sqlite,clubexists,0,0,140,153
+
+
+,initsql
+sqlite,createclub,0,0,127,138
+cmvars,pincode
 
 ,clubexists,,initsql,funcclass,createguid,funcclass,encryptstring
-sqlite,createplayerdatalist,0,0,35,43
+sqlite,createplayerdatalist,0,0,36,45
+cmvars,pincode
+
+funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring
+sqlite,getlastid,0,0,60,70
 
 
-funcclass,createplayercurs
-newclub,initform,1,0,17,40
-,clsfunc,,sql,,formposlist,,iconfont,,fx,,ncform,,btnsaveclub,,edtnameclub,,edtpincode,,edtpincode1,,lblexit,main,mainform
+,initsql
+sqlite,getplayerdata,0,0,27,34
+cmvars,pincode
+
+,initsql,,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring
+newclub,initform,1,0,19,47
+,clsfunc,,sql,,formposlist,,iconfont,,fx,,ncform,,btnsaveclub,,edtnameclub,,edtpincode,,edtpincode1,,lblexit,,clsform,main,mainform
 ,formposlist,,iconfont,,btnsaveclub,,edtnameclub,,edtpincode,,edtpincode1,,lblexit
-funcclass,initialize,sqlite,initialize,main,getformpos,funcclass,getappicon,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
-newclub,btnsaveclub_click,0,0,42,44
+funcclass,initialize,sqlite,initialize,main,getformpos,funcclass,getappicon,formclass,initialize,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
+newclub,setwinpos,0,0,119,122
+,ncform
+
+
+newclub,btnsaveclub_mousereleased,1,0,54,78
+,sql,,edtnameclub,,cutils,cmvars,appname,,ncform,,fx,cmvars,pincode,,edtpincode,,edtpincode1,main,sql,main,mainform,main,cmbclub,,clsfunc,,formposlist,,iconfont,,btnsaveclub,,lblexit,,clsform
+cmvars,pincode,,formposlist,,iconfont,,btnsaveclub,,edtnameclub,,edtpincode,,edtpincode1,,lblexit
+,checkpin,sqlite,clubexists,sqlite,createclub,main,getclubs,main,showform,sqlite,initsql,funcclass,createguid,funcclass,encryptstring,sqlite,getclublist,,initform,,setwinpos,funcclass,initialize,sqlite,initialize,main,getformpos,funcclass,getappicon,formclass,initialize,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
+newclub,checkpin,0,0,80,101
+,edtnameclub,,cutils,cmvars,appname,,ncform,,edtpincode,,edtpincode1
+
+
+newclub,edtnameclub_action,0,0,103,107
 
 
 
-newclub,btnsaveclub_mousereleased,1,0,51,55
-,edtnameclub,,fx,,ncform,,edtpincode,,edtpincode1
-
-,checkpin
-newclub,checkpin,1,0,57,79
-,edtnameclub,,fx,,ncform,,edtpincode,,edtpincode1
-
-
-newclub,checkclubname,0,0,97,100
-,edtnameclub,,sql
-
-sqlite,clubexists,sqlite,initsql
-newclub,clubexistsmsg,1,0,102,108
-,fx,,ncform
-
-
-newclub,edtnameclub_action,0,0,81,85
+newclub,edtnameclub_focuschanged,0,0,109,117
 
 
 
-newclub,edtnameclub_focuschanged,0,0,87,95
-
-
-
-newclub,lblexit_mousereleased,1,0,46,49
+newclub,lblexit_mousereleased,1,0,49,52
 ,ncform,main,mainform
 
 main,showform
-newclub,process_globals,0,1,2,15
+newclub,ncform_mousedragged,0,0,128,130
 
 
 
-playermatrix,setdisableclosemain,0,0,51,53
+newclub,ncform_mousepressed,0,0,124,126
+
+
+
+newclub,process_globals,0,1,2,17
+
+
+
+playermatrix,initmatrix,1,0,42,67
+,sp,,clsfunc,,mqtt,,sql,,mform,,btngame,,btngamecancel,,btngameok,,btnplayer,,btnsettings,,btntest,,cmbgametype,,label1,,lblbaseweek,,lblclubinfo,,lblp1name,,lblp2name,,lbltest,,paneblockinput,,panegame,,scrollpane1,,scrollpane2,,scrollpane3,,base,,dialog,cmvars,clubid,,lstplayerid,,fx,cmvars,pincode,players,selectedplayerid,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,players,sql,players,tblplayer,,formx,,formy,,formright,,fwidth,,screenwidth
+,btngame,,btngamecancel,,btngameok,,btnplayer,,btnsettings,,btntest,,cmbgametype,,label1,,lblbaseweek,,lblclubinfo,,lblp1name,,lblp2name,,lbltest,,paneblockinput,,panegame,,scrollpane1,,scrollpane2,,scrollpane3,,base,players,selectedplayerid,,formx,,formy,,formright,,fwidth,,screenwidth
+funcclass,initialize,mqttconnector,initialize,sqlite,initialize,funcclass,getappicon,b4xdialog,initialize,sqlite,getclubinfo,,populategamecombo,,initscollpanes,,setformpos,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,funcclass,padstring,sqlite,initsql,,setverticalnames,sqlite,getplayerlist,players,setselectedplayeridtoempty,players,showplayerform,funcclass,getformatnumber,,sethorizontalnames,,setweeks,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring,,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,players,createrow,players,setcolumnstyle,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,funcclass,rotatenode,,displaymetrics2
+playermatrix,showform,0,0,118,120
+
+
+
+playermatrix,setdisableclosemain,0,0,128,130
 ,clsfunc
 
 funcclass,setdisablecloseform
-playermatrix,initscollpanes,1,0,55,65
-,scrollpane1,,scrollpane2,,scrollpane3,,sql,,lstplayerid,,lbltest,,clsfunc,,fx,,lblheight,players,selectedplayerid,,paneblockinput,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,players,sql,players,clvplayer,players,xui,players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer,players,clsfunc,players,fx,main,pincode,,label1
-players,selectedplayerid,players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer
-,setverticalnames,sqlite,getplayerlist,players,setselectedplayeridtoempty,players,showplayerform,funcclass,getformatnumber,funcclass,decryptstring,,sethorizontalnames,,setweeks,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,players,createclv,funcclass,encrypttostring,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,,settooltip
-playermatrix,btnplayer_mousereleased,1,0,286,291
-,paneblockinput,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,,clsfunc,players,sql,players,clvplayer,players,xui,players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer,players,clsfunc,players,fx,main,pincode
-players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer
-players,showplayerform,,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,sqlite,getplayerlist,players,createclv,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,getformatnumber,funcclass,encrypttostring,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
-playermatrix,getplayerid,0,0,293,297
+playermatrix,initscollpanes,1,0,132,142
+,scrollpane1,,scrollpane2,,scrollpane3,,sql,,lstplayerid,,lbltest,,clsfunc,,fx,cmvars,clubid,cmvars,pincode,players,selectedplayerid,,paneblockinput,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,players,sql,players,tblplayer
+players,selectedplayerid
+,setverticalnames,sqlite,getplayerlist,players,setselectedplayeridtoempty,players,showplayerform,funcclass,getformatnumber,,sethorizontalnames,,setweeks,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring,,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,players,createrow,players,setcolumnstyle,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,funcclass,rotatenode
+playermatrix,btngame_mousereleased,1,0,386,388
+gamesplaying,gform,gamesplaying,clvgames,gamesplaying,clsfunc,gamesplaying,sql,gamesplaying,btnclose,,formright,,screenwidth,,formx,,fwidth,,formy,gamesplaying,xui,gamesplaying,lblinning,gamesplaying,lblp1,gamesplaying,lblp1avg,gamesplaying,lblp1caram,gamesplaying,lblp2,gamesplaying,lblp2avg,gamesplaying,lblp2caram,gamesplaying,lbltable,gamesplaying,pngame
+gamesplaying,btnclose,gamesplaying,clvgames,gamesplaying,lblinning,gamesplaying,lblp1,gamesplaying,lblp1avg,gamesplaying,lblp1caram,gamesplaying,lblp2,gamesplaying,lblp2avg,gamesplaying,lblp2caram,gamesplaying,lbltable,gamesplaying,pngame
+gamesplaying,showform,gamesplaying,initform,gamesplaying,setformpos,funcclass,setclvscrollbars,gamesplaying,gengamelist,funcclass,initialize,sqlite,initialize,funcclass,getappicon,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,,getformright,,getscreenwidth,,getformleft,,getformtop
+playermatrix,btngamecancel_mousereleased,0,0,376,378
+,panegame
+
+
+playermatrix,btngameok_mousereleased,0,0,372,374
 
 
 
-playermatrix,highlitespeler,0,0,258,260
+playermatrix,btnplayer_mousereleased,1,0,356,361
+,paneblockinput,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,,clsfunc,players,sql,players,tblplayer,cmvars,clubid,cmvars,pincode
+
+players,showplayerform,,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,sqlite,getplayerlist,players,createrow,players,setcolumnstyle,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring
+playermatrix,btnsettings_mousereleased,1,0,368,370
+tabsetting,clsfunc,tabsetting,sform,tabsetting,tabsettings,players,sql,players,clsfunc,players,edtmoyenne,players,clstabelview,players,playerform,players,tblplayer,players,btnclose,players,btnnew,players,btnsave,players,edtlastname,players,edtmake,players,edtname,players,genplayer,players,lblname,cmvars,clubid,cmvars,pincode
+tabsetting,tabsettings,players,btnclose,players,btnnew,players,btnsave,players,edtlastname,players,edtmake,players,edtmoyenne,players,edtname,players,genplayer,players,lblname,players,tblplayer
+tabsetting,initsettings,funcclass,initialize,funcclass,getappicon,players,initform,players,getplayers,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,sqlite,initialize,funcclass,configurefornumbers,tableviewclass,initialize,sqlite,getplayerlist,players,createrow,players,setcolumnstyle,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring
+playermatrix,btntest_mousereleased,0,0,398,401
+,mqtt,cmvars,mqttname,cmvars,mqttbase,cmvars,mqtttable
+
+mqttconnector,setsub,mqttconnector,connect
+playermatrix,displaymetrics2,0,0,87,102
+,screenwidth
+,screenwidth
+
+playermatrix,getformleft,0,0,107,109
+,formx,,fwidth
+
+
+playermatrix,getformright,0,0,104,106
+,formright
+
+
+playermatrix,getformtop,0,0,111,113
+,formy
+
+
+playermatrix,getplayerid,0,0,363,366
+
+
+
+playermatrix,getscreenwidth,0,0,115,117
+,screenwidth
+
+
+playermatrix,highlitespeler,0,0,322,324
 ,fx
 
 
-playermatrix,initmatrix,1,0,27,43
-,sp,,clsfunc,,sql,,mform,,btnplayer,,clvplaying,,cmbgametype,,label1,,lblbaseweek,,lbltest,,paneblockinput,,scrollpane1,,scrollpane2,,scrollpane3
-,btnplayer,,clvplaying,,cmbgametype,,label1,,lblbaseweek,,lbltest,,paneblockinput,,scrollpane1,,scrollpane2,,scrollpane3
-funcclass,initialize,sqlite,initialize,funcclass,getappicon,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata
-playermatrix,setverticalnames,1,0,67,119
-,scrollpane1,,sql,,lstplayerid,,lbltest,,clsfunc,,fx,,lblheight,,scrollpane2,,scrollpane3,players,selectedplayerid,,paneblockinput,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,players,sql,players,clvplayer,players,xui,players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer,players,clsfunc,players,fx,main,pincode,,label1
-players,selectedplayerid,players,lblmake,players,lblmoyenne,players,lblname,players,pnplayer
-sqlite,getplayerlist,players,setselectedplayeridtoempty,players,showplayerform,funcclass,getformatnumber,funcclass,decryptstring,,sethorizontalnames,,setweeks,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,players,createclv,funcclass,encrypttostring,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,,settooltip
-playermatrix,lblweek_mouseentered,0,0,227,256
-,fx,,scrollpane1,,pleft,,scrollpane3,,ptop
-,pleft,,ptop
-,highlitespeler
-playermatrix,lblweek_mouseexited,0,0,215,225
-,fx,,ptop,,pleft
-
-
-playermatrix,lblweek_mousereleased,1,0,274,284
-,pleft,,ptop,,fx,,mform
-
-,getplayerid
-playermatrix,mform_closerequest,0,0,45,49
-,clsfunc
-
-funcclass,getdisablecloseform
-playermatrix,populategamecombo,0,0,207,213
+playermatrix,populategamecombo,0,0,270,276
 ,cmbgametype
 
 
-playermatrix,process_globals,0,1,2,25
+playermatrix,setformpos,0,0,78,85
+,formx,,mform,,formy,,formright,,fwidth,,screenwidth
+,formx,,formy,,formright,,fwidth,,screenwidth
+,displaymetrics2
+playermatrix,setverticalnames,1,0,144,190
+,scrollpane1,,sql,,lstplayerid,,lbltest,,clsfunc,,fx,,scrollpane2,,scrollpane3,cmvars,clubid,cmvars,pincode,players,selectedplayerid,,paneblockinput,players,edtmake,players,edtmoyenne,players,edtname,players,playerform,players,sql,players,tblplayer
+players,selectedplayerid
+sqlite,getplayerlist,players,setselectedplayeridtoempty,players,showplayerform,funcclass,getformatnumber,,sethorizontalnames,,setweeks,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring,,setdisableclosemain,players,getplayers,funcclass,setdisablecloseform,players,createrow,players,setcolumnstyle,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,funcclass,rotatenode
+playermatrix,lblweek_mouseentered,0,0,290,320
+,fx,,scrollpane1,,pleft,,scrollpane3,,ptop
+,pleft,,ptop
+,highlitespeler
+playermatrix,lblweek_mouseexited,0,0,278,288
+,fx,,ptop,,pleft
+
+
+playermatrix,lblweek_mousereleased,1,0,338,354
+,panegame,,lblp1name,,pleft,,lblp2name,,ptop,,fx,,mform
+
+,getplayerid
+playermatrix,mainform_drag,0,0,390,392
+
+
+
+playermatrix,mainform_touch,0,0,394,396
+,formx,,mform,,formy,,formright,,fwidth,,screenwidth
+,formx,,formy,,formright,,fwidth,,screenwidth
+,setformpos,,displaymetrics2
+playermatrix,mform_closerequest,0,0,122,126
+,clsfunc
+
+funcclass,getdisablecloseform
+playermatrix,mform_resize,0,0,69,76
+,mform,,formx,,formy,,formright,,fwidth,,screenwidth,gamesplaying,gform
+,formx,,formy,,formright,,fwidth,,screenwidth
+,setformpos,gamesplaying,setformpos,,displaymetrics2,,getformright,,getscreenwidth,,getformleft,,getformtop
+playermatrix,panegame_mousedragged,0,0,380,384
+,panegame
+
+
+playermatrix,process_globals,0,1,2,40
 ,lblheight
 ,lblheight
 
-playermatrix,scrollpane1_vscrollchanged,0,0,262,264
+playermatrix,scrollpane1_vscrollchanged,0,0,326,328
 ,scrollpane2,,scrollpane1
 
 
-playermatrix,scrollpane2_hscrollchanged,0,0,270,272
+playermatrix,scrollpane2_hscrollchanged,0,0,334,336
 ,scrollpane3
 
 
-playermatrix,scrollpane2_vscrollchanged,0,0,266,268
+playermatrix,scrollpane2_vscrollchanged,0,0,330,332
 ,scrollpane1,,scrollpane2
 
 
-playermatrix,sethorizontalnames,0,0,128,169
-,label1,,scrollpane3,,sql,,lstplayerid,,fx,,clsfunc,,lbltest,main,pincode
+playermatrix,sethorizontalnames,0,0,199,232
+,scrollpane3,,sql,,lstplayerid,,clsfunc,,lbltest,cmvars,clubid,cmvars,pincode
 
-sqlite,getplayerlist,funcclass,getformatnumber,,settooltip,funcclass,decryptstring,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata,funcclass,encrypttostring
-playermatrix,settooltip,0,0,121,126
+sqlite,getplayerlist,funcclass,getformatnumber,funcclass,rotatenode,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring,funcclass,setnumberformat,b4xformatter,getdefaultformat,b4xformatter,format,b4xformatter,getformatdata
+playermatrix,settooltip,0,0,192,197
 
 
 
-playermatrix,setweeks,0,0,172,205
+playermatrix,setweeks,0,0,235,268
 ,lbltest,,scrollpane2,,lstplayerid,,fx
+
+
+formclass,mainform_mousedragged,0,0,17,22
+playermatrix,formx,playermatrix,mform,playermatrix,formy,playermatrix,formright,playermatrix,fwidth,playermatrix,screenwidth
+playermatrix,formx,playermatrix,formy,playermatrix,formright,playermatrix,fwidth,playermatrix,screenwidth
+playermatrix,setformpos,playermatrix,displaymetrics2
+formclass,class_globals,0,0,1,5
+
+
+
+formclass,initialize,0,0,8,10
+
+
+
+formclass,mainform_mousepressed,0,0,12,15
+
+
+
+formclass,pane_mousedragged,0,0,24,28
+
+
+
+tableviewclass,initialize,0,0,8,11
+
+
+
+tableviewclass,class_globals,0,0,1,5
+
+
+
+tableviewclass,createrow,0,0,18,27
+
+
+
+tableviewclass,getcellvalue,0,0,29,31
+
+
+,getlabel
+tableviewclass,getlabel,0,0,13,16
+
+
+
+tableviewclass,setcellvalue,0,0,33,35
+
+
+,getlabel
+tableviewclass,setcolumnstyle,0,0,37,41
+
+
+
+gamesplaying,showform,1,0,34,45
+,gform,,clvgames,,clsfunc,,sql,,btnclose,playermatrix,formright,playermatrix,screenwidth,playermatrix,formx,playermatrix,fwidth,playermatrix,formy,,xui,,lblinning,,lblp1,,lblp1avg,,lblp1caram,,lblp2,,lblp2avg,,lblp2caram,,lbltable,,pngame
+,btnclose,,clvgames,,lblinning,,lblp1,,lblp1avg,,lblp1caram,,lblp2,,lblp2avg,,lblp2caram,,lbltable,,pngame
+,initform,,setformpos,funcclass,setclvscrollbars,,gengamelist,funcclass,initialize,sqlite,initialize,funcclass,getappicon,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,playermatrix,getformright,playermatrix,getscreenwidth,playermatrix,getformleft,playermatrix,getformtop
+gamesplaying,setformpos,0,0,47,59
+,gform,playermatrix,formright,playermatrix,screenwidth,playermatrix,formx,playermatrix,fwidth,playermatrix,formy
+
+playermatrix,getformright,playermatrix,getscreenwidth,playermatrix,getformleft,playermatrix,getformtop
+gamesplaying,btnclose_mousereleased,0,0,61,63
+,gform
+
+
+gamesplaying,clvgames_itemclick,0,0,65,67
+
+
+
+gamesplaying,gengamelist,1,1,69,92
+,xui,,lblinning,,lblp1,,lblp1avg,,lblp1caram,,lblp2,,lblp2avg,,lblp2caram,,lbltable,,pngame,,clvgames
+,lblinning,,lblp1,,lblp1avg,,lblp1caram,,lblp2,,lblp2avg,,lblp2caram,,lbltable,,pngame
+
+gamesplaying,getpanel,0,1,107,118
+,clvgames
+
+
+gamesplaying,initform,1,0,21,32
+,clsfunc,,sql,,gform,,btnclose,,clvgames,playermatrix,formright,playermatrix,screenwidth,playermatrix,formx,playermatrix,fwidth,playermatrix,formy
+,btnclose,,clvgames
+funcclass,initialize,sqlite,initialize,funcclass,getappicon,,setformpos,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,playermatrix,getformright,playermatrix,getscreenwidth,playermatrix,getformleft,playermatrix,getformtop
+gamesplaying,pngame_mouseentered,0,1,94,99
+,clvgames
+
+,getpanel
+gamesplaying,pngame_mouseexited,0,1,101,105
+,clvgames
+
+,getpanel
+gamesplaying,process_globals,0,1,2,19
+
+
+
+tabsetting,initsettings,1,0,9,26
+,clsfunc,,sform,,tabsettings,players,sql,players,clsfunc,players,edtmoyenne,players,clstabelview,players,playerform,players,tblplayer,players,btnclose,players,btnnew,players,btnsave,players,edtlastname,players,edtmake,players,edtname,players,genplayer,players,lblname,cmvars,clubid,cmvars,pincode
+,tabsettings,players,btnclose,players,btnnew,players,btnsave,players,edtlastname,players,edtmake,players,edtmoyenne,players,edtname,players,genplayer,players,lblname,players,tblplayer
+funcclass,initialize,funcclass,getappicon,players,initform,players,getplayers,b4xformatter,initialize,b4xformatter,createdefaultformat,b4xformatter,addformatdata,sqlite,initialize,funcclass,configurefornumbers,tableviewclass,initialize,sqlite,getplayerlist,players,createrow,players,setcolumnstyle,sqlite,initsql,sqlite,createplayerdatalist,funcclass,createplayercurs,funcclass,decryptstring,funcclass,encrypttostring
+tabsetting,process_globals,0,1,2,7
+
+
+
+mqttconnector,setsub,0,0,13,15
+cmvars,mqttname,cmvars,mqttbase,cmvars,mqtttable
+
+
+mqttconnector,connect,0,0,17,27
+
+
+
+mqttconnector,initialize,0,0,10,11
+
+
+
+mqttconnector,class_globals,0,0,1,8
+
+
+
+mqttconnector,client_connected,0,0,29,45
+
+
+,processconnecterror
+mqttconnector,processconnecterror,0,0,110,114
+
+
+
+mqttconnector,client_messagearrived,0,0,55,90
+
+
+
+mqttconnector,createmessage,0,0,98,104
+
+
+
+mqttconnector,disconnect,0,0,47,53
+
+
+
+mqttconnector,getclientconnected,0,0,106,108
+
+
+
+mqttconnector,sendmessage,0,0,92,96
+
+
+
+b4xdialog,initialize,0,0,33,52
+
+
+
+b4xdialog,close,0,0,236,242
+
+
+,getvisible
+b4xdialog,background_click,0,0,255,257
+
+
+
+b4xdialog,background_mouseclicked,0,0,245,247
+
+
+
+b4xdialog,background_touch,0,0,250,252
+
+
+
+b4xdialog,blur,0,0,284,322
+
+
+,setavg
+b4xdialog,setavg,0,0,324,336
+
+
+
+b4xdialog,button_click,0,0,230,234
+
+
+,close,,getvisible
+b4xdialog,class_globals,0,0,1,31
+
+
+
+b4xdialog,getvisible,0,0,186,188
+
+
+
+b4xdialog,createbutton,0,0,190,209
+
+
+,internalsettextorcsbuildertolabel
+b4xdialog,internalsettextorcsbuildertolabel,0,0,353,365
+
+
+
+b4xdialog,getbutton,0,0,212,217
+
+
+
+b4xdialog,internaladdstubtoclvifneeded,0,0,338,351
+
+
+
+b4xdialog,resize,0,0,260,269
+
+
+,updateblur,,blur,,setavg
+b4xdialog,updateblur,0,0,271,282
+
+
+,blur,,setavg
+b4xdialog,setbuttonstate,0,0,220,227
+
+
+,getbutton
+b4xdialog,show,0,0,71,92
+
+
+,internalsettextorcsbuildertolabel,,showcustom,,updateblur,,createbutton,,blur,,setavg
+b4xdialog,showcustom,0,0,94,184
+
+
+,updateblur,,createbutton,,internalsettextorcsbuildertolabel,,blur,,setavg
+b4xdialog,showtemplate,1,0,62,69
+gamesplaying,clvgames
+
+gamesplaying,getpanel,b4xcolortemplate,getpanel,b4xdatetemplate,getpanel,b4xinputtemplate,getpanel,b4xlisttemplate,getpanel,b4xlongtexttemplate,getpanel,b4xsearchtemplate,getpanel,b4xsignaturetemplate,getpanel,b4xtimedtemplate,getpanel,b4xcolortemplate,show,b4xdatetemplate,show,b4xinputtemplate,show,b4xlisttemplate,show,b4xlongtexttemplate,show,b4xsearchtemplate,show,b4xsignaturetemplate,show,b4xtimedtemplate,show,,showcustom,b4xcolortemplate,dialogclosed,b4xdatetemplate,dialogclosed,b4xinputtemplate,dialogclosed,b4xlisttemplate,dialogclosed,b4xlongtexttemplate,dialogclosed,b4xsearchtemplate,dialogclosed,b4xsignaturetemplate,dialogclosed,b4xtimedtemplate,dialogclosed,b4xcolortemplate,getselectedhsvcolor,b4xcolortemplate,updatebarcolor,b4xcolortemplate,getselectedcolor,b4xdatetemplate,drawdays,b4xdatetemplate,drawbox,b4xinputtemplate,validate,b4xinputtemplate,isvalid,,setbuttonstate,b4xinputtemplate,setborder,,getbutton,b4xlisttemplate,selectitem,,internaladdstubtoclvifneeded,b4xsearchtemplate,update,b4xfloattextfield,settext,b4xfloattextfield,gettextfield,b4xsearchtemplate,additemstolist,b4jtextflow,initialize,b4jtextflow,reset,b4jtextflow,append,b4jtextflow,setcolor,b4jtextflow,createtextflow,anotherprogressbar,setvaluenoanimation,anotherprogressbar,setvalue,,close,,getvisible,,updateblur,,createbutton,,internalsettextorcsbuildertolabel,,blur,,setavg,b4xcolortemplate,setselectedhsvcolor,b4xcolortemplate,huebarselectedchanged,b4xcolortemplate,alphabarselectedchange,b4xcolortemplate,update,b4xcolortemplate,drawcolors,b4xcolortemplate,handleselectedcolorchanged
+b4xdialog,stub_click,0,0,367,369
+
 
 
 b4xformatter,initialize,0,0,11,15
@@ -468,6 +807,10 @@ b4xformatter,newformatdata,0,0,30,32
 
 
 ,copyformatdata,,getdefaultformat
+cmvars,process_globals,0,1,2,11
+,appname,,dblclick,,mqttname,,mqttbase,,mqtttable
+,appname,,dblclick,,mqttname,,mqttbase,,mqtttable
+
 animatedcounter,base_resize,0,0,70,86
 
 
@@ -796,90 +1139,6 @@ b4xdatetemplate,show,0,0,163,174
 
 
 ,drawdays,,drawbox
-b4xdialog,close,0,0,236,242
-
-
-,getvisible
-b4xdialog,background_click,0,0,255,257
-
-
-
-b4xdialog,background_mouseclicked,0,0,245,247
-
-
-
-b4xdialog,background_touch,0,0,250,252
-
-
-
-b4xdialog,blur,0,0,284,322
-
-
-,setavg
-b4xdialog,setavg,0,0,324,336
-
-
-
-b4xdialog,button_click,0,0,230,234
-
-
-,close,,getvisible
-b4xdialog,class_globals,0,0,1,31
-
-
-
-b4xdialog,getvisible,0,0,186,188
-
-
-
-b4xdialog,createbutton,0,0,190,209
-
-
-,internalsettextorcsbuildertolabel
-b4xdialog,internalsettextorcsbuildertolabel,0,0,353,365
-
-
-
-b4xdialog,getbutton,0,0,212,217
-
-
-
-b4xdialog,initialize,0,0,33,52
-
-
-
-b4xdialog,internaladdstubtoclvifneeded,0,0,338,351
-
-
-
-b4xdialog,resize,0,0,260,269
-
-
-,updateblur,,blur,,setavg
-b4xdialog,updateblur,0,0,271,282
-
-
-,blur,,setavg
-b4xdialog,setbuttonstate,0,0,220,227
-
-
-,getbutton
-b4xdialog,show,0,0,71,92
-
-
-,internalsettextorcsbuildertolabel,,showcustom,,updateblur,,createbutton,,blur,,setavg
-b4xdialog,showcustom,0,0,94,184
-
-
-,updateblur,,createbutton,,internalsettextorcsbuildertolabel,,blur,,setavg
-b4xdialog,showtemplate,1,0,62,69
-
-
-b4xcolortemplate,getpanel,b4xdatetemplate,getpanel,b4xinputtemplate,getpanel,b4xlisttemplate,getpanel,b4xlongtexttemplate,getpanel,b4xsearchtemplate,getpanel,b4xsignaturetemplate,getpanel,b4xtimedtemplate,getpanel,b4xcolortemplate,show,b4xdatetemplate,show,b4xinputtemplate,show,b4xlisttemplate,show,b4xlongtexttemplate,show,b4xsearchtemplate,show,b4xsignaturetemplate,show,b4xtimedtemplate,show,,showcustom,b4xcolortemplate,dialogclosed,b4xdatetemplate,dialogclosed,b4xinputtemplate,dialogclosed,b4xlisttemplate,dialogclosed,b4xlongtexttemplate,dialogclosed,b4xsearchtemplate,dialogclosed,b4xsignaturetemplate,dialogclosed,b4xtimedtemplate,dialogclosed,b4xcolortemplate,getselectedhsvcolor,b4xcolortemplate,updatebarcolor,b4xcolortemplate,getselectedcolor,b4xdatetemplate,drawdays,b4xdatetemplate,drawbox,b4xinputtemplate,validate,b4xinputtemplate,isvalid,,setbuttonstate,b4xinputtemplate,setborder,,getbutton,b4xlisttemplate,selectitem,,internaladdstubtoclvifneeded,b4xsearchtemplate,update,b4xfloattextfield,settext,b4xfloattextfield,gettextfield,b4xsearchtemplate,additemstolist,b4jtextflow,initialize,b4jtextflow,reset,b4jtextflow,append,b4jtextflow,setcolor,b4jtextflow,createtextflow,anotherprogressbar,setvaluenoanimation,anotherprogressbar,setvalue,,close,,getvisible,,updateblur,,createbutton,,internalsettextorcsbuildertolabel,,blur,,setavg,b4xcolortemplate,setselectedhsvcolor,b4xcolortemplate,huebarselectedchanged,b4xcolortemplate,alphabarselectedchange,b4xcolortemplate,update,b4xcolortemplate,drawcolors,b4xcolortemplate,handleselectedcolorchanged
-b4xdialog,stub_click,0,0,367,369
-
-
-
 b4xinputtemplate,getpanel,0,0,116,118
 
 
@@ -1073,9 +1332,9 @@ b4xsignaturetemplate,resize,0,0,21,24
 
 
 b4xtimedtemplate,getpanel,1,0,16,26
+gamesplaying,clvgames
 
-
-b4xcolortemplate,getpanel,b4xdatetemplate,getpanel,b4xinputtemplate,getpanel,b4xlisttemplate,getpanel,b4xlongtexttemplate,getpanel,b4xsearchtemplate,getpanel,b4xsignaturetemplate,getpanel,,getpanel
+gamesplaying,getpanel,b4xcolortemplate,getpanel,b4xdatetemplate,getpanel,b4xinputtemplate,getpanel,b4xlisttemplate,getpanel,b4xlongtexttemplate,getpanel,b4xsearchtemplate,getpanel,b4xsignaturetemplate,getpanel,,getpanel
 b4xtimedtemplate,show,0,0,28,39
 
 

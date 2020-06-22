@@ -1,31 +1,57 @@
 ﻿AppType=JavaFX
 Build1=Default,nl.pdeg.scoremanager
 File1=app_icon.png
-File10=scoremanager.css
-File11=scoremanager.db
-File12=scrollpane.bjl
+File10=main.bjl
+File11=materialdesignicons-webfont.ttf
+File12=newClub.bas
+File13=newclub.bjl
+File14=playerlist.bjl
+File15=playermatrix.bas
+File16=playermatrix.bjl
+File17=scoremanager - Copy.css
+File18=scoremanager.css
+File19=scoremanager.db
 File2=bal.png
+File20=scrollpane.bjl
+File21=tabSetting.bas
+File22=tabSettings.bas
+File23=tabsettings.bjl
 File3=baloo2-regular.ttf
-File4=clvPlayer.bjl
-File5=login.bjl
-File6=main.bjl
-File7=materialdesignicons-webfont.ttf
-File8=newclub.bjl
-File9=playerlist.bjl
-FileGroup1=Default Group
-FileGroup10=Default Group
-FileGroup11=Db
-FileGroup12=Form
-FileGroup2=Default Group
-FileGroup3=Default Group
+File4=clvgame.bjl
+File5=clvPlayer.bjl
+File6=cmVars.bas
+File7=FormClass.bas
+File8=gamesplaying.bjl
+File9=login.bjl
+FileGroup1=image
+FileGroup10=Form
+FileGroup11=font
+FileGroup12=Default Group
+FileGroup13=Form
+FileGroup14=Form
+FileGroup15=Default Group
+FileGroup16=Form
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup19=Db
+FileGroup2=image
+FileGroup20=Form
+FileGroup21=Default Group
+FileGroup22=Default Group
+FileGroup23=Form
+FileGroup3=font
 FileGroup4=Form
 FileGroup5=Form
-FileGroup6=Form
+FileGroup6=Default Group
 FileGroup7=Default Group
 FileGroup8=Form
 FileGroup9=Form
 Group=Default Group
 Library1=jcore
+Library10=jcontrolsfx9
+Library11=jreflection
+Library12=jmqtt
+Library13=jrandomaccessfile
 Library2=jfx
 Library3=xcustomlistview
 Library4=jsql
@@ -33,19 +59,26 @@ Library5=b4xformatter
 Library6=xui views
 Library7=jb4xencryption
 Library8=jstringutils
-Module1=FuncClass
-Module2=|relative|..\newClub
-Module3=|relative|..\playermatrix
-Module4=Players
-Module5=Sqlite
-NumberOfFiles=12
-NumberOfLibraries=8
-NumberOfModules=5
+Library9=jcontrolsfx
+Module1=|relative|..\cmVars
+Module10=TableViewClass
+Module11=|relative|..\tabSetting
+Module2=|relative|..\FormClass
+Module3=FuncClass
+Module4=gamesplaying
+Module5=MqttConnector
+Module6=|relative|..\newClub
+Module7=|relative|..\playermatrix
+Module8=Players
+Module9=Sqlite
+NumberOfFiles=23
+NumberOfLibraries=13
+NumberOfModules=11
 Version=8.31
 @EndOfDesignText@
 #Region Project Attributes 
-	#MainFormWidth: 1024
-	#MainFormHeight: 768 
+	#MainFormWidth: 300
+	#MainFormHeight: 300 
 	
 	#AdditionalJar: sqlite-jdbc-3.30.1.jar
     #AdditionalJar: bcprov-jdk15on-165
@@ -53,14 +86,16 @@ Version=8.31
 
 
 Sub Process_Globals
-	Type playerCurs(player_id As Int, player As String, moyenne As Float, to_make As Int)
-	Type playerIdForGrid(player1_id As Int, player2_id As Int)
+	Type playerCurs(player_id As String, firstname As String, lastname As String, moyenne As Float, to_make As Int)
+	Type playerIdForGrid(player1_id As String, player2_id As String)
 	
 	Private clsFunc As FuncClass
+	Private clsForm As FormClass
 	Private sql As Sqlite
+	Private cutils As ControlsUtils
+	
 	Public pincode As String
 	Public clubId As String
-	Private ox, oy As Double
 	
 	Private fx As JFX
 	Private MainForm As Form
@@ -70,6 +105,9 @@ Sub Process_Globals
 	Private lblExit As Label
 	Private btnNewClub As Button
 	Private cmbClub As ComboBox
+	Private Label4 As B4XView
+	
+	Type Message (Body As String, From As String)
 End Sub
 
 Sub AppStart (Form1 As Form, Args() As String)
@@ -82,17 +120,22 @@ Sub AppStart (Form1 As Form, Args() As String)
 	MainForm.Stylesheets.Add(File.GetUri(File.DirAssets, "scoremanager.css"))
 	MainForm.BackColor = fx.Colors.Transparent
 	MainForm.RootPane.LoadLayout("login") 'Load the layout file.
-	MainForm.WindowHeight = 300
-	MainForm.WindowWidth = 300
+'	MainForm.WindowHeight = 300
+'	MainForm.WindowWidth = 300
 	MainForm.Resizable = False
 	MainForm.Icon =  clsFunc.GetAppIcon
 	MainForm.SetFormStyle("TRANSPARENT")
+	'clsForm.Initialize(MainForm)
 	
 	lblLogin.Font = iconFont
 	lblLogin.Text = Chr(0xf5fc)
 	lblExit.Font = iconFont
 	lblExit.Text = Chr(0xf5fd)
+	
 	GetClubs
+	
+	cmbClub.Value = "De Grijze Duiven"
+	edtPincode.Text = "3005"
 '	ShowForm
 End Sub
 
@@ -113,58 +156,26 @@ Sub Label1_MouseExited (EventData As MouseEvent)
 	
 End Sub
 
-'Parent - The Node that ontains a scrollbar i.e. ListView, TableView etc.
-'Orientation - can be VERTICAL, HORIZONTAL or BOTH
-'Size - The required width for a VERTICAl scrollbar or height for a HORIZONTAL scroll bar
-Public Sub SetScrollbarSize(Parent As JavaObject, Orientation As String, Size As Double)
-	'Get a Set that contains the scrollbars attached to the parent and convert it to an array
-	Dim Arr() As Object = Parent.RunMethodJO("lookupAll",Array(".scroll-bar")).RunMethod("toArray",Null)
-
-	For Each N As Node In Arr
-
-		'Check this object is a scrolbar
-		If GetType(N) = "com.sun.javafx.scene.control.skin.VirtualScrollBar" Or GetType(N) = "javafx.scene.control.ScrollBar" Then
-			Dim SB As JavaObject = N
-
-			'Get the orientation of the scrollbar as a string
-			Dim BarOrientation As String = SB.RunMethodJO("getOrientation",Null).RunMethod("toString",Null)
-
-			'Required Orientation is VERTICAL or BOTH
-			If BarOrientation = "VERTICAL" And (Orientation  = BarOrientation Or Orientation = "BOTH") Then
-				N.PrefWidth = Size
-			End If
-
-			'Required Orientation is HORIZONTAL or BOTH
-			If BarOrientation = "HORIZONTAL" And (Orientation = BarOrientation Or Orientation = "BOTH") Then
-				N.PrefHeight = Size
-			End If
-		End If
- 
-	Next
-End Sub
-
 Sub GetClubs
 	Dim lst As List = sql.GetClubList
 	If lst.Size = 0 Then
 		newClub.initForm
+		ShowForm
+		newClub.SetWinPos(MainForm.WindowLeft, MainForm.WindowTop)
+		MainForm.Close
 		Return
 	End If
 	ShowForm
 		
 	cmbClub.Items.Add("")
 	For i = 0 To lst.Size -1
-		LogDebug(">"&lst.Get(i))
 		cmbClub.Items.Add(lst.Get(i))
 	Next
 
 End Sub
 
 Sub lblLogin_MouseReleased (EventData As MouseEvent)
-	If edtPincode.Text = "" Then
-		Return
-	End If
-	pincode = edtPincode.Text
-	sql.ValidateClub(cmbClub.Value)
+	login
 End Sub
 
 Sub lblExit_MouseReleased (EventData As MouseEvent)
@@ -186,14 +197,16 @@ Sub cmbClub_SelectedIndexChanged(Index As Int, Value As Object)
 End Sub
 
 Sub MainForm_MousePressed (EventData As MouseEvent)
-	ox = EventData.X
-	oy = EventData.Y
+'	ox = EventData.X
+'	oy = EventData.Y
+'	clsForm.MainForm_MousePressed (EventData)
 End Sub
-
+'
 Sub MainForm_MouseDragged (EventData As MouseEvent)
-	Dim jo As JavaObject = EventData
-	MainForm.WindowLeft = jo.RunMethod("getScreenX", Null) - ox
-	MainForm.WindowTop = jo.RunMethod("getScreenY", Null) - oy
+	clsForm.MainForm_MouseDragged (EventData)
+'	Dim jo As JavaObject = EventData
+'	MainForm.WindowLeft = jo.RunMethod("getScreenX", Null) - ox
+'	MainForm.WindowTop = jo.RunMethod("getScreenY", Null) - oy
 End Sub
 
 Sub GetFormPos As List
@@ -203,4 +216,24 @@ Sub GetFormPos As List
 	lst.Add(MainForm.WindowTop)
 	
 	Return lst
+End Sub
+
+Sub edtPincode_Action
+	login
+End Sub
+
+Sub login
+	If edtPincode.Text = "" Then
+		Return
+	End If
+	cmVars.pincode = edtPincode.Text
+	If sql.ValidateClub(cmbClub.Value) = True Then
+		sql.GetClubId(cmbClub.Value)
+		MainForm.Close
+		playermatrix.InitMatrix
+		playermatrix.ShowForm
+	Else
+		cutils.ShowNotification3(cmVars.appName, "Pincode niet correct", cutils.ICON_WARNING, _
+		MainForm, "BOTTOM_CENTER", 2000)
+	End If
 End Sub
