@@ -24,7 +24,7 @@ End Sub
 
 Sub GetPlayerList As List
 	InitSql
-	qry = "SELECT player_id, firstname, lastname, moyenne, to_make FROM player where club_id = ?"
+	qry = "SELECT * FROM player where club_id = ?"' and active=1"
 	rs = sql.ExecQuery2(qry, Array As String(cmVars.clubId))
 
 	Return CreatePlayerDataList
@@ -43,23 +43,23 @@ Private Sub CreatePlayerDataList As List
 	Dim lstPlayer As List
 	lstPlayer.Initialize
 	Do While rs.NextRow
-		lstPlayer.Add(clsFunc.CreateplayerCurs(rs.GetString("player_id"), rs.GetString("firstname"), rs.GetString("lastname"), rs.GetInt("moyenne"), rs.GetInt("to_make")))
+		lstPlayer.Add(clsFunc.CreateplayerCurs(rs.GetString("player_id"), rs.GetString("firstname"), rs.GetString("lastname"), rs.GetString("address"), rs.GetString("postcode"), rs.GetString("city"), rs.GetString("email"), rs.GetString("telephone"), rs.GetInt("active")))
 	Loop
 	rs.Close
 	lstPlayer.SortType("lastname", True)
 	Return lstPlayer
 End Sub
 
-Sub SetPlayerData(player_id As String, name As String, lastname As String, moyenne As Double, to_make As String)
+Sub SetPlayerData(player_id As String, name As String, lastname As String, address As String, postcode As String, city As String, telephone As String, email As String, active As Int)
+	Dim uuid As String = clsFunc.CreateGuid
 	InitSql
 	If player_id <> "0" Then
-		qry = "UPDATE player set firstname = ?, lastname = ?, moyenne = ?, to_make = ? WHERE player_id = ?"
-		sql.ExecNonQuery2(qry, Array As String(name, lastname, moyenne*1000, to_make, player_id))
+		qry = "UPDATE player set firstname = ?, lastname = ?, address=?, postcode=?, city=?, telephone=?, email=?, active = ? WHERE player_id = ?"
+		sql.ExecNonQuery2(qry, Array As String(name, lastname, address, postcode, city, telephone, email, active, player_id))
 	Else
-		'Log(clsFunc.CreateGuid)
-		'Sleep(1)
-		qry = "INSERT INTO player (player_id, club_id, firstname, lastname, moyenne, to_make) VALUES (?,?,?,?,?,?)"
-		sql.ExecNonQuery2(qry, Array As String(clsFunc.CreateGuid, cmVars.clubId, name, lastname, moyenne*1000, to_make))
+		
+		qry = "INSERT INTO player (player_id, club_id, firstname, lastname, address, city, postcode, telephone, email, active) VALUES (?,?,?,?,?,?,?,?,?,?)"
+		sql.ExecNonQuery2(qry, Array As String(uuid, cmVars.clubId, name, lastname, address, postcode, city, telephone, email, active))
 	End If
 End Sub
 

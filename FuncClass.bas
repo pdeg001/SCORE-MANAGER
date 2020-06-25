@@ -19,16 +19,19 @@ Public Sub Initialize
 	'DefaultFormat = numFormat.GetDefaultFormat
 End Sub
 
-Public Sub CreateplayerCurs (player_id As String, firstname As String, lastname As String, moyenne As Long, to_make As Int) As playerCurs
+Public Sub CreateplayerCurs (player_id As String, firstname As String, lastname As String, address As String, postcode As String, city As String, email As String, telephone As String,active As Int) As playerCurs
 	Dim t1 As playerCurs
 	
 	t1.Initialize
 	t1.player_id = player_id
 	t1.firstname = DecryptString(firstname)
 	t1.lastname = DecryptString(lastname)
-	t1.moyenne = moyenne
-	t1.to_make = to_make
-	
+	t1.address = DecryptString(address)
+	t1.postcode = DecryptString(postcode)
+	t1.city = DecryptString(city)
+	t1.email = DecryptString(email)
+	t1.telephone = DecryptString(telephone)
+	t1.active = active
 	Return t1
 End Sub
 
@@ -135,6 +138,7 @@ Sub EncryptString(Str As String) As String
 End Sub
 
 Sub DecryptString(str As String) As String
+	if str = null then Return ""
 	Dim c As B4XCipher
 	Dim baseStr() As Byte = su.DecodeBase64(str)
 	

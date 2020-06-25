@@ -32,7 +32,7 @@ Sub initForm
 	gForm.RootPane.LoadLayout("gamesplaying")
 	gForm.Stylesheets.Add(File.GetUri(File.DirAssets, "scoremanager.css"))
 	gForm.AlwaysOnTop = True
-	gForm.Resizable = True
+	gForm.Resizable = False
 	gForm.Icon =  clsFunc.GetAppIcon
 	SetFormPos
 End Sub
@@ -92,33 +92,29 @@ Private Sub GenGameList(num As Int) As B4XView
 	lblP1.Style = "-fx-color: dodgerblue"
 	lblP2.Style = "-fx-color: dodgerblue"
 	
-	p.Style = "-fx-effect: dropshadow(three-pass-box, gray, 15, 0, 0.0, 0.6);"
-	
+	'p.Style = "-fx-effect: dropshadow(three-pass-box, gray, 15, 0, 0.0, 0.6);"
+	p.Style = "-fx-background-insets: 10 20 30 40; -fx-background-radius: 0; -fx-effect: dropshadow(three-pass-box, lightslategray, 10, 0, 3, 4);"
 	Return p
 End Sub
 
 Sub pnGame_MouseEntered (EventData As MouseEvent)
 	Dim p As Pane = Sender
-	Dim p1 As Pane = GetPanel(p.Tag)
-	'p1.Style = "-fx-background-insets: 10; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, green, 10, 0, 0, 0);"
-	p1.Style = "-fx-effect: dropshadow(three-pass-box, green, 15, 0, 0, 0);"
+	GetPanel(p.Tag, "gray")
 End Sub
 
 Sub pnGame_MouseExited (EventData As MouseEvent)
 	Dim p As Pane = Sender
-	Dim p1 As Pane = GetPanel(p.Tag)
-	p1.Style = "-fx-effect: dropshadow(three-pass-box, gray, 10, 0, 0, 0);"
+	GetPanel(p.Tag, "lightslategray")
 	End Sub
 	
-Sub GetPanel(t As String) As Pane	
+Sub GetPanel(t As String, color As String)
 	Dim p As Pane
 	
 	For i = 0 To clvGames.Size -1
 		p = clvGames.GetPanel(i)
-		
 		If p.Tag = t Then
+			p.Style = $"-fx-background-insets: 10 20 30 40; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, ${color}, 10, 0, 3, 4);"$
 			Exit
 		End If
 	Next
-	Return p
 End Sub

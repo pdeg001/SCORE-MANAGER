@@ -52,20 +52,23 @@
 }
 
 .tooltip {
-  /*  -fx-show-delay: 0ms;
+    -fx-show-delay: 0ms;
     -fx-show-duration: 5000ms;
     -fx-hide-delay: 0ms;
     -fx-background-radius: 2 2 2 2;
-    -fx-background-color: yellow;
-    -fx-text-fill: black;
-    -fx-font-size: 12px;
+    -fx-background-color: blue;
+	
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
     -fx-font-family: 'Helvetica', Arial, sans-serif;
-    -fx-font-style: normal;*/
-	 -fx-background-radius: 2 2 2 2;
+    -fx-font-style: normal; 
+	/* -fx-background-radius: 2 2 2 2;
     -fx-background-color: linear-gradient(#FFFF99, #FFFF99);
     -fx-text-fill: black;
-    -fx-font-size: 12px;
+    -fx-font-size: 12px;*/
 }
+ 
+ 
  
 .label {
   /* -fx-border-color:blue;-fx-border-width:5%;

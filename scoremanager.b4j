@@ -52,6 +52,7 @@ Library10=jcontrolsfx9
 Library11=jreflection
 Library12=jmqtt
 Library13=jrandomaccessfile
+Library14=jgameviewhelper
 Library2=jfx
 Library3=xcustomlistview
 Library4=jsql
@@ -72,7 +73,7 @@ Module7=|relative|..\playermatrix
 Module8=Players
 Module9=Sqlite
 NumberOfFiles=23
-NumberOfLibraries=13
+NumberOfLibraries=14
 NumberOfModules=11
 Version=8.31
 @EndOfDesignText@
@@ -86,7 +87,7 @@ Version=8.31
 
 
 Sub Process_Globals
-	Type playerCurs(player_id As String, firstname As String, lastname As String, moyenne As Float, to_make As Int)
+	Type playerCurs(player_id As String, firstname As String, lastname As String, address As String, postcode As String, city As String, email As String, telephone As String, active As Int)
 	Type playerIdForGrid(player1_id As String, player2_id As String)
 	
 	Private clsFunc As FuncClass
@@ -112,10 +113,9 @@ End Sub
 
 Sub AppStart (Form1 As Form, Args() As String)
 	iconFont = fx.LoadFont(File.DirAssets, "materialdesignicons-webfont.ttf", 30)
-	Players.InitForm
+'	Players.InitForm
 	clsFunc.Initialize
 	sql.Initialize
-'	sql.CreateClub("Peter")
 	MainForm = Form1
 	MainForm.Stylesheets.Add(File.GetUri(File.DirAssets, "scoremanager.css"))
 	MainForm.BackColor = fx.Colors.Transparent
@@ -203,7 +203,7 @@ Sub MainForm_MousePressed (EventData As MouseEvent)
 End Sub
 '
 Sub MainForm_MouseDragged (EventData As MouseEvent)
-	clsForm.MainForm_MouseDragged (EventData)
+'	clsForm.MainForm_MouseDragged (EventData)
 '	Dim jo As JavaObject = EventData
 '	MainForm.WindowLeft = jo.RunMethod("getScreenX", Null) - ox
 '	MainForm.WindowTop = jo.RunMethod("getScreenY", Null) - oy
