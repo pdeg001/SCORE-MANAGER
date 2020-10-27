@@ -80,7 +80,7 @@ Version=8.5
     #AdditionalJar: bcprov-jdk15on-165
 #End Region
 
-'TEST123
+'TEST12345
 'HALLO
 Sub Process_Globals
 	Type playerCurs(player_id As String, firstname As String, lastname As String, address As String, postcode As String, city As String, email As String, telephone As String, active As Int)
