@@ -61,21 +61,16 @@ Library6=xui views
 Library7=jb4xencryption
 Library8=jstringutils
 Library9=jcontrolsfx
-Module1=|relative|..\cmVars
-Module10=TableViewClass
-Module11=|relative|..\tabSetting
-Module2=|relative|..\FormClass
-Module3=FuncClass
-Module4=gamesplaying
-Module5=MqttConnector
-Module6=|relative|..\newClub
-Module7=|relative|..\playermatrix
-Module8=Players
-Module9=Sqlite
+Module1=FuncClass
+Module2=gamesplaying
+Module3=MqttConnector
+Module4=Players
+Module5=Sqlite
+Module6=TableViewClass
 NumberOfFiles=23
 NumberOfLibraries=14
-NumberOfModules=11
-Version=8.31
+NumberOfModules=6
+Version=8.5
 @EndOfDesignText@
 #Region Project Attributes 
 	#MainFormWidth: 300
@@ -85,7 +80,7 @@ Version=8.31
     #AdditionalJar: bcprov-jdk15on-165
 #End Region
 
-
+'TEST
 Sub Process_Globals
 	Type playerCurs(player_id As String, firstname As String, lastname As String, address As String, postcode As String, city As String, email As String, telephone As String, active As Int)
 	Type playerIdForGrid(player1_id As String, player2_id As String)
